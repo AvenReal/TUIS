@@ -36,7 +36,7 @@ public class Component
     
     public readonly char[,] Display;
 
-    public Component(Terminal terminal, byte width, byte height, byte posX, byte posY)
+    public Component(Terminal terminal, byte width, byte height, byte posY, byte posX)
     {
         Terminal = terminal;
         Width = width;
@@ -44,6 +44,13 @@ public class Component
         PosX = posX;
         PosY = posY;
         Display = new char[Height,Width];
+        for (int i = 0; i < Height; i++)
+        {
+            for (int j = 0; j < Width; j++)
+            {
+                Display[i,j] = ' ';
+            }
+        }
     }
 
     public virtual void Draw()

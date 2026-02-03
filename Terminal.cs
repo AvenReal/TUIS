@@ -17,7 +17,7 @@ public class Terminal
         {
             for (int j = 0; j < ScreenWidth; j++)
             {
-                Screen[i,j] = '_';
+                Screen[i,j] = '░';
             }
         }
     }

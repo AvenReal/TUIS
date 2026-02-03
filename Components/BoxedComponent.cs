@@ -2,6 +2,8 @@ namespace Terminal.Components;
 
 public class BoxedComponent : Component
 {
+    public Boxes.Type Box = Boxes.Type.None;
+    
     public BoxedComponent(Terminal terminal, byte width, byte height, byte posX, byte posY) : base(terminal, width, height, posX, posY)
     {
         
@@ -13,7 +15,7 @@ public class BoxedComponent : Component
         {
             for (byte j = 0; j < Width; j++)
             {
-                Display[i, j] = Boxes.Light(i, j, Height, Width) ?? Display[i, j];
+                Display[i, j] = Boxes.Box(Box, j, i, PosX, PosY, Height, Width) ?? Display[i, j];
             }
         }
         base.Draw();
@@ -22,11 +24,33 @@ public class BoxedComponent : Component
 
 public static class Boxes
 {
-    public static char? Light(byte y, byte x, byte height, byte width)
+    public enum Type
     {
-        if (y == 0)
+        Light,
+        Bold,
+        None
+    }
+
+    public static char? Box(Type type, byte x, byte y, byte posX, byte posY, byte height, byte width)
+    {
+        switch (type)
         {
-            if(x == 0)
+            case Type.Light:
+                return Light(x, y, posX, posY, height, width);
+            case Type.Bold:
+                return Bold(x, y, posX, posY, height, width);
+            case Type.None:
+                return null;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(type), type, null);
+        }
+    }
+    
+    public static char? Light(byte x, byte y, byte posX, byte posY, byte height, byte width)
+    {
+        if (y == posY)
+        {
+            if(x == posX)
                 return '┌';
             
             if(x == width - 1)
@@ -37,7 +61,7 @@ public static class Boxes
         
         if (y == height - 1)
         {
-            if(x == 0)
+            if(x == posX)
                 return '└';
             
             if(x == width - 1)
@@ -46,9 +70,14 @@ public static class Boxes
             return '─';
         }
         
-        if(x == 0 || x == width - 1)
+        if(x == posX || x == width - 1)
             return '│';
         
         return null;
+    }
+    
+    public static char? Bold(byte x, byte y, byte posX, byte posY, byte height, byte width)
+    {
+        return x == posX || x == width-1 || y == posY || y == height-1 ? '█' : null;
     }
 }
