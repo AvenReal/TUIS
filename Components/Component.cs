@@ -39,6 +39,18 @@ public class Component
     public readonly char[,] Display;
 
     public readonly List<Mask> Masks = new();
+    
+    public bool NeedRedraw = true;
+    public bool IsVisible
+    {
+        set
+        {
+            if(!value)
+                NeedRedraw = true;
+            field = value;
+        }
+        get;
+    }
 
     public Component(Terminal terminal, byte width, byte height, byte posY, byte posX)
     {
@@ -49,6 +61,7 @@ public class Component
         PosX = posX;
         PosY = posY;
         Display = new char[Height,Width];
+        IsVisible = true;
         for (int i = 0; i < Height; i++)
         {
             for (int j = 0; j < Width; j++)
@@ -58,8 +71,11 @@ public class Component
         }
     }
 
-    public virtual void Draw()
+    public void Draw()
     {
+        if(!NeedRedraw)
+            return;
+        
         foreach (Mask mask in Masks)
         {
             mask.Draw();
@@ -69,8 +85,10 @@ public class Component
         {
             for (int j = 0; j < Width; j++)
             {
-                Terminal.Screen[PosY + i, PosX + j] = Display[i,j];
+                Console.Write($"\u001b[{PosY + i};{PosX + j}H{(IsVisible ? Display[i, j] : ' ')}");
             }
         }
+        
+        NeedRedraw = false;
     }
 }

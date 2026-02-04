@@ -7,7 +7,6 @@ public class BoxMask : Mask
     public BoxMask(Component component, Type type) : base(component, delegate(Component component, Mask mask)
     {
         BoxMask boxMask = (BoxMask)mask;
-        
         for (byte i = 0; i < component.Height; i++)
         {
             for (byte j = 0; j < component.Width; j++)
