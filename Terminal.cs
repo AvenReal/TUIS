@@ -4,8 +4,8 @@ namespace Terminal;
 
 public class Terminal
 {
-    public const byte ScreenWidth = 192;
-    public const byte ScreenHeight = 37;
+    //public const byte ScreenWidth = 192;
+    //public const byte ScreenHeight = 37;
     
 
     public List<Component> Components = new();

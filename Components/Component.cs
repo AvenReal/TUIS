@@ -13,11 +13,12 @@ public class Component
     {
         set
         {
-            if (value + Width > Terminal.ScreenWidth)
+            /*
+             if (value + Width > Terminal.ScreenWidth)
             {
                 throw new ArgumentOutOfRangeException(nameof(PosY),
                     $"Max value of {Terminal.ScreenWidth} but got PosX ({value}) + Width ({Width}) = {value + Width}.");
-            }
+            }*/
             field = value;
         }
         get;
@@ -26,11 +27,12 @@ public class Component
     {
         set
         {
-            if (value + Height > Terminal.ScreenHeight)
+            /*
+             if (value + Height > Terminal.ScreenHeight)
             {
                 throw new ArgumentOutOfRangeException(nameof(PosY), 
                     $"Max value of {Terminal.ScreenHeight} but got PosY ({value}) + Height ({Height}) = {value + Height}.");
-            }
+            }*/
             field = value;
         }
         get;
