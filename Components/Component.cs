@@ -1,13 +1,15 @@
+using Terminal.Components.Masks;
+
 namespace Terminal.Components;
 
 public class Component
 {
     public Terminal Terminal;
     
-    public readonly byte Width;
-    public readonly byte Height;
+    public byte Width;
+    public byte Height;
 
-    protected byte PosX
+    public byte PosX
     {
         set
         {
@@ -20,7 +22,7 @@ public class Component
         }
         get;
     }
-    protected byte PosY
+    public byte PosY
     {
         set
         {
@@ -36,9 +38,12 @@ public class Component
     
     public readonly char[,] Display;
 
+    public readonly List<Mask> Masks = new();
+
     public Component(Terminal terminal, byte width, byte height, byte posY, byte posX)
     {
         Terminal = terminal;
+        Terminal.Components.Add(this);
         Width = width;
         Height = height;
         PosX = posX;
@@ -55,6 +60,11 @@ public class Component
 
     public virtual void Draw()
     {
+        foreach (Mask mask in Masks)
+        {
+            mask.Draw();
+        }
+        
         for (int i = 0; i < Height; i++)
         {
             for (int j = 0; j < Width; j++)

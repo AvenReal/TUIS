@@ -9,13 +9,13 @@ public class Terminal
 
     public readonly char[,] Screen = new char[ScreenHeight, ScreenWidth];
 
-    public List<Component> Components = new List<Component>();
+    public List<Component> Components = new();
 
     public Terminal()
     {
-        for (int i = 0; i < ScreenHeight; i++)
+        for (byte i = 0; i < ScreenHeight; i++)
         {
-            for (int j = 0; j < ScreenWidth; j++)
+            for (byte j = 0; j < ScreenWidth; j++)
             {
                 Screen[i,j] = '░';
             }
@@ -29,9 +29,9 @@ public class Terminal
             component.Draw();
         }
         Console.Clear();
-        for (int i = 0; i < ScreenHeight; i++)
+        for (byte i = 0; i < ScreenHeight; i++)
         {
-            for (int j = 0; j < ScreenWidth; j++)
+            for (byte j = 0; j < ScreenWidth; j++)
             {
                 Console.Write(Screen[i,j]);
             }

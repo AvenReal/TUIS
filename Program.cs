@@ -2,29 +2,20 @@
 
 
 using Terminal.Components;
+using Terminal.Components.Masks;
 
 Terminal.Terminal terminal = new Terminal.Terminal();
 
-BoxedComponent component = new BoxedComponent(terminal, 20, 5, 1, 10);
-BoxedComponent component1 = new BoxedComponent(terminal, 20, 5, 1, 35);
-component1.Box = Boxes.Type.Light;
-BoxedComponent component2 = new BoxedComponent(terminal, 20, 5, 20, 10);
-Component component3 = new Component(terminal, 20, 3, 1, 70);
-component2.Box = Boxes.Type.Bold;
-terminal.Components.Add(component);
-terminal.Components.Add(component1);
-terminal.Components.Add(component2);
-terminal.Components.Add(component3);
+Component component = new Component(terminal, 20, 5, 1, 10);
+TextMask textMask = new TextMask(component, "Salut, ceci est un test avec du text");
+Component component1 = new Component(terminal, 20, 5, 1, 35);
+BoxMask boxMask1 = new BoxMask(component1, BoxMask.Type.Light);
+TextMask textMask1 = new TextMask(component1, "Je t'aime Julie !");
+Component component2 = new Component(terminal, 20, 5, 20, 10);
+BoxMask boxMask2 = new BoxMask(component2, BoxMask.Type.Bold);
+Component component3 = new Component(terminal, 20, 5, 1, 70);
+BoxMask boxMask3 = new BoxMask(component3, BoxMask.Type.ExtraBold);
 
 
 
-
-for (int i = 0; i < component3.Height; i++)
-{
-    for (int j = 0; j < component3.Width; j++)
-    {
-        component3.Display[i, j] = '█';
-        //component.Display[i, j] = '█';
-    }
-}
 terminal.PrintScreen();
