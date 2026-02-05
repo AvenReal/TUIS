@@ -80,9 +80,32 @@ public class Component
         }
     }
     
+    public Component(byte width, byte height, byte posY, byte posX, IEnumerable<Mask>? masks = null)
+    {
+        Width = width;
+        Height = height;
+        PosX = posX;
+        PosY = posY;
+        Display = new char[Height,Width];
+        IsVisible = true;
+        for (int i = 0; i < Height; i++)
+        {
+            for (int j = 0; j < Width; j++)
+            {
+                Display[i,j] = ' ';
+            }
+        }
 
+        if (masks != null)
+        {
+            foreach (Mask mask in masks)
+            {
+                mask.Component = this;
+                Masks.Add(mask);
+            }
+        }
+    }
     
-
     public void Draw()
     {
         if(!NeedRedraw)

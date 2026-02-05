@@ -6,7 +6,7 @@ public class BoxMask : Mask
         get;
         set
         {
-            Component.NeedRedraw = true;
+            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -74,7 +74,7 @@ public class BoxMask : Mask
 
     protected override void Behaviour()
     {
-        for (byte i = 0; i < Component.Height; i++)
+        for (byte i = 0; i < Component!.Height; i++)
         {
             for (byte j = 0; j < Component.Width; j++)
             {

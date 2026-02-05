@@ -2,15 +2,14 @@ namespace Terminal.Components.Masks;
 
 public abstract class Mask
 {
-    protected readonly Component Component;
-    
+    public Component? Component;
 
     public bool IsVisible
     {
         get;
         set
         {
-            Component.NeedRedraw = true;
+            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -33,6 +32,10 @@ public abstract class Mask
 
     public void Draw()
     {
+        if(Component == null)
+            throw new NullReferenceException("Component of Mask is null");
+        
+        
         if(IsVisible)
             Behaviour();
     }

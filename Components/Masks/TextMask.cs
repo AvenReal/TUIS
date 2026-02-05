@@ -10,7 +10,7 @@ public class TextMask : Mask
         get;
         set
         {
-            Component.NeedRedraw = true;
+            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -19,7 +19,7 @@ public class TextMask : Mask
         get;
         set
         {
-            Component.NeedRedraw = true;
+            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -27,7 +27,7 @@ public class TextMask : Mask
         get;
         set
         {
-            Component.NeedRedraw = true;
+            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -36,7 +36,7 @@ public class TextMask : Mask
         get;
         set
         {
-            Component.NeedRedraw = true;
+            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -44,7 +44,7 @@ public class TextMask : Mask
         get;
         set
         {
-            Component.NeedRedraw = true;
+            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -62,7 +62,19 @@ public class TextMask : Mask
         VerticalPadding = verticalPadding;
         HorizontalAlignment = horizontalAlignment;
         VerticalAlignment = verticalAlignment;
-        
+    }
+
+    public TextMask(string text,
+        byte horizontalPadding = 0,
+        byte verticalPadding = 0,
+        HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left,
+        VerticalAlignmentEnum verticalAlignment = VerticalAlignmentEnum.Top)
+    {
+        Text = text;
+        HorizontalPadding = horizontalPadding;
+        VerticalPadding = verticalPadding;
+        HorizontalAlignment = horizontalAlignment;
+        VerticalAlignment = verticalAlignment;
     }
     
     public enum HorizontalAlignmentEnum
@@ -84,7 +96,7 @@ public class TextMask : Mask
         
         int textLength = Text.Length;
         
-        byte charsPerLine = (byte)(Component.Width - 2 * HorizontalPadding);
+        byte charsPerLine = (byte)(Component!.Width - 2 * HorizontalPadding);
         
         byte totalLines = (byte)(textLength / charsPerLine + ((textLength / charsPerLine) != textLength / (float)charsPerLine ? 1 : 0));
         
@@ -94,7 +106,7 @@ public class TextMask : Mask
         byte xOffset = HorizontalAlignment switch
         {
             HorizontalAlignmentEnum.Left => HorizontalPadding,
-            HorizontalAlignmentEnum.Center => (byte)(HorizontalPadding + (effectiveWidth - charsPerLine) / 2),
+            HorizontalAlignmentEnum.Center => (byte)(HorizontalPadding + (effectiveWidth - byte.Min(charsPerLine, (byte)textLength)) / 2),
             HorizontalAlignmentEnum.Right => (byte)(HorizontalPadding + effectiveWidth - charsPerLine),
             _ => throw new ArgumentOutOfRangeException()
         };
