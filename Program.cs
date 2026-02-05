@@ -2,6 +2,7 @@
 
 
 using System.Timers;
+using Terminal;
 using Terminal.Components;
 using Terminal.Components.Masks;
 
@@ -18,7 +19,40 @@ Component component3 = new Component(terminal, 20, 5, 1, 70);
 BoxMask boxMask3 = new BoxMask(component3, BoxMask.Type.ExtraBold);
 
 
+InputSystem inputSystem = new InputSystem();
 
+inputSystem.OnKeyPress += (key) =>
+{
+    switch (key.Key)
+    {
+        case ConsoleKey.UpArrow:
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                component2.Height -= 1;
+            else
+                component2.PosY -= 1;
+            break;
+        case ConsoleKey.DownArrow:
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                component2.Height += 1;
+            else
+                component2.PosY += 1;
+            break;
+        case ConsoleKey.LeftArrow:
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                component2.Width -= 1;
+            else
+                component2.PosX -= 1;
+            break;
+        case ConsoleKey.RightArrow:
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                component1.Width += 1;
+            else
+                component2.PosX += 1;
+            break;
+    }
+}; 
+
+inputSystem.Start();
 
 bool tick = true;
 Console.Clear();

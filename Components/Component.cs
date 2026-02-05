@@ -5,20 +5,32 @@ namespace Terminal.Components;
 public class Component
 {
     public Terminal Terminal;
-    
-    public byte Width;
-    public byte Height;
+
+    public byte Width
+    {
+        get;
+        set
+        {
+            NeedRedraw = true;
+            field = value;
+        }
+    }
+
+    public byte Height
+    {
+        get;
+        set
+        {
+            NeedRedraw = true;
+            field = value;
+        }
+    }
 
     public byte PosX
     {
         set
         {
-            /*
-             if (value + Width > Terminal.ScreenWidth)
-            {
-                throw new ArgumentOutOfRangeException(nameof(PosY),
-                    $"Max value of {Terminal.ScreenWidth} but got PosX ({value}) + Width ({Width}) = {value + Width}.");
-            }*/
+            NeedRedraw = true;
             field = value;
         }
         get;
@@ -27,12 +39,7 @@ public class Component
     {
         set
         {
-            /*
-             if (value + Height > Terminal.ScreenHeight)
-            {
-                throw new ArgumentOutOfRangeException(nameof(PosY), 
-                    $"Max value of {Terminal.ScreenHeight} but got PosY ({value}) + Height ({Height}) = {value + Height}.");
-            }*/
+            NeedRedraw = true;
             field = value;
         }
         get;

@@ -17,12 +17,13 @@ public class Terminal
 
     public void Draw()
     {
+        Console.CursorVisible = false;
         foreach (Component component in Components)
         {
             component.Draw();
         }
-        
-        Console.Write($"\u001b[47;0H");
+        Console.CursorVisible = true;
+        Console.Write($"\u001b[47;1H");
     }
 
     public void Clear()
