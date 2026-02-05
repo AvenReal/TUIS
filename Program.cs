@@ -20,37 +20,23 @@ Terminal.Terminal terminal = new Terminal.Terminal(new []
     })
 } );
 
-timeSystem.AddTimedEvent(((sender, eventArgs) =>
+timeSystem.AddTimedEvent(((_, _) =>
 {
-    if (timeSystem.Tick % 2 == 0)
+    if (timeSystem.Tick % 8 == 0)
     {
         boxMask.BoxType = boxMask.BoxType == BoxMask.Type.Light ? BoxMask.Type.Bold : BoxMask.Type.Light;
     }
 }));
 
-
+timeSystem.AddTimedEvent( ((_, _) =>
+{
+    terminal.Draw();
+} ));
 
 inputSystem.Start();
+ 
 
-
-bool tick = true;
-Console.Clear();
-System.Timers.Timer timer = new System.Timers.Timer(100);
-timer.Elapsed += Tick;
-timer.Start();
 while (true)
 {
     
 }
-timer.Stop();
-
-
-
-
-
-void Tick(Object source, ElapsedEventArgs e)
-{
-    terminal.Draw();
-    
-}
-
