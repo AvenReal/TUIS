@@ -1,48 +1,116 @@
+using System.Diagnostics;
 using System.Runtime.Intrinsics.X86;
 
 namespace Terminal.Components.Masks;
 
 public class TextMask : Mask
 {
-    public string Text;
+    public string Text
+    {
+        get;
+        set
+        {
+            Component.NeedRedraw = true;
+            field = value;
+        }
+    }
+    
+    public byte HorizontalPadding{
+        get;
+        set
+        {
+            Component.NeedRedraw = true;
+            field = value;
+        }
+    }
+    public byte VerticalPadding{
+        get;
+        set
+        {
+            Component.NeedRedraw = true;
+            field = value;
+        }
+    }
+    
+    public VerticalAlignmentEnum VerticalAlignment{
+        get;
+        set
+        {
+            Component.NeedRedraw = true;
+            field = value;
+        }
+    }
+    public HorizontalAlignmentEnum HorizontalAlignment{
+        get;
+        set
+        {
+            Component.NeedRedraw = true;
+            field = value;
+        }
+    }
+    
     
     public TextMask(Component component, string text, 
-        HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left, 
-        VerticalAlignment verticalAlignment = VerticalAlignment.Top) 
-        : base(component, delegate(Component component, Mask mask)
-    {
-        TextMask textMask = (TextMask) mask;
-        
-        int textLength = textMask.Text.Length;
-
-        byte horizontalOffset = (byte)(horizontalAlignment == 0
-            ? 0
-            : (component.Width - textLength % component.Width ) / (int)horizontalAlignment);
-
-        byte verticalOffset = (byte)(verticalAlignment == 0
-            ? 0
-            : (component.Height - textLength / component.Width) / (int)verticalAlignment);
-        
-        for (int i = 0; i < textLength; i++)
-        {
-            char c = textMask.Text[i];
-            if(i / component.Width < component.Height)
-                component.Display[i / component.Width + verticalOffset, i % component.Width + horizontalOffset] = c;
-        }
-    })
+        byte horizontalPadding = 0, 
+        byte verticalPadding = 0,
+        HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left, 
+        VerticalAlignmentEnum verticalAlignment = VerticalAlignmentEnum.Top) 
+        : base(component)
     {
         Text = text;
+        HorizontalPadding = horizontalPadding;
+        VerticalPadding = verticalPadding;
+        HorizontalAlignment = horizontalAlignment;
+        VerticalAlignment = verticalAlignment;
+        
     }
     
-    public enum HorizontalAlignment : byte
+    public enum HorizontalAlignmentEnum
     {
-        Left = 0,
-        Center = 2,
+        Left,
+        Center,
+        Right
     }
     
-    public enum VerticalAlignment :  byte
+    public enum VerticalAlignmentEnum
     {
-        Top = 0,
-        Center = 2,
+        Top,
+        Center,
+        Bottom
+    }
+
+    protected override void Behaviour()
+    {
+        
+        int textLength = Text.Length;
+        
+        byte charsPerLine = (byte)(Component.Width - 2 * HorizontalPadding);
+        
+        byte totalLines = (byte)(textLength / charsPerLine + ((textLength / charsPerLine) != textLength / (float)charsPerLine ? 1 : 0));
+        
+        byte effectiveWidth = (byte)(Component.Width - 2 * HorizontalPadding);
+        byte effectiveHeight = (byte)(Component.Height - 2 * VerticalPadding);
+
+        byte xOffset = HorizontalAlignment switch
+        {
+            HorizontalAlignmentEnum.Left => HorizontalPadding,
+            HorizontalAlignmentEnum.Center => (byte)(HorizontalPadding + (effectiveWidth - charsPerLine) / 2),
+            HorizontalAlignmentEnum.Right => (byte)(HorizontalPadding + effectiveWidth - charsPerLine),
+            _ => throw new ArgumentOutOfRangeException()
+        };
+        byte yOffset = HorizontalAlignment switch
+        {
+            HorizontalAlignmentEnum.Left => VerticalPadding,
+            HorizontalAlignmentEnum.Center => (byte)(VerticalPadding + (effectiveHeight - totalLines) / 2),
+            HorizontalAlignmentEnum.Right => (byte)(VerticalPadding + effectiveHeight - totalLines),
+            _ => throw new ArgumentOutOfRangeException()
+        };
+
+        for (int i = 0; i < textLength; i++)
+        {
+            byte lineIndex = (byte)(i / charsPerLine);
+            byte charIndexInLine = (byte)(i % charsPerLine);
+            Component.Display[yOffset + lineIndex, xOffset + charIndexInLine] = Text[i];
+        }
     }
 }

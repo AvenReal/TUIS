@@ -79,6 +79,9 @@ public class Component
             }
         }
     }
+    
+
+    
 
     public void Draw()
     {

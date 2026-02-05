@@ -2,19 +2,21 @@ namespace Terminal.Components.Masks;
 
 public class BoxMask : Mask
 {
-    public Type BoxType;
-    
-    public BoxMask(Component component, Type type) : base(component, delegate(Component component, Mask mask)
-    {
-        BoxMask boxMask = (BoxMask)mask;
-        for (byte i = 0; i < component.Height; i++)
+    public Type BoxType{
+        get;
+        set
         {
-            for (byte j = 0; j < component.Width; j++)
-            {
-                component.Display[i, j] = boxMask.GetBox(boxMask.BoxType, j, i, component.Height, component.Width) ?? component.Display[i, j];
-            }
+            Component.NeedRedraw = true;
+            field = value;
         }
-    })
+    }
+    
+    public BoxMask(Component component, Type type) : base(component)
+    {
+        BoxType = type;
+    }
+
+    public BoxMask(Type type)
     {
         BoxType = type;
     }
@@ -29,12 +31,12 @@ public class BoxMask : Mask
 
     private Dictionary<Type, (char west, char east, char north, char south, char northWest, char northEast, char southWest, char southEast)> _boxChars = new()
         {
-            { Type.Light,     ('│', '│', '─', '─', '┌', '┐', '└', '┘') },
-            { Type.Bold,      ('║', '║', '═', '═', '╔', '╗', '╚', '╝') },
-            { Type.ExtraBold, ('▌', '▐', '▀', '▄', '█', '█', '█', '█') }
+            { Type.Light,        ('│', '│', '─', '─', '┌', '┐', '└', '┘') },
+            { Type.Bold,         ('║', '║', '═', '═', '╔', '╗', '╚', '╝') },
+            { Type.ExtraBold,    ('▌', '▐', '▀', '▄', '█', '█', '█', '█') }
         };
 
-    public char? GetBox(Type type, byte x, byte y, byte height, byte width)
+    private char? GetBox(Type type, byte x, byte y, byte height, byte width)
     {
         if (type == Type.None)
         {
@@ -69,5 +71,17 @@ public class BoxMask : Mask
         
         return null;
     }
-    
+
+    protected override void Behaviour()
+    {
+        for (byte i = 0; i < Component.Height; i++)
+        {
+            for (byte j = 0; j < Component.Width; j++)
+            {
+                Component.Display[i, j] =
+                    GetBox(BoxType, j, i, Component.Height, Component.Width) ??
+                    Component.Display[i, j];
+            }
+        }
+    }
 }

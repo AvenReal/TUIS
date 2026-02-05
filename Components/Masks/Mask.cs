@@ -1,20 +1,39 @@
 namespace Terminal.Components.Masks;
 
-public class Mask
+public abstract class Mask
 {
-    public readonly Component Component;
-    public readonly Action<Component, Mask> Function;
+    protected readonly Component Component;
     
+
+    public bool IsVisible
+    {
+        get;
+        set
+        {
+            Component.NeedRedraw = true;
+            field = value;
+        }
+    }
     
-    public Mask(Component component, Action<Component, Mask> function)
+    public Mask(Component component)
     {
         Component = component;
         Component.Masks.Add(this);
-        Function = function;
+        
+        
+        IsVisible = true;
     }
+
+    public Mask()
+    {
+        IsVisible = true;
+    }
+    
+    protected abstract void Behaviour();
 
     public void Draw()
     {
-        Function(Component, this);
+        if(IsVisible)
+            Behaviour();
     }
 }

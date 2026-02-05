@@ -10,9 +10,16 @@ public class Terminal
 
     public List<Component> Components = new();
 
-    public Terminal()
+    public Terminal(IEnumerable<Component>? components = null)
     {
-        
+        if (components != null)
+        {
+            foreach (Component component in components)
+            {
+                component.Terminal = this;
+                Components.Add(component);
+            }
+        }
     }
 
     public void Draw()
@@ -34,4 +41,5 @@ public class Terminal
             component.NeedRedraw = true;
         }
     }
+
 }
