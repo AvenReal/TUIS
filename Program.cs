@@ -9,29 +9,27 @@ using Terminal.Components.Masks;
 InputSystem inputSystem = new InputSystem();
 TimeSystem timeSystem = new TimeSystem();
 
-BoxMask boxMask = new BoxMask(BoxMask.Type.Light);
+InputMask inputMask = new InputMask(1, 1);
 
 Terminal.Terminal terminal = new Terminal.Terminal(new []
 {
     new Component(50, 20, 1, 1, new Mask[]
     {
-        boxMask,
-        new TextMask("Salut\nComment ça va ?", 1, 1, TextMask.HorizontalAlignmentEnum.Center, TextMask.VerticalAlignmentEnum.Center ),
+        new BoxMask(BoxMask.Type.Light),
+        inputMask
     })
 } );
 
-timeSystem.AddTimedEvent(((_, _) =>
+inputSystem.OnKeyPress += key =>
 {
-    if (timeSystem.Tick % 8 == 0)
+    if (key.Key == ConsoleKey.I)
     {
-        boxMask.BoxType = boxMask.BoxType == BoxMask.Type.Light ? BoxMask.Type.Bold : BoxMask.Type.Light;
+        inputMask.Component!.NeedRedraw = true;
+        inputMask.Enabeled = true;
     }
-}));
+};
 
-timeSystem.AddTimedEvent( ((_, _) =>
-{
-    terminal.Draw();
-} ));
+timeSystem.AddTimedEvent((_, _) => {terminal.Draw();});
 
 inputSystem.Start();
  
