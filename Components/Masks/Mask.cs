@@ -3,6 +3,8 @@ namespace Terminal.Components.Masks;
 public abstract class Mask
 {
     public Component? Component;
+    
+    
 
     public bool IsVisible
     {

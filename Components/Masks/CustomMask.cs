@@ -15,7 +15,9 @@ public class CustomMask : Mask
         _action = action;
     }
 
-    
+
+
+
     protected override void Behaviour()
     {
         _action(this);
