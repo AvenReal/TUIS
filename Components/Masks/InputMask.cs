@@ -11,7 +11,17 @@ public class InputMask : Mask
             field = value;
         }
     }
-    public string Output = "";
+    public string Output
+    {
+        get;
+        private set
+        {
+            field = value;
+            _onOutputChange?.Invoke(this);
+        }
+    }
+
+    private readonly Action<InputMask>? _onOutputChange;
 
     public byte HorizontalPadding
     {
@@ -33,26 +43,32 @@ public class InputMask : Mask
         }
     }
     
-    public InputMask(Component component, byte horizontalPadding = 0, byte verticalPadding = 0) : base(component)
+    public InputMask(Component component, Action<InputMask>? onOutputChange = null, byte horizontalPadding = 0, byte verticalPadding = 0) : base(component)
     {
+        _onOutputChange = onOutputChange;
         HorizontalPadding = horizontalPadding;
         VerticalPadding = verticalPadding;
+        Output = "";
     }
 
-    public InputMask(byte horizontalPadding = 0, byte verticalPadding = 0)
+    public InputMask(Action<InputMask>? onOutputChange = null, byte horizontalPadding = 0, byte verticalPadding = 0)
     {
+        _onOutputChange = onOutputChange;
         HorizontalPadding = horizontalPadding;
         VerticalPadding = verticalPadding;
+        Output = "";
     }
     
     protected override void Behaviour()
     {
         if (Enabeled)
         {
-            Console.Write($"\u001b[{Component!.PosY + VerticalPadding};{Component.PosX + HorizontalPadding}H");
-            Console.CursorVisible = true;
-            Output = Console.ReadLine() ?? "";
             Enabeled = false;
+            Console.CursorVisible = true;
+            Console.Write($"\u001b[{Component!.PosY + VerticalPadding};{Component.PosX + HorizontalPadding}H");
+            Component.NeedRedraw = false;
+            Output = Console.ReadLine() ?? "";
+
         }
     }
 }
