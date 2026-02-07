@@ -16,7 +16,7 @@ public class TimeSystem
     {
         Timer = new Timer(100);
         Tick = 0;
-        Timer.Elapsed += (sender, args) => { Tick = (byte)((Tick + 1) % 256); }; 
+        Timer.Elapsed += (_, _) => { Tick = (byte)((Tick + 1) % 256); }; 
         Timer.Start();
     }
 

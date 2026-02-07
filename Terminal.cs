@@ -8,7 +8,7 @@ public class Terminal
     //public const byte ScreenHeight = 37;
     
 
-    public List<Component> Components = new();
+    public readonly List<Component> Components = [];
 
     public Terminal(IEnumerable<Component>? components = null)
     {
@@ -24,7 +24,7 @@ public class Terminal
 
     public void Draw()
     {
-        foreach (Component component in Components)
+        foreach (var component in Components)
         {
             component.Draw();
         }
@@ -34,7 +34,7 @@ public class Terminal
     public void Clear()
     {
         Console.Clear();
-        foreach (Component component in Components)
+        foreach (var component in Components)
         {
             component.NeedRedraw = true;
         }
