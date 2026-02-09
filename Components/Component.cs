@@ -4,7 +4,7 @@ namespace Terminal.Components;
 
 public class Component
 {
-    public Terminal Terminal;
+    public Terminal? Terminal;
 
     public byte Width
     {
@@ -45,7 +45,6 @@ public class Component
         get;
     }
     
-    public readonly char[,] Display;
 
     public readonly List<Mask> Masks = new();
     
@@ -71,15 +70,9 @@ public class Component
         Height = height;
         PosX = posX;
         PosY = posY;
-        Display = new char[Height,Width];
+        
         IsVisible = true;
-        for (int i = 0; i < Height; i++)
-        {
-            for (int j = 0; j < Width; j++)
-            {
-                Display[i,j] = ' ';
-            }
-        }
+        
     }
     
     public Component(byte width, byte height, byte posY, byte posX, IEnumerable<Mask>? masks = null)
@@ -88,15 +81,8 @@ public class Component
         Height = height;
         PosX = posX;
         PosY = posY;
-        Display = new char[Height,Width];
         IsVisible = true;
-        for (int i = 0; i < Height; i++)
-        {
-            for (int j = 0; j < Width; j++)
-            {
-                Display[i,j] = ' ';
-            }
-        }
+        
 
         if (masks != null)
         {
@@ -117,26 +103,15 @@ public class Component
         {
             mask.Draw();
         }
-        
+        /*
         for (int i = 0; i < Height; i++)
         {
             for (int j = 0; j < Width; j++)
             {
-                Print((byte)(PosY + i), (byte)(PosX + j), (IsVisible ? Display[i, j] : ' '));
-                //Console.Write($"\u001b[{PosY + i};{PosX + j}H{(IsVisible ? Display[i, j] : ' ')}");
+                Console.Write($"\u001b[{PosY + i};{PosX + j}H{(IsVisible ? Display[i, j] : ' ')}");
             }
-        }
+        }*/
         
         NeedRedraw = false;
-    }
-
-    private void Print(byte y, byte x, char c)
-    {
-        Console.Write($"\u001b[{y};{x}H");
-        if (c != Terminal.Display[y,x])
-        {
-            Console.Write(c);
-            Terminal.Display[y,x] = c;
-        }
     }
 }

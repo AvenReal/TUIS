@@ -4,10 +4,8 @@ namespace Terminal;
 
 public class Terminal
 {
-    public InputSystem InputSystem = new();
-    public TimeSystem TimeSystem = new();
-    
-    public char[,] Display = new char[Console.BufferHeight, Console.BufferWidth];
+    public readonly InputSystem InputSystem = new();
+    public readonly TimeSystem TimeSystem = new();
     
     public readonly List<Component> Components = [];
 

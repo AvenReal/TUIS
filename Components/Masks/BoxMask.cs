@@ -6,6 +6,7 @@ public class BoxMask : Mask
         get;
         set
         {
+            NeedRedraw = true;
             Component?.NeedRedraw = true;
             field = value;
         }
@@ -78,9 +79,7 @@ public class BoxMask : Mask
         {
             for (byte j = 0; j < Component.Width; j++)
             {
-                Component.Display[i, j] =
-                    GetBox(BoxType, j, i, Component.Height, Component.Width) ??
-                    Component.Display[i, j];
+                DrawChar(i, j, GetBox(BoxType, j, i, Component.Height, Component.Width));
             }
         }
     }

@@ -4,6 +4,7 @@ public abstract class Mask
 {
     public Component? Component;
     
+    public bool NeedRedraw;
     
 
     public bool IsVisible
@@ -11,6 +12,7 @@ public abstract class Mask
         get;
         set
         {
+            NeedRedraw = true;
             Component?.NeedRedraw = true;
             field = value;
         }
@@ -38,7 +40,18 @@ public abstract class Mask
             throw new NullReferenceException("Component of Mask is null");
         
         
-        if(IsVisible)
+        if(NeedRedraw && IsVisible)
+        {
             Behaviour();
+            NeedRedraw = false;
+        }
+    }
+
+    protected void DrawChar(byte y, byte x, char? c)
+    {
+        if(c == null)
+            return;
+        
+        Console.Write($"\u001b[{y + Component!.PosY};{x + Component.PosX}H{c}");
     }
 }

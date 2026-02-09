@@ -10,6 +10,7 @@ public class TextMask : Mask
         get;
         set
         {
+            NeedRedraw = true;
             Component?.NeedRedraw = true;
             field = value;
         }
@@ -122,7 +123,7 @@ public class TextMask : Mask
         {
             byte lineIndex = (byte)(i / charsPerLine);
             byte charIndexInLine = (byte)(i % charsPerLine);
-            Component.Display[yOffset + lineIndex, xOffset + charIndexInLine] = Text[i];
+            DrawChar((byte)(yOffset + lineIndex), (byte)(xOffset + charIndexInLine), Text[i]);
         }
     }
 }

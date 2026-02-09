@@ -10,8 +10,6 @@ using Terminal.Components.Masks;
 
 
 
-InputSystem inputSystem = new InputSystem();
-TimeSystem timeSystem = new TimeSystem();
 BoxMask boxMask = new BoxMask(BoxMask.Type.Light);
 
 
@@ -41,7 +39,7 @@ InputMask shellInputMask = new InputMask(mask =>
 
 Terminal.Terminal terminal = new Terminal.Terminal(new []
 {
-    new Component(200, 50, 1, 1, new Mask[]
+    new Component(250, 30, 1, 1, new Mask[]
     {
         boxMask,
         inputMask,
@@ -52,9 +50,12 @@ Terminal.Terminal terminal = new Terminal.Terminal(new []
         new BoxMask(BoxMask.Type.Light),
         shellInputMask,
     })
+    {
+        IsVisible = false,
+    }
 } );
 
-inputSystem.OnKeyPress += key =>
+terminal.InputSystem.OnKeyPress += key =>
 {
     switch (key.Key)
     {
@@ -66,14 +67,18 @@ inputSystem.OnKeyPress += key =>
             inputMask.Enabeled = true;
             break;
         case ConsoleKey.J:
+            
             shellInputMask.Component!.IsVisible = true;
+            
             shellInputMask.Enabeled = true;
+            shellInputMask.Component!.Draw();
+            
             shellInputMask.Component.IsVisible = false;
             break;
     }
 };
 
-timeSystem.AddTimedEvent((_, _) => {terminal.Draw();});
+terminal.TimeSystem.AddTimedEvent((_, _) => {terminal.Draw();});
 
 terminal.Start();
  

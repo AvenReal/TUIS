@@ -7,6 +7,7 @@ public class InputMask : Mask
         get;
         set
         {
+            NeedRedraw = true;
             Component?.NeedRedraw = true;
             field = value;
         }
@@ -16,6 +17,7 @@ public class InputMask : Mask
         get;
         private set
         {
+            NeedRedraw = true;
             field = value;
             _onOutputChange?.Invoke(this);
         }
@@ -28,6 +30,7 @@ public class InputMask : Mask
         get;
         set
         {
+            NeedRedraw = true;
             Component?.NeedRedraw = true;
             field = value;
         }
@@ -38,6 +41,7 @@ public class InputMask : Mask
         get;
         set
         {
+            NeedRedraw = true;
             Component?.NeedRedraw = true;
             field = value;
         }
@@ -66,6 +70,7 @@ public class InputMask : Mask
             Enabeled = false;
             Console.CursorVisible = true;
             Component!.NeedRedraw = false;
+            
             Console.Write($"\u001b[{Component!.PosY + VerticalPadding};{Component.PosX + HorizontalPadding}H");
             
             Output = Console.ReadLine() ?? "";
