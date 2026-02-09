@@ -49,6 +49,8 @@ public class Component
 
     public readonly List<Mask> Masks = new();
     
+    
+    
     public bool NeedRedraw = true;
     public bool IsVisible
     {
@@ -120,10 +122,21 @@ public class Component
         {
             for (int j = 0; j < Width; j++)
             {
-                Console.Write($"\u001b[{PosY + i};{PosX + j}H{(IsVisible ? Display[i, j] : ' ')}");
+                Print((byte)(PosY + i), (byte)(PosX + j), (IsVisible ? Display[i, j] : ' '));
+                //Console.Write($"\u001b[{PosY + i};{PosX + j}H{(IsVisible ? Display[i, j] : ' ')}");
             }
         }
         
         NeedRedraw = false;
+    }
+
+    private void Print(byte y, byte x, char c)
+    {
+        Console.Write($"\u001b[{y};{x}H");
+        if (c != Terminal.Display[y,x])
+        {
+            Console.Write(c);
+            Terminal.Display[y,x] = c;
+        }
     }
 }

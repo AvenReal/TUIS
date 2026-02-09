@@ -7,6 +7,9 @@ using Terminal;
 using Terminal.Components;
 using Terminal.Components.Masks;
 
+
+
+
 InputSystem inputSystem = new InputSystem();
 TimeSystem timeSystem = new TimeSystem();
 BoxMask boxMask = new BoxMask(BoxMask.Type.Light);
@@ -38,7 +41,7 @@ InputMask shellInputMask = new InputMask(mask =>
 
 Terminal.Terminal terminal = new Terminal.Terminal(new []
 {
-    new Component(50, 20, 1, 1, new Mask[]
+    new Component(200, 50, 1, 1, new Mask[]
     {
         boxMask,
         inputMask,
@@ -57,7 +60,7 @@ inputSystem.OnKeyPress += key =>
     {
         case ConsoleKey.I:
             boxMask.BoxType = BoxMask.Type.Bold;
-            boxMask.Component.Draw();
+            boxMask.Component!.Draw();
             inputMask.HorizontalPadding = (byte)(textMask.Text.Length % inputMask.Component!.Width + 1);
             inputMask.VerticalPadding = (byte)(textMask.Text.Length / inputMask.Component.Width + 1);
             inputMask.Enabeled = true;
@@ -72,10 +75,5 @@ inputSystem.OnKeyPress += key =>
 
 timeSystem.AddTimedEvent((_, _) => {terminal.Draw();});
 
-inputSystem.Start();
+terminal.Start();
  
-
-while (true)
-{
-    
-}

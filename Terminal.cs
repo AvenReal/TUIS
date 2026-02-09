@@ -4,10 +4,11 @@ namespace Terminal;
 
 public class Terminal
 {
-    //public const byte ScreenWidth = 192;
-    //public const byte ScreenHeight = 37;
+    public InputSystem InputSystem = new();
+    public TimeSystem TimeSystem = new();
     
-
+    public char[,] Display = new char[Console.BufferHeight, Console.BufferWidth];
+    
     public readonly List<Component> Components = [];
 
     public Terminal(IEnumerable<Component>? components = null)
@@ -37,6 +38,16 @@ public class Terminal
         foreach (var component in Components)
         {
             component.NeedRedraw = true;
+        }
+    }
+
+    public void Start()
+    {
+        InputSystem.Start();
+        TimeSystem.Start();
+        while (true)
+        {
+            
         }
     }
 

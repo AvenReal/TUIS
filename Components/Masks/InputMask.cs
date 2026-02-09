@@ -65,8 +65,9 @@ public class InputMask : Mask
         {
             Enabeled = false;
             Console.CursorVisible = true;
+            Component!.NeedRedraw = false;
             Console.Write($"\u001b[{Component!.PosY + VerticalPadding};{Component.PosX + HorizontalPadding}H");
-            Component.NeedRedraw = false;
+            
             Output = Console.ReadLine() ?? "";
 
         }

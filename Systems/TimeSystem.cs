@@ -17,11 +17,15 @@ public class TimeSystem
         Timer = new Timer(100);
         Tick = 0;
         Timer.Elapsed += (_, _) => { Tick = (byte)((Tick + 1) % 256); }; 
-        Timer.Start();
     }
 
     public void AddTimedEvent(ElapsedEventHandler? eventHandler)
     {
         Timer.Elapsed += eventHandler;
+    }
+
+    public void Start()
+    {
+        Timer.Start();
     }
 }
