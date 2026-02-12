@@ -39,12 +39,14 @@ InputMask shellInputMask = new InputMask(mask =>
 
 Terminal.Terminal terminal = new Terminal.Terminal(new []
 {
-    new Component(250, 30, 1, 1, new Mask[]
+    new Component(236, 42, 1, 1, new Mask[]
     {
-        boxMask,
+        
         inputMask,
-        textMask
-    }),
+        textMask,
+        new ImageMask("Images/wallpaper.jpg"),
+        /*boxMask*/
+    }),/*
     new Component(50, 20, 1, 51, new Mask[]
     {
         new BoxMask(BoxMask.Type.Light),
@@ -52,7 +54,7 @@ Terminal.Terminal terminal = new Terminal.Terminal(new []
     })
     {
         IsVisible = false,
-    }
+    }*/
 } );
 
 terminal.InputSystem.OnKeyPress += key =>

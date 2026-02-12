@@ -99,19 +99,13 @@ public class Component
         if(!NeedRedraw)
             return;
         
+        NeedRedraw = false;
+        
         foreach (Mask mask in Masks)
         {
             mask.Draw();
         }
-        /*
-        for (int i = 0; i < Height; i++)
-        {
-            for (int j = 0; j < Width; j++)
-            {
-                Console.Write($"\u001b[{PosY + i};{PosX + j}H{(IsVisible ? Display[i, j] : ' ')}");
-            }
-        }*/
         
-        NeedRedraw = false;
+        
     }
 }

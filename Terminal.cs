@@ -11,6 +11,7 @@ public class Terminal
 
     public Terminal(IEnumerable<Component>? components = null)
     {
+        TimeSystem.AddTimedEvent((_, _) => {Draw();});
         if (components != null)
         {
             foreach (Component component in components)

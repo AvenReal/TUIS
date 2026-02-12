@@ -42,8 +42,8 @@ public abstract class Mask
         
         if(NeedRedraw && IsVisible)
         {
-            Behaviour();
             NeedRedraw = false;
+            Behaviour();
         }
     }
 
