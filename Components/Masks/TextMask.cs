@@ -11,7 +11,6 @@ public class TextMask : Mask
         set
         {
             NeedRedraw = true;
-            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -20,7 +19,7 @@ public class TextMask : Mask
         get;
         set
         {
-            Component?.NeedRedraw = true;
+            NeedRedraw = true;
             field = value;
         }
     }
@@ -28,7 +27,7 @@ public class TextMask : Mask
         get;
         set
         {
-            Component?.NeedRedraw = true;
+            NeedRedraw = true;
             field = value;
         }
     }
@@ -37,7 +36,7 @@ public class TextMask : Mask
         get;
         set
         {
-            Component?.NeedRedraw = true;
+            NeedRedraw = true;
             field = value;
         }
     }
@@ -45,7 +44,7 @@ public class TextMask : Mask
         get;
         set
         {
-            Component?.NeedRedraw = true;
+            NeedRedraw = true;
             field = value;
         }
     }

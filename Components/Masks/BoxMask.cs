@@ -7,7 +7,6 @@ public class BoxMask : Mask
         set
         {
             NeedRedraw = true;
-            Component?.NeedRedraw = true;
             field = value;
         }
     }

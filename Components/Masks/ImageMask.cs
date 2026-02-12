@@ -4,15 +4,39 @@ namespace Terminal.Components.Masks;
 using System.Drawing;
 public class ImageMask : Mask
 {
-    private Bitmap _image;
+    private Bitmap image;
     private int _imageHeight;
     private int _imageWidth;
 
-    public ImageMask(string path)
+    private Color[,] __image; 
+    
+    
+    public bool IsColored
     {
-        _image = new Bitmap(path); // Windows Only...
-        _imageHeight = _image.Height;
-        _imageWidth = _image.Width;
+        get;
+        set
+        {
+            NeedRedraw = true;
+            field = value;
+        }
+    }
+
+    public ImageMask(string path, bool isColored = false)
+    {
+        var image = new Bitmap(path); // Windows Only...
+        _imageHeight = image.Height;
+        _imageWidth = image.Width;
+        IsColored = isColored;
+        __image = new Color[_imageHeight, _imageWidth];
+        for (int i = 0; i < _imageHeight; i++)
+        {
+            for (int j = 0; j < _imageWidth; j++)
+            {
+                __image[i, j] = image.GetPixel(j, i);
+            }
+        }
+        
+        image.Dispose();
     }
     
     
@@ -26,36 +50,50 @@ public class ImageMask : Mask
         {
             for (byte j = 0; j < Component.Width; j++)
             {
-                DrawChar(i, j, GetChar(i * height, j * width,  height, width)  );
+                (float r, float g, float b, float a) = GetRGBA(i * height, j * width,  height, width);
+                char? c = GetChar(r, g, b, a);
+                TextColor textColor = IsColored ? GetColor(r, g, b) : TextColor.White;
+                DrawChar(i, j, c, textColor);
             }
         }
     }
 
-    private char? GetChar(int yoffset, int xoffset, int height, int width)
+    private (float r, float g, float b, float a) GetRGBA(int yoffset, int xoffset, int height, int width)
     {
-        float sum = 0;
-        float nb_pixels = 0;
-        float alpha = 0;
+        float r = 0;
+        float g = 0;
+        float b = 0;
+        float a = 0;
+        float nbPixels = 0;
+        
         
         
         for (int i = 0; i < height; i++)
         {
             for (int j = 0; j < width; j++)
             {
-                Color c = _image.GetPixel(xoffset + j, yoffset + i);
-                sum += c.R + c.G + c.B;
-                alpha += c.A;
-                nb_pixels ++;
+                Color c = __image[yoffset + i, xoffset + j];
+                r+= c.R;
+                g += c.G;
+                b += c.B;
+                a += c.A;
+                nbPixels ++;
             }
         }
+        
+        return (r / nbPixels / 255.0f, g / nbPixels / 255.0f, b / nbPixels / 255.0f, a / nbPixels / 255.0f);
+    }
+    
+    
+    private char? GetChar(float r, float g, float b, float a)
+    {
 
-        if (alpha <= 0.5)
+        if (a <= 0.5)
         {
             return null;
         }
-        float gray = sum / (3 * nb_pixels) / 255.0f;
 
-        switch (gray)
+        switch ((r + g + b) / 3.0f)
         {
             case >= 0.8f:
                 return '█';
@@ -69,6 +107,28 @@ public class ImageMask : Mask
                 return ' ';
         }
         
+    }
+
+    private TextColor GetColor(float r, float g, float b)
+    {
+        float gray = (r + g + b) / 3.0f;
+
+        if (r < gray)
+        {
+            if(g < gray)
+            {
+                return b < gray ? TextColor.Black : TextColor.Blue;
+            }
+
+            return b < gray ? TextColor.Green : TextColor.Cyan;
+        }
+
+        if(g < gray)
+        {
+            return b < gray ? TextColor.Red : TextColor.Purple;
+        }
+
+        return b < gray ? TextColor.Yellow : TextColor.White;
     }
     
     

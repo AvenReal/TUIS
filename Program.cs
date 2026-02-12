@@ -13,7 +13,6 @@ using Terminal.Components.Masks;
 BoxMask boxMask = new BoxMask(BoxMask.Type.Light);
 
 
-
 TextMask textMask = new TextMask("", 1, 1);
 InputMask inputMask = new InputMask(mask =>
 {
@@ -27,6 +26,8 @@ InputMask inputMask = new InputMask(mask =>
     });
 }, 1, 1);
 
+ImageMask imageMask = new ImageMask("Images/wallpaper.jpg", false);
+
 
 InputMask shellInputMask = new InputMask(mask =>
 {
@@ -39,12 +40,12 @@ InputMask shellInputMask = new InputMask(mask =>
 
 Terminal.Terminal terminal = new Terminal.Terminal(new []
 {
-    new Component(236, 42, 1, 1, new Mask[]
+    new Component(255, 48, 1, 1, new Mask[]
     {
         
         inputMask,
         textMask,
-        new ImageMask("Images/wallpaper.jpg"),
+        imageMask,
         /*boxMask*/
     }),/*
     new Component(50, 20, 1, 51, new Mask[]
@@ -78,6 +79,27 @@ terminal.InputSystem.OnKeyPress += key =>
             shellInputMask.Component.IsVisible = false;
             break;
     }
+};
+
+terminal.InputSystem.OnKeyPress += key =>
+{
+    switch (key.Key)
+    {
+        case ConsoleKey.DownArrow:
+            imageMask.Component!.Height++;
+            break;
+        case ConsoleKey.UpArrow:
+            imageMask.Component.Height--;
+            break;
+        case ConsoleKey.LeftArrow:
+            imageMask.Component.Width--;
+            break;
+        case ConsoleKey.RightArrow:
+            imageMask.Component.Width++;
+            break;
+    }
+
+    imageMask.NeedRedraw = true;
 };
 
 terminal.TimeSystem.AddTimedEvent((_, _) => {terminal.Draw();});

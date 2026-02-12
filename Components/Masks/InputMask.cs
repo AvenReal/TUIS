@@ -8,7 +8,6 @@ public class InputMask : Mask
         set
         {
             NeedRedraw = true;
-            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -31,7 +30,6 @@ public class InputMask : Mask
         set
         {
             NeedRedraw = true;
-            Component?.NeedRedraw = true;
             field = value;
         }
     }
@@ -42,7 +40,6 @@ public class InputMask : Mask
         set
         {
             NeedRedraw = true;
-            Component?.NeedRedraw = true;
             field = value;
         }
     }
