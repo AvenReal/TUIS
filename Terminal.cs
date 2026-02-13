@@ -8,6 +8,8 @@ public class Terminal
     public readonly TimeSystem TimeSystem = new();
     
     public readonly List<Component> Components = [];
+    
+    public bool NeedRedraw = true;
 
     public Terminal(IEnumerable<Component>? components = null)
     {
@@ -24,9 +26,14 @@ public class Terminal
 
     public void Draw()
     {
+        if (!NeedRedraw)
+            return;
+        
+        NeedRedraw = false;
         foreach (var component in Components)
         {
             component.Draw();
+            
         }
         Console.CursorVisible = false;
     }

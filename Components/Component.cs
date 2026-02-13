@@ -47,10 +47,19 @@ public class Component
     
 
     public readonly List<Mask> Masks = new();
-    
-    
-    
-    public bool NeedRedraw = true;
+
+
+
+    public bool NeedRedraw
+    {
+        get;
+        set
+        {
+            if(value)
+                Terminal?.NeedRedraw = true;
+            field = value;
+        }
+    }
     public bool IsVisible
     {
         set
@@ -63,7 +72,8 @@ public class Component
     }
 
     public Component(Terminal terminal, byte width, byte height, byte posY, byte posX)
-    {
+    { 
+        NeedRedraw = true;
         Terminal = terminal;
         Terminal.Components.Add(this);
         Width = width;
@@ -77,6 +87,7 @@ public class Component
     
     public Component(byte width, byte height, byte posY, byte posX, IEnumerable<Mask>? masks = null)
     {
+        NeedRedraw = true;
         Width = width;
         Height = height;
         PosX = posX;
@@ -98,6 +109,7 @@ public class Component
     {
         if(!NeedRedraw)
             return;
+        
         
         NeedRedraw = false;
         

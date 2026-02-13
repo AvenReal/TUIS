@@ -122,7 +122,7 @@ public class TextMask : Mask
         {
             byte lineIndex = (byte)(i / charsPerLine);
             byte charIndexInLine = (byte)(i % charsPerLine);
-            DrawChar((byte)(yOffset + lineIndex), (byte)(xOffset + charIndexInLine), Text[i]);
+            DrawChar((byte)(yOffset + lineIndex), (byte)(xOffset + charIndexInLine), Text[i], TextColor.White, BackgroundColor.None, TextDecoration.Bold);
         }
     }
 }

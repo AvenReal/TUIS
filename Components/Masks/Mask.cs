@@ -80,14 +80,21 @@ public abstract class Mask
     	White = 47,
         None = 0
     }
+
+    public enum TextDecoration : byte
+    {
+        Default = 0,
+        Bold = 1,
+        Underline = 4,
+    }
     
-    protected void DrawChar(byte y, byte x, char? c, TextColor textColor = TextColor.White, BackgroundColor backgroundColor = BackgroundColor.None)
+    protected void DrawChar(byte y, byte x, char? c, TextColor textColor = TextColor.White, BackgroundColor backgroundColor = BackgroundColor.None, TextDecoration textDecoration = TextDecoration.Default)
     {
         if(c == null)
             return;
         
         
          
-        Console.Write($"\e[{ (byte) backgroundColor}m\e[0;{ (byte) textColor }m\u001b[{y + Component!.PosY};{x + Component.PosX}H{c}");
+        Console.Write($"\e[{ (byte) backgroundColor}m\e[{ (byte) textDecoration };{ (byte) textColor }m\u001b[{y + Component!.PosY};{x + Component.PosX}H{c}");
     }
 }
