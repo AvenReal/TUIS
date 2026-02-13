@@ -1,4 +1,4 @@
-namespace Terminal.Components.Masks;
+namespace TUIS.Components.Masks;
 
 public class BackgroundMask : Mask
 {
@@ -19,9 +19,9 @@ public class BackgroundMask : Mask
     
     protected override void Behaviour()
     {
-        for (byte i = 0; i < Component!.Height; i++)
+        for (int i = 0; i < Component!.Height; i++)
         {
-            for (byte j = 0; j < Component.Width; j++)
+            for (int j = 0; j < Component.Width; j++)
             {
                 DrawChar(i, j, BackgroundChar);
             }

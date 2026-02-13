@@ -1,7 +1,4 @@
-using System.Diagnostics;
-using System.Runtime.Intrinsics.X86;
-
-namespace Terminal.Components.Masks;
+namespace TUIS.Components.Masks;
 
 public class TextMask : Mask
 {
@@ -15,7 +12,7 @@ public class TextMask : Mask
         }
     }
     
-    public byte HorizontalPadding{
+    public int HorizontalPadding{
         get;
         set
         {
@@ -23,7 +20,7 @@ public class TextMask : Mask
             field = value;
         }
     }
-    public byte VerticalPadding{
+    public int VerticalPadding{
         get;
         set
         {
@@ -51,8 +48,8 @@ public class TextMask : Mask
     
     
     public TextMask(Component component, string text, 
-        byte horizontalPadding = 0, 
-        byte verticalPadding = 0,
+        int horizontalPadding = 0, 
+        int verticalPadding = 0,
         HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left, 
         VerticalAlignmentEnum verticalAlignment = VerticalAlignmentEnum.Top) 
         : base(component)
@@ -65,8 +62,8 @@ public class TextMask : Mask
     }
 
     public TextMask(string text,
-        byte horizontalPadding = 0,
-        byte verticalPadding = 0,
+        int horizontalPadding = 0,
+        int verticalPadding = 0,
         HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left,
         VerticalAlignmentEnum verticalAlignment = VerticalAlignmentEnum.Top)
     {
@@ -96,33 +93,33 @@ public class TextMask : Mask
         
         int textLength = Text.Length;
         
-        byte charsPerLine = (byte)(Component!.Width - 2 * HorizontalPadding);
+        int charsPerLine = (int)(Component!.Width - 2 * HorizontalPadding);
         
-        byte totalLines = (byte)(textLength / charsPerLine + ((textLength / charsPerLine) != textLength / (float)charsPerLine ? 1 : 0));
+        int totalLines = (int)(textLength / charsPerLine + ((textLength / charsPerLine) != textLength / (float)charsPerLine ? 1 : 0));
         
-        byte effectiveWidth = (byte)(Component.Width - 2 * HorizontalPadding);
-        byte effectiveHeight = (byte)(Component.Height - 2 * VerticalPadding);
+        int effectiveWidth = (int)(Component.Width - 2 * HorizontalPadding);
+        int effectiveHeight = (int)(Component.Height - 2 * VerticalPadding);
 
-        byte xOffset = HorizontalAlignment switch
+        int xOffset = HorizontalAlignment switch
         {
             HorizontalAlignmentEnum.Left => HorizontalPadding,
-            HorizontalAlignmentEnum.Center => (byte)(HorizontalPadding + (effectiveWidth - byte.Min(charsPerLine, (byte)textLength)) / 2),
-            HorizontalAlignmentEnum.Right => (byte)(HorizontalPadding + effectiveWidth - charsPerLine),
+            HorizontalAlignmentEnum.Center => (int)(HorizontalPadding + (effectiveWidth - int.Min(charsPerLine, (int)textLength)) / 2),
+            HorizontalAlignmentEnum.Right => (int)(HorizontalPadding + effectiveWidth - charsPerLine),
             _ => throw new ArgumentOutOfRangeException()
         };
-        byte yOffset = HorizontalAlignment switch
+        int yOffset = HorizontalAlignment switch
         {
             HorizontalAlignmentEnum.Left => VerticalPadding,
-            HorizontalAlignmentEnum.Center => (byte)(VerticalPadding + (effectiveHeight - totalLines) / 2),
-            HorizontalAlignmentEnum.Right => (byte)(VerticalPadding + effectiveHeight - totalLines),
+            HorizontalAlignmentEnum.Center => (int)(VerticalPadding + (effectiveHeight - totalLines) / 2),
+            HorizontalAlignmentEnum.Right => (int)(VerticalPadding + effectiveHeight - totalLines),
             _ => throw new ArgumentOutOfRangeException()
         };
 
         for (int i = 0; i < textLength; i++)
         {
-            byte lineIndex = (byte)(i / charsPerLine);
-            byte charIndexInLine = (byte)(i % charsPerLine);
-            DrawChar((byte)(yOffset + lineIndex), (byte)(xOffset + charIndexInLine), Text[i], TextColor.White, BackgroundColor.None, TextDecoration.Bold);
+            int lineIndex = (int)(i / charsPerLine);
+            int charIndexInLine = (int)(i % charsPerLine);
+            DrawChar((int)(yOffset + lineIndex), (int)(xOffset + charIndexInLine), Text[i]);
         }
     }
 }

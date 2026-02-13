@@ -1,4 +1,4 @@
-namespace Terminal.Components.Masks;
+namespace TUIS.Components.Masks;
 
 public class BoxMask : Mask
 {
@@ -36,7 +36,7 @@ public class BoxMask : Mask
             { Type.ExtraBold,    ('▌', '▐', '▀', '▄', '█', '█', '█', '█') }
         };
 
-    private char? GetBox(Type type, byte x, byte y, byte height, byte width)
+    private char? GetBox(Type type, int x, int y, int height, int width)
     {
         if (type == Type.None)
         {
@@ -74,9 +74,9 @@ public class BoxMask : Mask
 
     protected override void Behaviour()
     {
-        for (byte i = 0; i < Component!.Height; i++)
+        for (int i = 0; i < Component!.Height; i++)
         {
-            for (byte j = 0; j < Component.Width; j++)
+            for (int j = 0; j < Component.Width; j++)
             {
                 DrawChar(i, j, GetBox(BoxType, j, i, Component.Height, Component.Width));
             }

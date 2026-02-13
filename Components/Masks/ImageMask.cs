@@ -1,7 +1,7 @@
-using System.Diagnostics;
-
-namespace Terminal.Components.Masks;
 using System.Drawing;
+
+namespace TUIS.Components.Masks;
+
 public class ImageMask : Mask
 {
     private Bitmap image;
@@ -46,9 +46,9 @@ public class ImageMask : Mask
         int height = _imageHeight / Component!.Height;
         int width = _imageWidth / Component.Width;
         
-        for (byte i = 0; i < Component!.Height; i++)
+        for (int i = 0; i < Component!.Height; i++)
         {
-            for (byte j = 0; j < Component.Width; j++)
+            for (int j = 0; j < Component.Width; j++)
             {
                 (float r, float g, float b, float a) = GetRGBA(i * height, j * width,  height, width);
                 char? c = GetChar(r, g, b, a);
@@ -111,7 +111,7 @@ public class ImageMask : Mask
 
     private TextColor GetColor(float r, float g, float b)
     {
-        float gray = (r + g + b) / 3.0f;
+        float gray = 0.6f;//(r + g + b) / 3.0f;
 
         if (r < gray)
         {

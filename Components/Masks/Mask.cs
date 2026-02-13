@@ -1,4 +1,4 @@
-namespace Terminal.Components.Masks;
+namespace TUIS.Components.Masks;
 
 public abstract class Mask
 {
@@ -56,7 +56,7 @@ public abstract class Mask
     }
 
 
-    public enum TextColor : byte
+    public enum TextColor : int
     {
         Black = 30,
         Red = 31,
@@ -68,7 +68,7 @@ public abstract class Mask
         White = 37,
     }
 
-    public enum BackgroundColor : byte
+    public enum BackgroundColor : int
     {
     	Black = 40,
     	Red = 41,
@@ -81,20 +81,20 @@ public abstract class Mask
         None = 0
     }
 
-    public enum TextDecoration : byte
+    public enum TextDecoration : int
     {
         Default = 0,
         Bold = 1,
         Underline = 4,
     }
     
-    protected void DrawChar(byte y, byte x, char? c, TextColor textColor = TextColor.White, BackgroundColor backgroundColor = BackgroundColor.None, TextDecoration textDecoration = TextDecoration.Default)
+    protected void DrawChar(int y, int x, char? c, TextColor textColor = TextColor.White, BackgroundColor backgroundColor = BackgroundColor.None, TextDecoration textDecoration = TextDecoration.Default)
     {
         if(c == null)
             return;
         
         
          
-        Console.Write($"\e[{ (byte) backgroundColor}m\e[{ (byte) textDecoration };{ (byte) textColor }m\u001b[{y + Component!.PosY};{x + Component.PosX}H{c}");
+        Console.Write($"\e[{ (int) backgroundColor}m\e[{ (int) textDecoration };{ (int) textColor }m\u001b[{y + Component!.PosY};{x + Component.PosX}H{c}");
     }
 }

@@ -1,6 +1,7 @@
-using Terminal.Components;
+using TUIS.Components;
+using TUIS.Systems;
 
-namespace Terminal;
+namespace TUIS;
 
 public class Terminal
 {
@@ -47,10 +48,11 @@ public class Terminal
         }
     }
 
-    public void Start()
+    public void Start(Action<Terminal>? onStart = null)
     {
         InputSystem.Start();
         TimeSystem.Start();
+        onStart?.Invoke(this);
         while (true)
         {
             

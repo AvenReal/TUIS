@@ -1,4 +1,4 @@
-namespace Terminal.Components.Masks;
+namespace TUIS.Components.Masks;
 
 public class CustomMask : Mask
 {

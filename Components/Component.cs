@@ -1,12 +1,12 @@
-using Terminal.Components.Masks;
+using TUIS.Components.Masks;
 
-namespace Terminal.Components;
+namespace TUIS.Components;
 
 public class Component
 {
     public Terminal? Terminal;
 
-    public byte Width
+    public int Width
     {
         get;
         set
@@ -16,7 +16,7 @@ public class Component
         }
     }
 
-    public byte Height
+    public int Height
     {
         get;
         set
@@ -26,7 +26,7 @@ public class Component
         }
     }
 
-    public byte PosX
+    public int PosX
     {
         set
         {
@@ -35,7 +35,7 @@ public class Component
         }
         get;
     }
-    public byte PosY
+    public int PosY
     {
         set
         {
@@ -71,7 +71,7 @@ public class Component
         get;
     }
 
-    public Component(Terminal terminal, byte width, byte height, byte posY, byte posX)
+    public Component(Terminal terminal, int width, int height, int posY, int posX)
     { 
         NeedRedraw = true;
         Terminal = terminal;
@@ -85,7 +85,7 @@ public class Component
         
     }
     
-    public Component(byte width, byte height, byte posY, byte posX, IEnumerable<Mask>? masks = null)
+    public Component(int width, int height, int posY, int posX, IEnumerable<Mask>? masks = null)
     {
         NeedRedraw = true;
         Width = width;

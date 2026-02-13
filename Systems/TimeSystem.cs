@@ -1,7 +1,7 @@
 using System.Timers;
 using Timer = System.Timers.Timer;
 
-namespace Terminal;
+namespace TUIS.Systems;
 
 public class TimeSystem
 {

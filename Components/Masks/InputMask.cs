@@ -1,4 +1,4 @@
-namespace Terminal.Components.Masks;
+namespace TUIS.Components.Masks;
 
 public class InputMask : Mask
 {
@@ -24,7 +24,7 @@ public class InputMask : Mask
 
     private readonly Action<InputMask>? _onOutputChange;
 
-    public byte HorizontalPadding
+    public int HorizontalPadding
     {
         get;
         set
@@ -34,7 +34,7 @@ public class InputMask : Mask
         }
     }
     
-    public byte VerticalPadding
+    public int VerticalPadding
     {
         get;
         set
@@ -44,7 +44,7 @@ public class InputMask : Mask
         }
     }
     
-    public InputMask(Component component, Action<InputMask>? onOutputChange = null, byte horizontalPadding = 0, byte verticalPadding = 0) : base(component)
+    public InputMask(Component component, Action<InputMask>? onOutputChange = null, int horizontalPadding = 0, int verticalPadding = 0) : base(component)
     {
         _onOutputChange = onOutputChange;
         HorizontalPadding = horizontalPadding;
@@ -52,7 +52,7 @@ public class InputMask : Mask
         Output = "";
     }
 
-    public InputMask(Action<InputMask>? onOutputChange = null, byte horizontalPadding = 0, byte verticalPadding = 0)
+    public InputMask(Action<InputMask>? onOutputChange = null, int horizontalPadding = 0, int verticalPadding = 0)
     {
         _onOutputChange = onOutputChange;
         HorizontalPadding = horizontalPadding;
@@ -64,9 +64,9 @@ public class InputMask : Mask
     {
         if (Enabeled)
         {
+            Component!.NeedRedraw = false;
             Enabeled = false;
             Console.CursorVisible = true;
-            Component!.NeedRedraw = false;
             
             Console.Write($"\u001b[{Component!.PosY + VerticalPadding};{Component.PosX + HorizontalPadding}H");
             

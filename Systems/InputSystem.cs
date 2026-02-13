@@ -1,4 +1,4 @@
-namespace Terminal;
+namespace TUIS.Systems;
 
 public class InputSystem : IDisposable
 {
