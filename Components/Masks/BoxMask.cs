@@ -15,11 +15,7 @@ public class BoxMask : Mask
     {
         BoxType = type;
     }
-
-    public BoxMask(Type type)
-    {
-        BoxType = type;
-    }
+    
     
     public enum Type
     {
@@ -74,7 +70,7 @@ public class BoxMask : Mask
 
     protected override void Behaviour()
     {
-        for (int i = 0; i < Component!.Height; i++)
+        for (int i = 0; i < Component.Height; i++)
         {
             for (int j = 0; j < Component.Width; j++)
             {

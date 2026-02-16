@@ -46,29 +46,22 @@ public class InputMask : Mask
     
     public InputMask(Component component, Action<InputMask>? onOutputChange = null, int horizontalPadding = 0, int verticalPadding = 0) : base(component)
     {
+        Output = "";
         _onOutputChange = onOutputChange;
         HorizontalPadding = horizontalPadding;
         VerticalPadding = verticalPadding;
-        Output = "";
     }
-
-    public InputMask(Action<InputMask>? onOutputChange = null, int horizontalPadding = 0, int verticalPadding = 0)
-    {
-        _onOutputChange = onOutputChange;
-        HorizontalPadding = horizontalPadding;
-        VerticalPadding = verticalPadding;
-        Output = "";
-    }
+    
     
     protected override void Behaviour()
     {
         if (Enabeled)
         {
-            Component!.NeedRedraw = false;
+            Component.NeedRedraw = false;
             Enabeled = false;
             Console.CursorVisible = true;
             
-            Console.Write($"\u001b[{Component!.PosY + VerticalPadding};{Component.PosX + HorizontalPadding}H");
+            Console.Write($"\u001b[{Component.PosY + VerticalPadding};{Component.PosX + HorizontalPadding}H");
             
             Output = Console.ReadLine() ?? "";
 

@@ -21,7 +21,7 @@ public class ImageMask : Mask
         }
     }
 
-    public ImageMask(string path, bool isColored = false)
+    public ImageMask(Component component, string path, bool isColored = false) : base(component)
     {
         var image = new Bitmap(path); // Windows Only...
         _imageHeight = image.Height;
@@ -43,16 +43,16 @@ public class ImageMask : Mask
     
     protected override void Behaviour()
     {
-        int height = _imageHeight / Component!.Height;
+        int height = _imageHeight / Component.Height;
         int width = _imageWidth / Component.Width;
         
-        for (int i = 0; i < Component!.Height; i++)
+        for (int i = 0; i < Component.Height; i++)
         {
             for (int j = 0; j < Component.Width; j++)
             {
                 (float r, float g, float b, float a) = GetRGBA(i * height, j * width,  height, width);
                 char? c = GetChar(r, g, b, a);
-                TextColor textColor = IsColored ? GetColor(r, g, b) : TextColor.White;
+                TextColor? textColor = IsColored ? GetColor(r, g, b) : null;
                 DrawChar(i, j, c, textColor);
             }
         }

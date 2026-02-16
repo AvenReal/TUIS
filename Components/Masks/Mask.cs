@@ -2,7 +2,7 @@ namespace TUIS.Components.Masks;
 
 public abstract class Mask
 {
-    public Component? Component;
+    public Component Component;
 
     public bool NeedRedraw
     {
@@ -11,7 +11,7 @@ public abstract class Mask
         {
             field = value;
             if(value)
-                Component?.NeedRedraw = true;
+                Component.NeedRedraw = true;
         }
     }
     
@@ -25,6 +25,37 @@ public abstract class Mask
             field = value;
         }
     }
+
+    public TextColor Color
+    {
+        get;
+        set
+        {
+            NeedRedraw = true;
+            field = value;
+        }
+    }
+
+    public BackgroundColor Background
+    {
+        get;
+        set
+        {
+            NeedRedraw = true;
+            field = value;
+        }
+    }
+
+    public TextDecoration Decoration
+    {
+        get;
+        set
+        {
+            NeedRedraw = true;
+            field = value;
+        }
+    }
+    
     
     public Mask(Component component)
     {
@@ -34,11 +65,7 @@ public abstract class Mask
         
         IsVisible = true;
     }
-
-    public Mask()
-    {
-        IsVisible = true;
-    }
+    
     
     protected abstract void Behaviour();
 
@@ -88,13 +115,13 @@ public abstract class Mask
         Underline = 4,
     }
     
-    protected void DrawChar(int y, int x, char? c, TextColor textColor = TextColor.White, BackgroundColor backgroundColor = BackgroundColor.None, TextDecoration textDecoration = TextDecoration.Default)
+    protected void DrawChar(int y, int x, char? c, TextColor? textColor = null, BackgroundColor? backgroundColor = null, TextDecoration? textDecoration = null)
     {
         if(c == null)
             return;
         
         
          
-        Console.Write($"\e[{ (int) backgroundColor}m\e[{ (int) textDecoration };{ (int) textColor }m\u001b[{y + Component!.PosY};{x + Component.PosX}H{c}");
+        Console.Write($"\e[{ (int)(backgroundColor ?? Background) }m\e[{ (int)(textDecoration ?? Decoration) };{ (int)(textColor ?? Color) }m\u001b[{y + Component.PosY};{x + Component.PosX}H{c}");
     }
 }

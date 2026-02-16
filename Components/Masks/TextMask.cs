@@ -60,19 +60,7 @@ public class TextMask : Mask
         HorizontalAlignment = horizontalAlignment;
         VerticalAlignment = verticalAlignment;
     }
-
-    public TextMask(string text,
-        int horizontalPadding = 0,
-        int verticalPadding = 0,
-        HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left,
-        VerticalAlignmentEnum verticalAlignment = VerticalAlignmentEnum.Top)
-    {
-        Text = text;
-        HorizontalPadding = horizontalPadding;
-        VerticalPadding = verticalPadding;
-        HorizontalAlignment = horizontalAlignment;
-        VerticalAlignment = verticalAlignment;
-    }
+    
     
     public enum HorizontalAlignmentEnum
     {
@@ -93,7 +81,7 @@ public class TextMask : Mask
         
         int textLength = Text.Length;
         
-        int charsPerLine = (int)(Component!.Width - 2 * HorizontalPadding);
+        int charsPerLine = (int)(Component.Width - 2 * HorizontalPadding);
         
         int totalLines = (int)(textLength / charsPerLine + ((textLength / charsPerLine) != textLength / (float)charsPerLine ? 1 : 0));
         

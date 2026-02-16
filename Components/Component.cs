@@ -4,7 +4,7 @@ namespace TUIS.Components;
 
 public class Component
 {
-    public Terminal? Terminal;
+    public Terminal Terminal;
 
     public int Width
     {
@@ -83,26 +83,6 @@ public class Component
         
         IsVisible = true;
         
-    }
-    
-    public Component(int width, int height, int posY, int posX, IEnumerable<Mask>? masks = null)
-    {
-        NeedRedraw = true;
-        Width = width;
-        Height = height;
-        PosX = posX;
-        PosY = posY;
-        IsVisible = true;
-        
-
-        if (masks != null)
-        {
-            foreach (Mask mask in masks)
-            {
-                mask.Component = this;
-                Masks.Add(mask);
-            }
-        }
     }
     
     public void Draw()

@@ -9,11 +9,7 @@ public class CustomMask : Mask
     {
         _action = action;
     }
-
-    public CustomMask(Action<CustomMask> action)
-    {
-        _action = action;
-    }
+    
 
 
 

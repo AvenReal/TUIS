@@ -7,7 +7,7 @@ public class TimeSystem
 {
     public readonly Timer Timer;
 
-    public byte Tick
+    public byte MiliSecond
     {
         get;
         private set;
@@ -15,8 +15,8 @@ public class TimeSystem
     public TimeSystem()
     {
         Timer = new Timer(100);
-        Tick = 0;
-        Timer.Elapsed += (_, _) => { Tick = (byte)((Tick + 1) % 256); }; 
+        MiliSecond = 0;
+        Timer.Elapsed += (_, _) => { MiliSecond = (byte)((MiliSecond + 1) % 100); }; 
     }
 
     public void AddTimedEvent(ElapsedEventHandler? eventHandler)
