@@ -25,7 +25,7 @@ public class BoxMask : Mask
         None
     }
 
-    private Dictionary<Type, (char west, char east, char north, char south, char northWest, char northEast, char southWest, char southEast)> _boxChars = new()
+    private static Dictionary<Type, (char west, char east, char north, char south, char northWest, char northEast, char southWest, char southEast)> _boxChars = new()
         {
             { Type.Light,        ('│', '│', '─', '─', '┌', '┐', '└', '┘') },
             { Type.Bold,         ('║', '║', '═', '═', '╔', '╗', '╚', '╝') },

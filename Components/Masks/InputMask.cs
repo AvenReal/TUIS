@@ -23,28 +23,9 @@ public class InputMask : Mask
     }
 
     private readonly Action<InputMask>? _onOutputChange;
-
-    public int HorizontalPadding
-    {
-        get;
-        set
-        {
-            NeedRedraw = true;
-            field = value;
-        }
-    }
     
-    public int VerticalPadding
-    {
-        get;
-        set
-        {
-            NeedRedraw = true;
-            field = value;
-        }
-    }
     
-    public InputMask(Component component, Action<InputMask>? onOutputChange = null, int horizontalPadding = 0, int verticalPadding = 0) : base(component)
+    public InputMask(Component component, Action<InputMask>? onOutputChange = null, byte horizontalPadding = 0, byte verticalPadding = 0) : base(component)
     {
         Output = "";
         _onOutputChange = onOutputChange;

@@ -4,11 +4,10 @@ namespace TUIS.Components.Masks;
 
 public class ImageMask : Mask
 {
-    private Bitmap image;
     private int _imageHeight;
     private int _imageWidth;
 
-    private Color[,] __image; 
+    private Color[,] _image; 
     
     
     public bool IsColored
@@ -27,12 +26,12 @@ public class ImageMask : Mask
         _imageHeight = image.Height;
         _imageWidth = image.Width;
         IsColored = isColored;
-        __image = new Color[_imageHeight, _imageWidth];
+        _image = new Color[_imageHeight, _imageWidth];
         for (int i = 0; i < _imageHeight; i++)
         {
             for (int j = 0; j < _imageWidth; j++)
             {
-                __image[i, j] = image.GetPixel(j, i);
+                _image[i, j] = image.GetPixel(j, i);
             }
         }
         
@@ -72,7 +71,7 @@ public class ImageMask : Mask
         {
             for (int j = 0; j < width; j++)
             {
-                Color c = __image[yoffset + i, xoffset + j];
+                Color c = _image[yoffset + i, xoffset + j];
                 r+= c.R;
                 g += c.G;
                 b += c.B;

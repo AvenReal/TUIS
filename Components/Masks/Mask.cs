@@ -14,7 +14,6 @@ public abstract class Mask
                 Component.NeedRedraw = true;
         }
     }
-    
 
     public bool IsVisible
     {
@@ -55,31 +54,51 @@ public abstract class Mask
             field = value;
         }
     }
+
+    public byte HorizontalPadding
+    {
+        get;
+        set
+        {
+            field = value;
+            NeedRedraw = true;
+        }
+    }
+
+    public byte VerticalPadding
+    {
+        get;
+        set
+        {
+            field = value;
+            NeedRedraw = true;
+        }
+    }
     
-    
-    public Mask(Component component)
+
+    public Mask(Component component, bool isVisible = true, TextColor color = TextColor.White, BackgroundColor background = BackgroundColor.None, TextDecoration decoration = TextDecoration.Default, byte horizontalPadding = 0, byte verticalPadding = 0)
     {
         Component = component;
         Component.Masks.Add(this);
         
-        
-        IsVisible = true;
+        IsVisible = isVisible;
+        Color = color;
+        Background = background;
+        Decoration = decoration;
+        HorizontalPadding = horizontalPadding;
+        VerticalPadding = verticalPadding;
     }
-    
-    
+
+
     protected abstract void Behaviour();
 
     public void Draw()
     {
-        if(Component == null)
-            throw new NullReferenceException("Component of Mask is null");
+        if (!NeedRedraw || !IsVisible) 
+            return;
         
-        
-        if(NeedRedraw && IsVisible)
-        {
-            NeedRedraw = false;
-            Behaviour();
-        }
+        NeedRedraw = false;
+        Behaviour();
     }
 
 
@@ -120,8 +139,6 @@ public abstract class Mask
         if(c == null)
             return;
         
-        
-         
         Console.Write($"\e[{ (int)(backgroundColor ?? Background) }m\e[{ (int)(textDecoration ?? Decoration) };{ (int)(textColor ?? Color) }m\u001b[{y + Component.PosY};{x + Component.PosX}H{c}");
     }
 }

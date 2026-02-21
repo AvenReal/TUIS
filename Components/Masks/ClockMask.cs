@@ -4,10 +4,16 @@ public class ClockMask : Mask
 {
     public ClockMask(Component component) : base(component)
     {
-        Color = TextColor.Yellow;
+        Component.Terminal.TimeSystem.AddTimedEvent( ((_, _) =>
+        {
+            if (Component.Terminal.TimeSystem.MiliSecond % 10 == 0)
+            {
+                NeedRedraw = true;
+            }
+        } ));
     }
 
-    private Dictionary<int, char[]> _numbers = new()
+    private static Dictionary<int, char[]> _numbers = new()
         {
             { 0, ['█', '▀', '█', '█', ' ', '█', '█', '▄', '█'] },
             { 1, [' ', ' ', '█', ' ', ' ', '█', ' ', ' ', '█'] },

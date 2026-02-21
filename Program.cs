@@ -11,8 +11,8 @@ Terminal terminal = new Terminal();
 // Background
 
 Component bg = new Component(terminal, 316, 53, 1, 1);
-ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
-
+// ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
+BackgroundMask bgMask = new BackgroundMask(bg, '#');
 // Login
 
 Component login = new Component(terminal, 50, 4, 20, 133);
@@ -53,13 +53,7 @@ ClockMask clockMask = new ClockMask(clock);
 
 terminal.Draw();
 
-terminal.TimeSystem.AddTimedEvent( ((_, _) =>
-{
-    if (terminal.TimeSystem.MiliSecond % 10 == 0)
-    {
-        clockMask.NeedRedraw = true;
-    }
-} ));
+
 
 InputMask inputMask = (InputMask)terminal.Components[1].Masks[1];
 inputMask.Enabeled = true;

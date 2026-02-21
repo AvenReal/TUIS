@@ -12,22 +12,6 @@ public class TextMask : Mask
         }
     }
     
-    public int HorizontalPadding{
-        get;
-        set
-        {
-            NeedRedraw = true;
-            field = value;
-        }
-    }
-    public int VerticalPadding{
-        get;
-        set
-        {
-            NeedRedraw = true;
-            field = value;
-        }
-    }
     
     public VerticalAlignmentEnum VerticalAlignment{
         get;
@@ -48,8 +32,8 @@ public class TextMask : Mask
     
     
     public TextMask(Component component, string text, 
-        int horizontalPadding = 0, 
-        int verticalPadding = 0,
+        byte horizontalPadding = 0, 
+        byte verticalPadding = 0,
         HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left, 
         VerticalAlignmentEnum verticalAlignment = VerticalAlignmentEnum.Top) 
         : base(component)
@@ -81,33 +65,33 @@ public class TextMask : Mask
         
         int textLength = Text.Length;
         
-        int charsPerLine = (int)(Component.Width - 2 * HorizontalPadding);
+        int charsPerLine = (Component.Width - 2 * HorizontalPadding);
         
-        int totalLines = (int)(textLength / charsPerLine + ((textLength / charsPerLine) != textLength / (float)charsPerLine ? 1 : 0));
+        int totalLines = (textLength / charsPerLine + ((textLength / charsPerLine) != textLength / (float)charsPerLine ? 1 : 0));
         
-        int effectiveWidth = (int)(Component.Width - 2 * HorizontalPadding);
-        int effectiveHeight = (int)(Component.Height - 2 * VerticalPadding);
+        int effectiveWidth = (Component.Width - 2 * HorizontalPadding);
+        int effectiveHeight = (Component.Height - 2 * VerticalPadding);
 
         int xOffset = HorizontalAlignment switch
         {
             HorizontalAlignmentEnum.Left => HorizontalPadding,
-            HorizontalAlignmentEnum.Center => (int)(HorizontalPadding + (effectiveWidth - int.Min(charsPerLine, (int)textLength)) / 2),
-            HorizontalAlignmentEnum.Right => (int)(HorizontalPadding + effectiveWidth - charsPerLine),
+            HorizontalAlignmentEnum.Center => (HorizontalPadding + (effectiveWidth - int.Min(charsPerLine, textLength)) / 2),
+            HorizontalAlignmentEnum.Right => (HorizontalPadding + effectiveWidth - charsPerLine),
             _ => throw new ArgumentOutOfRangeException()
         };
         int yOffset = HorizontalAlignment switch
         {
             HorizontalAlignmentEnum.Left => VerticalPadding,
-            HorizontalAlignmentEnum.Center => (int)(VerticalPadding + (effectiveHeight - totalLines) / 2),
-            HorizontalAlignmentEnum.Right => (int)(VerticalPadding + effectiveHeight - totalLines),
+            HorizontalAlignmentEnum.Center => (VerticalPadding + (effectiveHeight - totalLines) / 2),
+            HorizontalAlignmentEnum.Right => (VerticalPadding + effectiveHeight - totalLines),
             _ => throw new ArgumentOutOfRangeException()
         };
 
         for (int i = 0; i < textLength; i++)
         {
-            int lineIndex = (int)(i / charsPerLine);
-            int charIndexInLine = (int)(i % charsPerLine);
-            DrawChar((int)(yOffset + lineIndex), (int)(xOffset + charIndexInLine), Text[i]);
+            int lineIndex = (i / charsPerLine);
+            int charIndexInLine = (i % charsPerLine);
+            DrawChar((yOffset + lineIndex), (xOffset + charIndexInLine), Text[i]);
         }
     }
 }
