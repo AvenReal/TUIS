@@ -7,36 +7,28 @@ public class Terminal
 {
     public readonly InputSystem InputSystem = new();
     public readonly TimeSystem TimeSystem = new();
-    
+
     public readonly List<Component> Components = [];
-    
+
     public bool NeedRedraw = true;
 
-    public Terminal(IEnumerable<Component>? components = null)
+    public Terminal()
     {
-        TimeSystem.AddTimedEvent((_, _) => {Draw();});
-        if (components != null)
-        {
-            foreach (Component component in components)
-            {
-                component.Terminal = this;
-                Components.Add(component);
-            }
-        }
+        TimeSystem.AddTimedEvent((_, _) => { Draw(); });
     }
 
     public void Draw()
     {
         if (!NeedRedraw)
             return;
-        
+
         NeedRedraw = false;
+
         foreach (var component in Components)
         {
             component.Draw();
-            
         }
-        Console.CursorVisible = false;
+        // Console.CursorVisible = false;
     }
 
     public void Clear()
@@ -55,8 +47,6 @@ public class Terminal
         onStart?.Invoke(this);
         while (true)
         {
-            
         }
     }
-
 }

@@ -7,13 +7,37 @@ public class TextMask : Mask
         get;
         set
         {
-            NeedRedraw = true;
             field = value;
+            _textLength = Text.Length;
+            NeedRedraw = true;
         }
     }
-    
-    
-    public VerticalAlignmentEnum VerticalAlignment{
+
+    private int _textLength { get; set; }
+
+    public byte HorizontalPadding
+    {
+        get;
+        set
+        {
+            field = value;
+            NeedRedraw = true;
+        }
+    }
+
+    public byte VerticalPadding
+    {
+        get;
+        set
+        {
+            field = value;
+            NeedRedraw = true;
+        }
+    }
+
+
+    public VerticalAlignmentEnum VerticalAlignment
+    {
         get;
         set
         {
@@ -21,7 +45,9 @@ public class TextMask : Mask
             field = value;
         }
     }
-    public HorizontalAlignmentEnum HorizontalAlignment{
+
+    public HorizontalAlignmentEnum HorizontalAlignment
+    {
         get;
         set
         {
@@ -29,14 +55,17 @@ public class TextMask : Mask
             field = value;
         }
     }
-    
-    
-    public TextMask(Component component, string text, 
-        byte horizontalPadding = 0, 
+
+
+    public TextMask(Component component, string text,
+        byte horizontalPadding = 0,
         byte verticalPadding = 0,
-        HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left, 
-        VerticalAlignmentEnum verticalAlignment = VerticalAlignmentEnum.Top) 
-        : base(component)
+        HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left,
+        VerticalAlignmentEnum verticalAlignment = VerticalAlignmentEnum.Top,
+        bool isVisible = true,
+        TextColor color = TextColor.White,
+        BackgroundColor background = BackgroundColor.None,
+        TextDecoration decoration = TextDecoration.Default) : base(component, isVisible, color, background, decoration)
     {
         Text = text;
         HorizontalPadding = horizontalPadding;
@@ -44,15 +73,15 @@ public class TextMask : Mask
         HorizontalAlignment = horizontalAlignment;
         VerticalAlignment = verticalAlignment;
     }
-    
-    
+
+
     public enum HorizontalAlignmentEnum
     {
         Left,
         Center,
         Right
     }
-    
+
     public enum VerticalAlignmentEnum
     {
         Top,
@@ -62,20 +91,19 @@ public class TextMask : Mask
 
     protected override void Behaviour()
     {
-        
-        int textLength = Text.Length;
-        
         int charsPerLine = (Component.Width - 2 * HorizontalPadding);
-        
-        int totalLines = (textLength / charsPerLine + ((textLength / charsPerLine) != textLength / (float)charsPerLine ? 1 : 0));
-        
+
+        int totalLines = (_textLength / charsPerLine +
+                          ((_textLength / charsPerLine) != _textLength / (float)charsPerLine ? 1 : 0));
+
         int effectiveWidth = (Component.Width - 2 * HorizontalPadding);
         int effectiveHeight = (Component.Height - 2 * VerticalPadding);
 
         int xOffset = HorizontalAlignment switch
         {
             HorizontalAlignmentEnum.Left => HorizontalPadding,
-            HorizontalAlignmentEnum.Center => (HorizontalPadding + (effectiveWidth - int.Min(charsPerLine, textLength)) / 2),
+            HorizontalAlignmentEnum.Center => (HorizontalPadding +
+                                               (effectiveWidth - int.Min(charsPerLine, _textLength)) / 2),
             HorizontalAlignmentEnum.Right => (HorizontalPadding + effectiveWidth - charsPerLine),
             _ => throw new ArgumentOutOfRangeException()
         };
@@ -87,7 +115,7 @@ public class TextMask : Mask
             _ => throw new ArgumentOutOfRangeException()
         };
 
-        for (int i = 0; i < textLength; i++)
+        for (int i = 0; i < _textLength; i++)
         {
             int lineIndex = (i / charsPerLine);
             int charIndexInLine = (i % charsPerLine);

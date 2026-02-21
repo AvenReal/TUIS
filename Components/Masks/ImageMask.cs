@@ -7,9 +7,9 @@ public class ImageMask : Mask
     private int _imageHeight;
     private int _imageWidth;
 
-    private Color[,] _image; 
-    
-    
+    private Color[,] _image;
+
+
     public bool IsColored
     {
         get;
@@ -20,7 +20,13 @@ public class ImageMask : Mask
         }
     }
 
-    public ImageMask(Component component, string path, bool isColored = false) : base(component)
+
+    /// <summary>
+    /// Draw an image in knida ASCII art, only windows compatible :,).
+    /// </summary>
+    public ImageMask(Component component, string path, bool isColored = false, bool isVisible = true,
+        TextColor color = TextColor.White, BackgroundColor background = BackgroundColor.None,
+        TextDecoration decoration = TextDecoration.Default) : base(component, isVisible, color, background, decoration)
     {
         var image = new Bitmap(path); // Windows Only...
         _imageHeight = image.Height;
@@ -34,22 +40,21 @@ public class ImageMask : Mask
                 _image[i, j] = image.GetPixel(j, i);
             }
         }
-        
+
         image.Dispose();
     }
-    
-    
-    
+
+
     protected override void Behaviour()
     {
         int height = _imageHeight / Component.Height;
         int width = _imageWidth / Component.Width;
-        
+
         for (int i = 0; i < Component.Height; i++)
         {
             for (int j = 0; j < Component.Width; j++)
             {
-                (float r, float g, float b, float a) = GetRGBA(i * height, j * width,  height, width);
+                (float r, float g, float b, float a) = GetRGBA(i * height, j * width, height, width);
                 char? c = GetChar(r, g, b, a);
                 TextColor? textColor = IsColored ? GetColor(r, g, b) : null;
                 DrawChar(i, j, c, textColor);
@@ -64,29 +69,27 @@ public class ImageMask : Mask
         float b = 0;
         float a = 0;
         float nbPixels = 0;
-        
-        
-        
+
+
         for (int i = 0; i < height; i++)
         {
             for (int j = 0; j < width; j++)
             {
                 Color c = _image[yoffset + i, xoffset + j];
-                r+= c.R;
+                r += c.R;
                 g += c.G;
                 b += c.B;
                 a += c.A;
-                nbPixels ++;
+                nbPixels++;
             }
         }
-        
+
         return (r / nbPixels / 255.0f, g / nbPixels / 255.0f, b / nbPixels / 255.0f, a / nbPixels / 255.0f);
     }
-    
-    
+
+
     private char? GetChar(float r, float g, float b, float a)
     {
-
         if (a <= 0.5)
         {
             return null;
@@ -105,16 +108,15 @@ public class ImageMask : Mask
             default:
                 return ' ';
         }
-        
     }
 
     private TextColor GetColor(float r, float g, float b)
     {
-        float gray = 0.6f;//(r + g + b) / 3.0f;
+        float gray = 0.6f; //(r + g + b) / 3.0f;
 
         if (r < gray)
         {
-            if(g < gray)
+            if (g < gray)
             {
                 return b < gray ? TextColor.Black : TextColor.Blue;
             }
@@ -122,14 +124,11 @@ public class ImageMask : Mask
             return b < gray ? TextColor.Green : TextColor.Cyan;
         }
 
-        if(g < gray)
+        if (g < gray)
         {
             return b < gray ? TextColor.Red : TextColor.Purple;
         }
 
         return b < gray ? TextColor.Yellow : TextColor.White;
     }
-    
-    
-    
 }

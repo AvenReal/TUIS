@@ -35,6 +35,7 @@ public class Component
         }
         get;
     }
+
     public int PosY
     {
         set
@@ -44,27 +45,25 @@ public class Component
         }
         get;
     }
-    
 
     public readonly List<Mask> Masks = new();
-
-
 
     public bool NeedRedraw
     {
         get;
         set
         {
-            if(value)
+            if (value)
                 Terminal?.NeedRedraw = true;
             field = value;
         }
     }
+
     public bool IsVisible
     {
         set
         {
-            if(!value)
+            if (!value)
                 NeedRedraw = true;
             field = value;
         }
@@ -72,32 +71,30 @@ public class Component
     }
 
     public Component(Terminal terminal, int width, int height, int posY, int posX)
-    { 
-        NeedRedraw = true;
+    {
         Terminal = terminal;
         Terminal.Components.Add(this);
+
         Width = width;
         Height = height;
         PosX = posX;
         PosY = posY;
-        
+
         IsVisible = true;
-        
+        NeedRedraw = true;
     }
-    
+
     public void Draw()
     {
-        if(!NeedRedraw)
+        if (!NeedRedraw)
             return;
-        
-        
+
+
         NeedRedraw = false;
-        
+
         foreach (Mask mask in Masks)
         {
             mask.Draw();
         }
-        
-        
     }
 }
