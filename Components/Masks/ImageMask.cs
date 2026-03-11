@@ -8,7 +8,7 @@ public class ImageMask : Mask
     private int _imageHeight;
     private int _imageWidth;
 
-    private Color[,] _image;
+    private Rgba32[,] _image;
 
 
     public bool IsColored
@@ -33,7 +33,7 @@ public class ImageMask : Mask
         _imageHeight = image.Height;
         _imageWidth = image.Width;
         IsColored = isColored;
-        _image = new Color[_imageHeight, _imageWidth];
+        _image = new Rgba32[_imageHeight, _imageWidth];
         for (int i = 0; i < _imageHeight; i++)
         {
             for (int j = 0; j < _imageWidth; j++)
@@ -129,5 +129,25 @@ public class ImageMask : Mask
         }
 
         return b < gray ? TextColor.Yellow : TextColor.White;
+    }
+
+    public void Export(string path = "./exported_image.png", int? exportedWidth = null, int? exportedHeight = null)
+    {
+        var goalHeight = (exportedHeight ?? Component.Height);
+        int height = _imageHeight / goalHeight;
+        var goalWidth = (exportedWidth ?? Component.Width);
+        int width = _imageWidth / goalWidth;
+        
+        using StreamWriter writer = new StreamWriter(path);
+        for (int i = 0; i < goalHeight; i++)
+        {
+            for (int j = 0; j < goalWidth; j++)
+            {
+                (float r, float g, float b, float a) = GetRGBA(i * height, j * width, height, width);
+                writer.Write(GetChar(r, g, b, a));
+            }
+
+            writer.Write('\n');
+        }
     }
 }

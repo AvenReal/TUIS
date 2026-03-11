@@ -12,6 +12,8 @@ var height = Console.LargestWindowHeight * 2;
 var width = Console.LargestWindowWidth * 6;
 Component bg = new Component(terminal, width, height, 1, 1);
 ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
+
+bgImageMask.Export("./Images/wallpaper.txt");
 // BackgroundMask bgMask = new BackgroundMask(bg, '#');
 
 // Login
