@@ -1,4 +1,5 @@
-using System.Drawing;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 
 namespace TUIS.Components.Masks;
 
@@ -28,7 +29,7 @@ public class ImageMask : Mask
         TextColor color = TextColor.White, BackgroundColor background = BackgroundColor.None,
         TextDecoration decoration = TextDecoration.Default) : base(component, isVisible, color, background, decoration)
     {
-        var image = new Bitmap(path); // Windows Only...
+        using Image<Rgba32> image = Image.Load<Rgba32>(path); // Windows Only...
         _imageHeight = image.Height;
         _imageWidth = image.Width;
         IsColored = isColored;
@@ -37,11 +38,9 @@ public class ImageMask : Mask
         {
             for (int j = 0; j < _imageWidth; j++)
             {
-                _image[i, j] = image.GetPixel(j, i);
+                _image[i, j] = image[j, i];
             }
         }
-
-        image.Dispose();
     }
 
 
@@ -75,7 +74,7 @@ public class ImageMask : Mask
         {
             for (int j = 0; j < width; j++)
             {
-                Color c = _image[yoffset + i, xoffset + j];
+                Rgba32 c = _image[yoffset + i, xoffset + j];
                 r += c.R;
                 g += c.G;
                 b += c.B;

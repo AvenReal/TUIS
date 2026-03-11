@@ -8,10 +8,11 @@ using TUIS.Components.Masks;
 Terminal terminal = new Terminal();
 
 // Background
-
-Component bg = new Component(terminal, 316, 53, 1, 1);
-// ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
-BackgroundMask bgMask = new BackgroundMask(bg, '#');
+var height = Console.LargestWindowHeight * 2;
+var width = Console.LargestWindowWidth * 6;
+Component bg = new Component(terminal, width, height, 1, 1);
+ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
+// BackgroundMask bgMask = new BackgroundMask(bg, '#');
 
 // Login
 
