@@ -5,7 +5,7 @@ using TUIS;
 using TUIS.Components;
 using TUIS.Components.Masks;
 
-/*
+
 Terminal terminal = new Terminal();
 
 // Background
@@ -62,4 +62,4 @@ InputMask inputMask = (InputMask)terminal.Components[1].Masks[1];
 inputMask.Enabeled = true;
 Console.CursorVisible = true;
 
-terminal.Start();*/
+terminal.Start();
