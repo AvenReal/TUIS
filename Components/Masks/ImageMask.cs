@@ -3,6 +3,10 @@ using SixLabors.ImageSharp.PixelFormats;
 
 namespace TUIS.Components.Masks;
 
+/// <summary>
+/// <inheritdoc/>
+/// Draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.
+/// </summary>
 public class ImageMask : Mask
 {
     private int _imageHeight;
@@ -144,7 +148,7 @@ public class ImageMask : Mask
         int height = _imageHeight / goalHeight;
         var goalWidth = (exportedWidth ?? Component.Width);
         int width = _imageWidth / goalWidth;
-        
+
         using StreamWriter writer = new StreamWriter(path);
         for (int i = 0; i < goalHeight; i++)
         {

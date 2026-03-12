@@ -1,8 +1,14 @@
 namespace TUIS.Components.Masks;
 
+/// <summary>
+/// WIP. This mask let you use <see cref="Console.ReadLine"/> to get some user input as command or text 
+/// </summary>
 public class InputMask : Mask
 {
-    public bool Enabeled
+    /// <summary>
+    /// Holds whether or not the <see cref="Mask"/> should read the user inputs.  
+    /// </summary>
+    public bool Enabled
     {
         get;
         set
@@ -12,6 +18,9 @@ public class InputMask : Mask
         }
     }
 
+    /// <summary>
+    /// Holds the <see cref="string"/> corresponding to the last input of the user 
+    /// </summary>
     public string Output
     {
         get;
@@ -23,6 +32,9 @@ public class InputMask : Mask
         }
     }
 
+    /// <summary>
+    /// Holds an <see cref="Action"/> that will be called when the <see cref="Output"/> changes.
+    /// </summary>
     private readonly Action<InputMask>? _onOutputChange;
 
     public byte HorizontalPadding
@@ -60,10 +72,10 @@ public class InputMask : Mask
 
     protected override void Behaviour()
     {
-        if (Enabeled)
+        if (Enabled)
         {
             Component.NeedRedraw = false;
-            Enabeled = false;
+            Enabled = false;
             Console.CursorVisible = true;
 
             Console.Write($"\u001b[{Component.PosY + VerticalPadding};{Component.PosX + HorizontalPadding}H");
