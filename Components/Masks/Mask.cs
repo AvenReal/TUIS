@@ -78,7 +78,7 @@ public abstract class Mask
     }
 
     /// <summary>
-    /// A Mask goes in a <see cref="component"/> and will add characters to print on it following custom rules: <see cref="Behaviour"/>.
+    /// A Mask goes in a <see cref="Component"/> and will add characters to print on it following custom rules: <see cref="Behaviour"/>.
     /// </summary>
     /// <param name="component">The component which the mask is attached to.</param>
     /// <param name="isVisible">Represent the visibility of the mask (default = true).</param>
