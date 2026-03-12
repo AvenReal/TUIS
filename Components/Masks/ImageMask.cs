@@ -36,7 +36,7 @@ public class ImageMask : Mask
         TextColor color = TextColor.White, BackgroundColor background = BackgroundColor.None,
         TextDecoration decoration = TextDecoration.Default) : base(component, isVisible, color, background, decoration)
     {
-        using Image<Rgba32> image = Image.Load<Rgba32>(path); // Windows Only...
+        using Image<Rgba32> image = Image.Load<Rgba32>(path);
         _imageHeight = image.Height;
         _imageWidth = image.Width;
         IsColored = isColored;
