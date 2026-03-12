@@ -23,8 +23,15 @@ public class ImageMask : Mask
 
 
     /// <summary>
-    /// Draw an image in knida ASCII art, only windows compatible :,).
+    /// Draw an image in format jpg, png or any other image format in ASCII art.
     /// </summary>
+    /// <param name="path">The relative or absolute path of the image to draw is ASCII art</param>
+    /// <param name="isColored">Whether or not the Image will be drawn using the 8 possible colors or in black and white (default = false).</param>
+    /// <param name="component">The component which the mask is attached to.</param>
+    /// <param name="isVisible">Represent the visibility of the mask (default = true).</param>
+    /// <param name="color">The default color of the mask (a mask's <see cref="Behaviour"/>) method can override the color (default = white).</param>
+    /// <param name="background">The default background color of the mask (a mask's <see cref="Behaviour"/>) method can override the background color (default = None).</param>
+    /// <param name="decoration">The default decoration of the mask (a mask's <see cref="Behaviour"/>) method can override the decoration (default = Default).</param>
     public ImageMask(Component component, string path, bool isColored = false, bool isVisible = true,
         TextColor color = TextColor.White, BackgroundColor background = BackgroundColor.None,
         TextDecoration decoration = TextDecoration.Default) : base(component, isVisible, color, background, decoration)
