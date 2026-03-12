@@ -144,7 +144,7 @@ public class ImageMask : Mask
             for (int j = 0; j < goalWidth; j++)
             {
                 (float r, float g, float b, float a) = GetRGBA(i * height, j * width, height, width);
-                writer.Write(GetChar(r, g, b, a));
+                writer.Write(GetChar(r, g, b, a) ?? ' ');
             }
 
             writer.Write('\n');
