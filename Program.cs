@@ -24,7 +24,7 @@ BackgroundMask loginBg = new BackgroundMask(login);
 InputMask loginInputMask = new InputMask(login, mask =>
 {
     InputMask inputMask = (InputMask)mask.Component.Terminal.Components[2].Masks[1];
-    inputMask.Enabeled = true;
+    inputMask.Enabled = true;
 });
 BoxMask loginBoxMask = new BoxMask(login, BoxMask.Type.Simple);
 TextMask loginTextMask = new TextMask(login, "Login:", 1, 1);
@@ -37,7 +37,7 @@ InputMask passwordInputMask = new InputMask(password, pwInputMask =>
 {
     if (loginInputMask.Output != "admin" || pwInputMask.Output != "password")
     {
-        loginInputMask.Enabeled = true;
+        loginInputMask.Enabled = true;
         pwInputMask.NeedRedraw = true;
     }
     else
@@ -59,7 +59,7 @@ terminal.Draw();
 
 
 InputMask inputMask = (InputMask)terminal.Components[1].Masks[1];
-inputMask.Enabeled = true;
+inputMask.Enabled = true;
 Console.CursorVisible = true;
 
 terminal.Start();
