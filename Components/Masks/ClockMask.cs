@@ -1,10 +1,13 @@
 namespace TUIS.Components.Masks;
-
+/// <summary>
+/// <inheritdoc/>
+/// This <see cref="Mask"/> will draw a clock and updates it accordingly to the real time.
+/// </summary>
 public class ClockMask : Mask
 {
     /// <summary>
     /// Add a real time clock to the <see cref="Component"/>.
-    /// Warning: The clock is 27 wide by 3 tall.
+    /// Warning: The clock is 27 wide by 3 tall. Any <see cref="Component"/> smaller than that will cause the clock to overshoot.
     /// </summary>
     /// <param name="component">The component which the mask is attached to.</param>
     /// <param name="isVisible">Represent the visibility of the mask (default = true).</param>
@@ -43,7 +46,7 @@ public class ClockMask : Mask
 
     /// <summary>
     /// <inheritdoc/>
-    /// This <see cref="Mask"/>'s <see cref="Behaviour"/> is to print the big numbers in the right place.
+    /// This <see cref="Mask"/>'s <see cref="Behaviour"/> is to display large numbers .
     /// </summary>
     protected override void Behaviour()
     {

@@ -1,9 +1,13 @@
 namespace TUIS.Components.Masks;
 
+/// <summary>
+/// <inheritdoc/>
+/// This <see cref="Mask"/> will draw a box on the border of the <see cref="Component"/>.
+/// </summary>
 public class BoxMask : Mask
 {
     /// <summary>
-    /// Keeps the <see cref="Type"/> of boxing 
+    /// Holds the <see cref="Type"/> of boxing. 
     /// </summary>
     public Type BoxType
     {
@@ -57,11 +61,11 @@ public class BoxMask : Mask
 
 
     /// <summary>
-    /// Helps getting the appropriate char regarding of the local coordinates (<paramref name="x"/>, <paramref name="y"/>).
+    /// Helps to get the appropriate char regarding of the local coordinates (<paramref name="x"/>, <paramref name="y"/>).
     /// </summary>
     /// <param name="type">The <see cref="Type"/> of boxing.</param>
-    /// <param name="x">The coordinate of the x-axis (0 = left) relative to the <see cref="Component"/>.</param>
-    /// <param name="y">The coordinate of the y-axis (0 = top) relative to the <see cref="Component"/>.</param>
+    /// <param name="x">The coordinate of the x-axis (0 = left) relative to the <see cref="Component"/> current position.</param>
+    /// <param name="y">The coordinate of the y-axis (0 = top) relative to the <see cref="Component"/> current position.</param>
     /// <param name="height">The height of the <see cref="Component"/>.</param>
     /// <param name="width">The width of the <see cref="Component"/>.</param>
     /// <returns>The appropriate char regarding of the local coordinates (<paramref name="x"/>, <paramref name="y"/>).</returns>
@@ -93,7 +97,10 @@ public class BoxMask : Mask
 
         return null;
     }
-
+    /// <summary>
+    /// <inheritdoc/>
+    /// This <see cref="Mask"/> will draw a box on the border of the <see cref="Component"/>.
+    /// </summary>
     protected override void Behaviour()
     {
         for (int i = 0; i < Component.Height; i++)

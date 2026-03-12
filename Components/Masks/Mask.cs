@@ -1,11 +1,18 @@
 namespace TUIS.Components.Masks;
-
+/// <summary>
+/// A Mask must be attached to a <see cref="Component"/> and adds a layer of drawings on top of it.
+/// Masks will be drawn in the same order as they have been added to the <see cref="Component.Masks"/> list.  
+/// </summary>
 public abstract class Mask
 {
-    public Component Component;
+    /// <summary>
+    /// The <see cref="Component"/> the <see cref="Mask"/> is attached to.
+    /// </summary>
+    public readonly Component Component;
 
     /// <summary>
-    /// Helps to optimise the drawing of components, if NeedRedraw == false, the <see cref="Mask"/> won't be re-<see cref="Draw"/>n. 
+    /// Helps to optimise the drawing of components, if NeedRedraw == false, the <see cref="Mask"/> won't be re-<see cref="Draw"/>n.
+    /// if NeedRedraw is set to true, it will automatically set the <see cref="Component.NeedRedraw"/> to true.
     /// </summary>
     public bool NeedRedraw
     {

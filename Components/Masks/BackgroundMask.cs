@@ -6,7 +6,7 @@ namespace TUIS.Components.Masks;
 public class BackgroundMask : Mask
 {
     /// <summary>
-    /// Keeps the background character.
+    /// Holds the character to be drawn as the background.
     /// </summary>
     public char BackgroundChar
     {
@@ -37,6 +37,7 @@ public class BackgroundMask : Mask
 
     /// <summary>
     /// <inheritdoc/>
+    /// This <see cref="Mask"/> will draw the <see cref="BackgroundChar"/> on top of the intire <see cref="Component"/>.
     /// </summary>
     protected override void Behaviour()
     {
