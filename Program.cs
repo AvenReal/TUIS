@@ -5,15 +5,16 @@ using TUIS;
 using TUIS.Components;
 using TUIS.Components.Masks;
 
+/*
 Terminal terminal = new Terminal();
 
 // Background
 var height = Console.LargestWindowHeight * 2;
 var width = Console.LargestWindowWidth * 6;
 Component bg = new Component(terminal, width, height, 1, 1);
-ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
+ImageMask bgImageMask = new ImageMask(bg, "Images/TUIS.png");
 
-bgImageMask.Export("./Images/wallpaper.txt");
+bgImageMask.Export("./Images/Logo.txt", 103 * 2, 20);
 // BackgroundMask bgMask = new BackgroundMask(bg, '#');
 
 // Login
@@ -61,4 +62,4 @@ InputMask inputMask = (InputMask)terminal.Components[1].Masks[1];
 inputMask.Enabeled = true;
 Console.CursorVisible = true;
 
-terminal.Start();
+terminal.Start();*/

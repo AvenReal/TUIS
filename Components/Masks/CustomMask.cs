@@ -1,14 +1,17 @@
 namespace TUIS.Components.Masks;
-
+/// <summary>
+/// <inheritdoc/>
+/// This <see cref="Mask"/> helps to create a <see cref="Mask"/> with unique behaviour without needing to create an entire new class.  
+/// </summary>
 public class CustomMask : Mask
 {
     /// <summary>
-    /// Keeps the Action.
+    /// Holds the Action.
     /// </summary>
     private readonly Action<CustomMask> _action;
 
     /// <summary>
-    /// Keeps properties used in the <see cref="_action"/>.
+    /// Holds properties used in the <see cref="_action"/>.
     /// (Useless for now).
     /// </summary>
     public readonly Dictionary<string, object> Properties = new();
