@@ -10,7 +10,7 @@
           ]
         }
       ],
-      "dest": "_api"
+      "dest": "api"
     }
   ],
   "build": {

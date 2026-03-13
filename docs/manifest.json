@@ -72,10 +72,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Component.yml",
+      "source_relative_path": "api/TUIS.Components.Component.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Component.html"
+          "relative_path": "api/TUIS.Components.Component.html"
         }
       },
       "version": "",
@@ -86,164 +86,164 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.BackgroundMask.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.BackgroundMask.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.BackgroundMask.html"
+          "relative_path": "api/TUIS.Components.Masks.BackgroundMask.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.BackgroundMask",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.BackgroundMask.yml\" sourcestartlinenumber=\"1\">Print a single char in the background (Warning Masks will be printed in order so this one will override any Mask before itself)</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.BackgroundMask.yml\" sourcestartlinenumber=\"1\">Print a single char in the background (Warning Masks will be printed in order so this one will override any Mask before itself)</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.BoxMask.Type.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.BoxMask.Type.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.BoxMask.Type.html"
+          "relative_path": "api/TUIS.Components.Masks.BoxMask.Type.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.BoxMask.Type",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.BoxMask.Type.yml\" sourcestartlinenumber=\"1\">The Type of boxing</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.BoxMask.Type.yml\" sourcestartlinenumber=\"1\">The Type of boxing</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.BoxMask.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.BoxMask.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.BoxMask.html"
+          "relative_path": "api/TUIS.Components.Masks.BoxMask.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.BoxMask",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.BoxMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"_api/TUIS.Components.Masks.BoxMask.yml\" sourcestartlinenumber=\"4\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> will draw a box on the border of the <xref href=\"TUIS.Components.Component\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.BoxMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"api/TUIS.Components.Masks.BoxMask.yml\" sourcestartlinenumber=\"4\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> will draw a box on the border of the <xref href=\"TUIS.Components.Component\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.ClockMask.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.ClockMask.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.ClockMask.html"
+          "relative_path": "api/TUIS.Components.Masks.ClockMask.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.ClockMask",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.ClockMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"_api/TUIS.Components.Masks.ClockMask.yml\" sourcestartlinenumber=\"4\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> will draw a clock and updates it accordingly to the real time.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.ClockMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"api/TUIS.Components.Masks.ClockMask.yml\" sourcestartlinenumber=\"4\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> will draw a clock and updates it accordingly to the real time.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.CustomMask.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.CustomMask.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.CustomMask.html"
+          "relative_path": "api/TUIS.Components.Masks.CustomMask.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.CustomMask",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.CustomMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"_api/TUIS.Components.Masks.CustomMask.yml\" sourcestartlinenumber=\"4\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> helps to create a <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> with unique behaviour without needing to create an entire new class.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.CustomMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"api/TUIS.Components.Masks.CustomMask.yml\" sourcestartlinenumber=\"4\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> helps to create a <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> with unique behaviour without needing to create an entire new class.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.ImageMask.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.ImageMask.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.ImageMask.html"
+          "relative_path": "api/TUIS.Components.Masks.ImageMask.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.ImageMask",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.ImageMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"_api/TUIS.Components.Masks.ImageMask.yml\" sourcestartlinenumber=\"4\">Draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.ImageMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"api/TUIS.Components.Masks.ImageMask.yml\" sourcestartlinenumber=\"4\">Draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.InputMask.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.InputMask.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.InputMask.html"
+          "relative_path": "api/TUIS.Components.Masks.InputMask.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.InputMask",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.InputMask.yml\" sourcestartlinenumber=\"1\">WIP. This mask let you use <xref href=\"System.Console.ReadLine\" data-throw-if-not-resolved=\"false\"></xref> to get some user input as command or text</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.InputMask.yml\" sourcestartlinenumber=\"1\">WIP. This mask let you use <xref href=\"System.Console.ReadLine\" data-throw-if-not-resolved=\"false\"></xref> to get some user input as command or text</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.Mask.BackgroundColor.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.Mask.BackgroundColor.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.Mask.BackgroundColor.html"
+          "relative_path": "api/TUIS.Components.Masks.Mask.BackgroundColor.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.Mask.BackgroundColor",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.Mask.BackgroundColor.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Components.Masks.Mask.BackgroundColor\" data-throw-if-not-resolved=\"false\"></xref> using the ANSI color code.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.Mask.BackgroundColor.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Components.Masks.Mask.BackgroundColor\" data-throw-if-not-resolved=\"false\"></xref> using the ANSI color code.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.Mask.TextColor.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.Mask.TextColor.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.Mask.TextColor.html"
+          "relative_path": "api/TUIS.Components.Masks.Mask.TextColor.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.Mask.TextColor",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.Mask.TextColor.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Components.Masks.Mask.TextColor\" data-throw-if-not-resolved=\"false\"></xref> using th ANSI color code.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.Mask.TextColor.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Components.Masks.Mask.TextColor\" data-throw-if-not-resolved=\"false\"></xref> using th ANSI color code.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.Mask.TextDecoration.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.Mask.TextDecoration.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.Mask.TextDecoration.html"
+          "relative_path": "api/TUIS.Components.Masks.Mask.TextDecoration.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.Mask.TextDecoration",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.Mask.TextDecoration.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Components.Masks.Mask.TextDecoration\" data-throw-if-not-resolved=\"false\"></xref> using the ANSI color code.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.Mask.TextDecoration.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Components.Masks.Mask.TextDecoration\" data-throw-if-not-resolved=\"false\"></xref> using the ANSI color code.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.Mask.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.Mask.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.Mask.html"
+          "relative_path": "api/TUIS.Components.Masks.Mask.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.Mask",
-      "Summary": "<p sourcefile=\"_api/TUIS.Components.Masks.Mask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.Mask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum.html"
+          "relative_path": "api/TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum.html"
         }
       },
       "version": "",
@@ -254,10 +254,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.TextMask.VerticalAlignmentEnum.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.TextMask.VerticalAlignmentEnum.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.TextMask.VerticalAlignmentEnum.html"
+          "relative_path": "api/TUIS.Components.Masks.TextMask.VerticalAlignmentEnum.html"
         }
       },
       "version": "",
@@ -268,10 +268,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.TextMask.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.TextMask.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.TextMask.html"
+          "relative_path": "api/TUIS.Components.Masks.TextMask.html"
         }
       },
       "version": "",
@@ -282,10 +282,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.Masks.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.Masks.html"
+          "relative_path": "api/TUIS.Components.Masks.html"
         }
       },
       "version": "",
@@ -296,10 +296,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Components.yml",
+      "source_relative_path": "api/TUIS.Components.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Components.html"
+          "relative_path": "api/TUIS.Components.html"
         }
       },
       "version": "",
@@ -310,10 +310,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Systems.InputSystem.yml",
+      "source_relative_path": "api/TUIS.Systems.InputSystem.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Systems.InputSystem.html"
+          "relative_path": "api/TUIS.Systems.InputSystem.html"
         }
       },
       "version": "",
@@ -324,10 +324,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Systems.TimeSystem.yml",
+      "source_relative_path": "api/TUIS.Systems.TimeSystem.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Systems.TimeSystem.html"
+          "relative_path": "api/TUIS.Systems.TimeSystem.html"
         }
       },
       "version": "",
@@ -338,10 +338,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Systems.yml",
+      "source_relative_path": "api/TUIS.Systems.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Systems.html"
+          "relative_path": "api/TUIS.Systems.html"
         }
       },
       "version": "",
@@ -352,10 +352,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.Terminal.yml",
+      "source_relative_path": "api/TUIS.Terminal.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.Terminal.html"
+          "relative_path": "api/TUIS.Terminal.html"
         }
       },
       "version": "",
@@ -366,10 +366,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "_api/TUIS.yml",
+      "source_relative_path": "api/TUIS.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/TUIS.html"
+          "relative_path": "api/TUIS.html"
         }
       },
       "version": "",
@@ -380,46 +380,46 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "_api/toc.yml",
+      "source_relative_path": "api/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "_api/toc.html"
+          "relative_path": "api/toc.html"
         },
         ".json": {
-          "relative_path": "_api/toc.json"
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "_documentation/getting-started.md",
+      "source_relative_path": "documentation/getting-started.md",
       "output": {
         ".html": {
-          "relative_path": "_documentation/getting-started.html"
+          "relative_path": "documentation/getting-started.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "_documentation/introduction.md",
+      "source_relative_path": "documentation/introduction.md",
       "output": {
         ".html": {
-          "relative_path": "_documentation/introduction.html"
+          "relative_path": "documentation/introduction.html"
         }
       },
       "version": ""
     },
     {
       "type": "Toc",
-      "source_relative_path": "_documentation/toc.yml",
+      "source_relative_path": "documentation/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "_documentation/toc.html"
+          "relative_path": "documentation/toc.html"
         },
         ".json": {
-          "relative_path": "_documentation/toc.json"
+          "relative_path": "documentation/toc.json"
         }
       },
       "version": ""

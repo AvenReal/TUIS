@@ -9,8 +9,8 @@ using TUIS.Components.Masks;
 Terminal terminal = new Terminal();
 
 // Background
-var height = Console.LargestWindowHeight * 2;
-var width = Console.LargestWindowWidth * 6;
+var height = Console.WindowHeight;
+var width = Console.WindowWidth;
 Component bg = new Component(terminal, width, height, 1, 1);
 ImageMask bgImageMask = new ImageMask(bg, "Images/TUIS.png");
 
