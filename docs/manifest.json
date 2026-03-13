@@ -12,30 +12,80 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "Images/Logo.txt",
-      "output": {
-        "resource": {
-          "relative_path": "Images/Logo.txt"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "Images/TUIS.png",
-      "output": {
-        "resource": {
-          "relative_path": "Images/TUIS.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "Images/example1.png",
       "output": {
         "resource": {
           "relative_path": "Images/example1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "Images/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/favicon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/favicon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/favicon.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Images/favicon.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/favicon.txt",
+      "output": {
+        "resource": {
+          "relative_path": "Images/favicon.txt"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/logo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Images/logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/logo.txt",
+      "output": {
+        "resource": {
+          "relative_path": "Images/logo.txt"
         }
       },
       "version": ""

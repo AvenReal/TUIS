@@ -12,9 +12,9 @@ Terminal terminal = new Terminal();
 var height = Console.WindowHeight;
 var width = Console.WindowWidth;
 Component bg = new Component(terminal, width, height, 1, 1);
-ImageMask bgImageMask = new ImageMask(bg, "Images/TUIS.png");
+ImageMask bgImageMask = new ImageMask(bg, "Images/icon.png");
 
-bgImageMask.Export("./Images/Logo.txt", 103 * 2, 20);
+bgImageMask.Export("./Images/icon.txt", 15, 20);
 // BackgroundMask bgMask = new BackgroundMask(bg, '#');
 
 // Login
