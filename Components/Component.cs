@@ -55,7 +55,7 @@ public class Component
         {
             if (value)
             {
-                try
+                try // awful, need to go away
                 {
                     Draw();
                 }
