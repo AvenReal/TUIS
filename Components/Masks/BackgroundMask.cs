@@ -13,7 +13,7 @@ public class BackgroundMask : Mask
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
@@ -29,8 +29,10 @@ public class BackgroundMask : Mask
     /// <param name="background">The default background color of the mask (a mask's <see cref="Behaviour"/>) method can override the background color (default = None).</param>
     /// <param name="decoration">The default decoration of the mask (a mask's <see cref="Behaviour"/>) method can override the decoration (default = Default).</param>
     public BackgroundMask(Component component, char backgroundChar = ' ', bool isVisible = true,
-        TextColor color = TextColor.White, BackgroundColor background = BackgroundColor.None,
-        TextDecoration decoration = TextDecoration.Default) : base(component, isVisible, color, background, decoration)
+        Terminal.TextColor color = Terminal.TextColor.White,
+        Terminal.BackgroundColor background = Terminal.BackgroundColor.None,
+        Terminal.TextDecoration decoration = Terminal.TextDecoration.Default) : base(component, isVisible, color,
+        background, decoration)
     {
         BackgroundChar = backgroundChar;
     }

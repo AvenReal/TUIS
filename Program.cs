@@ -6,15 +6,13 @@ using TUIS.Components;
 using TUIS.Components.Masks;
 
 
-Terminal terminal = new Terminal();
+Terminal terminal = new Terminal(200, 50);
 
 // Background
 var height = Console.WindowHeight;
 var width = Console.WindowWidth;
 Component bg = new Component(terminal, width, height, 1, 1);
-ImageMask bgImageMask = new ImageMask(bg, "Images/icon.png");
-
-bgImageMask.Export("./Images/icon.txt", 15, 20);
+ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
 // BackgroundMask bgMask = new BackgroundMask(bg, '#');
 
 // Login
@@ -38,7 +36,7 @@ InputMask passwordInputMask = new InputMask(password, pwInputMask =>
     if (loginInputMask.Output != "admin" || pwInputMask.Output != "password")
     {
         loginInputMask.Enabled = true;
-        pwInputMask.NeedRedraw = true;
+        pwInputMask.NeedReDraw = true;
     }
     else
     {

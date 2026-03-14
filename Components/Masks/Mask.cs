@@ -1,4 +1,5 @@
 namespace TUIS.Components.Masks;
+
 /// <summary>
 /// A Mask must be attached to a <see cref="Component"/> and adds a layer of drawings on top of it.
 /// Masks will be drawn in the same order as they have been added to the <see cref="Component.Masks"/> list.  
@@ -11,17 +12,17 @@ public abstract class Mask
     public readonly Component Component;
 
     /// <summary>
-    /// Helps to optimise the drawing of components, if NeedRedraw == false, the <see cref="Mask"/> won't be re-<see cref="Draw"/>n.
-    /// if NeedRedraw is set to true, it will automatically set the <see cref="Component.NeedRedraw"/> to true.
+    /// Helps to optimise the drawing of components, if NeedReDraw == false, the <see cref="Mask"/> won't be re-<see cref="Draw"/>n.
+    /// if NeedReDraw is set to true, it will automatically set the <see cref="Components.Component.NeedReDraw"/> to true.
     /// </summary>
-    public bool NeedRedraw
+    public bool NeedReDraw
     {
         get;
         set
         {
             field = value;
             if (value)
-                Component.NeedRedraw = true;
+                Component.NeedReDraw = true;
         }
     }
 
@@ -33,46 +34,46 @@ public abstract class Mask
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
 
     /// <summary>
-    /// Keeps the current <see cref="TextColor"/> of the <see cref="Mask"/>.
+    /// Keeps the current <see cref="Terminal.TextColor"/> of the <see cref="Mask"/>.
     /// </summary>
-    public TextColor Color
+    public Terminal.TextColor Color
     {
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
 
     /// <summary>
-    /// Keeps the current <see cref="BackgroundColor"/> of the <see cref="Mask"/>.
+    /// Keeps the current <see cref="Terminal.BackgroundColor"/> of the <see cref="Mask"/>.
     /// </summary>
-    public BackgroundColor Background
+    public Terminal.BackgroundColor Background
     {
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
 
     /// <summary>
-    /// Keeps the current <see cref="TextDecoration"/> of the <see cref="Mask"/>.
+    /// Keeps the current <see cref="Terminal.TextDecoration"/> of the <see cref="Mask"/>.
     /// </summary>
-    public TextDecoration Decoration
+    public Terminal.TextDecoration Decoration
     {
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
@@ -85,8 +86,9 @@ public abstract class Mask
     /// <param name="color">The default color of the mask (a mask's <see cref="Behaviour"/>) method can override the color (default = white).</param>
     /// <param name="background">The default background color of the mask (a mask's <see cref="Behaviour"/>) method can override the background color (default = None).</param>
     /// <param name="decoration">The default decoration of the mask (a mask's <see cref="Behaviour"/>) method can override the decoration (default = Default).</param>
-    public Mask(Component component, bool isVisible = true, TextColor color = TextColor.White,
-        BackgroundColor background = BackgroundColor.None, TextDecoration decoration = TextDecoration.Default)
+    public Mask(Component component, bool isVisible = true, Terminal.TextColor color = Terminal.TextColor.White,
+        Terminal.BackgroundColor background = Terminal.BackgroundColor.None,
+        Terminal.TextDecoration decoration = Terminal.TextDecoration.Default)
     {
         Component = component;
         Component.Masks.Add(this);
@@ -96,7 +98,7 @@ public abstract class Mask
         Background = background;
         Decoration = decoration;
 
-        NeedRedraw = true;
+        NeedReDraw = true;
     }
 
     /// <summary>
@@ -111,53 +113,11 @@ public abstract class Mask
     /// </summary>
     public void Draw()
     {
-        if (!NeedRedraw || !IsVisible)
+        if (!NeedReDraw || !IsVisible)
             return;
 
-        NeedRedraw = false;
+        NeedReDraw = false;
         Behaviour();
-    }
-
-    /// <summary>
-    /// Get the <see cref="TextColor"/> using th ANSI color code.
-    /// </summary>
-    public enum TextColor
-    {
-        Black = 30,
-        Red = 31,
-        Green = 32,
-        Yellow = 33,
-        Blue = 34,
-        Purple = 35,
-        Cyan = 36,
-        White = 37,
-    }
-
-    /// <summary>
-    /// Get the <see cref="BackgroundColor"/> using the ANSI color code.
-    /// </summary>
-    public enum BackgroundColor
-    {
-        Black = 40,
-        Red = 41,
-        Green = 42,
-        Yellow = 43,
-        Blue = 44,
-        Purple = 45,
-        Cyan = 46,
-        White = 47,
-        None = 0
-    }
-
-
-    /// <summary>
-    /// Get the <see cref="TextDecoration"/> using the ANSI color code.
-    /// </summary>
-    public enum TextDecoration
-    {
-        Default = 0,
-        Bold = 1,
-        Underline = 4,
     }
 
     /// <summary>
@@ -169,13 +129,15 @@ public abstract class Mask
     /// <param name="textColor">The color which the <paramref name="c"/> will be printed. null = the default background color of the mask.</param>
     /// <param name="backgroundColor">The background color which the <paramref name="c"/> will be printed. null = the default background color of the mask.</param>
     /// <param name="textDecoration">The decoration with which the <paramref name="c"/> will be printed. null = the default decoration of the mask.</param>
-    protected void DrawChar(int y, int x, char? c, TextColor? textColor = null, BackgroundColor? backgroundColor = null,
-        TextDecoration? textDecoration = null)
+    protected void DrawChar(int y, int x, char? c, Terminal.TextColor textColor = Terminal.TextColor.White,
+        Terminal.BackgroundColor backgroundColor = Terminal.BackgroundColor.None,
+        Terminal.TextDecoration textDecoration = Terminal.TextDecoration.Default)
     {
         if (c == null)
             return;
 
-        Console.Write(
-            $"\e[{(int)(backgroundColor ?? Background)}m\e[{(int)(textDecoration ?? Decoration)};{(int)(textColor ?? Color)}m\u001b[{y + Component.PosY};{x + Component.PosX}H{c}");
+
+        Component.Terminal.UpdateScreen(y + Component.PosY, x + Component.PosX, (char)c, textColor, backgroundColor,
+            textDecoration);
     }
 }

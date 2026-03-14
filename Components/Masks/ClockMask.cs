@@ -1,6 +1,6 @@
 namespace TUIS.Components.Masks;
+
 /// <summary>
-/// <inheritdoc/>
 /// This <see cref="Mask"/> will draw a clock and updates it accordingly to the real time.
 /// </summary>
 public class ClockMask : Mask
@@ -14,15 +14,16 @@ public class ClockMask : Mask
     /// <param name="color">The default color of the mask (a mask's <see cref="Behaviour"/>) method can override the color (default = white).</param>
     /// <param name="background">The default background color of the mask (a mask's <see cref="Behaviour"/>) method can override the background color (default = None).</param>
     /// <param name="decoration">The default decoration of the mask (a mask's <see cref="Behaviour"/>) method can override the decoration (default = Default).</param>
-    public ClockMask(Component component, bool isVisible = true, TextColor color = TextColor.White,
-        BackgroundColor background = BackgroundColor.None, TextDecoration decoration = TextDecoration.Default) : base(
+    public ClockMask(Component component, bool isVisible = true, Terminal.TextColor color = Terminal.TextColor.White,
+        Terminal.BackgroundColor background = Terminal.BackgroundColor.None,
+        Terminal.TextDecoration decoration = Terminal.TextDecoration.Default) : base(
         component, isVisible, color, background, decoration)
     {
         Component.Terminal.TimeSystem.AddTimedEvent(((_, _) =>
         {
             if (Component.Terminal.TimeSystem.MiliSecond % 10 == 0)
             {
-                NeedRedraw = true;
+                NeedReDraw = true;
             }
         }));
     }

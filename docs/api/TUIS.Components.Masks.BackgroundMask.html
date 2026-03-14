@@ -126,7 +126,7 @@ Class BackgroundMask  <a class="header-action link-secondary" title="View source
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Component">Mask.Component</a>
     </div>
     <div>
-      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedRedraw">Mask.NeedRedraw</a>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReDraw">Mask.NeedReDraw</a>
     </div>
     <div>
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_IsVisible">Mask.IsVisible</a>
@@ -144,7 +144,7 @@ Class BackgroundMask  <a class="header-action link-secondary" title="View source
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw">Mask.Draw()</a>
     </div>
     <div>
-      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Components_Masks_Mask_TextColor__System_Nullable_TUIS_Components_Masks_Mask_BackgroundColor__System_Nullable_TUIS_Components_Masks_Mask_TextDecoration__">Mask.DrawChar(int, int, char?, Mask.TextColor?, Mask.BackgroundColor?, Mask.TextDecoration?)</a>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_">Mask.DrawChar(int, int, char?, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -180,7 +180,7 @@ Class BackgroundMask  <a class="header-action link-secondary" title="View source
 
   <a id="TUIS_Components_Masks_BackgroundMask__ctor_" data-uid="TUIS.Components.Masks.BackgroundMask.#ctor*"></a>
 
-  <h3 id="TUIS_Components_Masks_BackgroundMask__ctor_TUIS_Components_Component_System_Char_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_" data-uid="TUIS.Components.Masks.BackgroundMask.#ctor(TUIS.Components.Component,System.Char,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)">
+  <h3 id="TUIS_Components_Masks_BackgroundMask__ctor_TUIS_Components_Component_System_Char_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_" data-uid="TUIS.Components.Masks.BackgroundMask.#ctor(TUIS.Components.Component,System.Char,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)">
   BackgroundMask(Component, char, bool, TextColor, BackgroundColor, TextDecoration)
   <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BackgroundMask.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
@@ -189,7 +189,7 @@ Class BackgroundMask  <a class="header-action link-secondary" title="View source
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BackgroundMask(Component component, char backgroundChar = &#39; &#39;, bool isVisible = true, Mask.TextColor color = TextColor.White, Mask.BackgroundColor background = BackgroundColor.None, Mask.TextDecoration decoration = TextDecoration.Default)</code></pre>
+    <pre><code class="lang-csharp hljs">public BackgroundMask(Component component, char backgroundChar = &#39; &#39;, bool isVisible = true, Terminal.TextColor color = TextColor.White, Terminal.BackgroundColor background = BackgroundColor.None, Terminal.TextDecoration decoration = TextDecoration.Default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -200,11 +200,11 @@ Class BackgroundMask  <a class="header-action link-secondary" title="View source
     <dd></dd>
     <dt><code>isVisible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
-    <dt><code>color</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextColor.html">TextColor</a></dt>
+    <dt><code>color</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextColor.html">TextColor</a></dt>
     <dd></dd>
-    <dt><code>background</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.BackgroundColor.html">BackgroundColor</a></dt>
+    <dt><code>background</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.BackgroundColor.html">BackgroundColor</a></dt>
     <dd></dd>
-    <dt><code>decoration</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextDecoration.html">TextDecoration</a></dt>
+    <dt><code>decoration</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextDecoration.html">TextDecoration</a></dt>
     <dd></dd>
   </dl>
 
@@ -263,10 +263,10 @@ Class BackgroundMask  <a class="header-action link-secondary" title="View source
 
   <h3 id="TUIS_Components_Masks_BackgroundMask_Behaviour" data-uid="TUIS.Components.Masks.BackgroundMask.Behaviour">
   Behaviour()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BackgroundMask.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BackgroundMask.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Components_Masks_Mask_TextColor__System_Nullable_TUIS_Components_Masks_Mask_BackgroundColor__System_Nullable_TUIS_Components_Masks_Mask_TextDecoration__">DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)</a>. The method will automatically be called when needed.</p>
+  <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_">DrawChar(int, int, char?, TextColor, BackgroundColor, TextDecoration)</a>. The method will automatically be called when needed.</p>
 <p>This <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a> will draw the <a class="xref" href="TUIS.Components.Masks.BackgroundMask.html#TUIS_Components_Masks_BackgroundMask_BackgroundChar">BackgroundChar</a> on top of the intire <a class="xref" href="TUIS.Components.Component.html">Component</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>

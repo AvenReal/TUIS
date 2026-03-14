@@ -1,7 +1,6 @@
 namespace TUIS.Components.Masks;
 
 /// <summary>
-/// <inheritdoc/>
 /// This <see cref="Mask"/> helps to create a <see cref="Mask"/> with unique behaviour without needing to create an entire new class.  
 /// </summary>
 public class CustomMask : Mask
@@ -30,8 +29,10 @@ public class CustomMask : Mask
     /// <param name="background">The default background color of the mask (a mask's <see cref="Behaviour"/>) method can override the background color (default = None).</param>
     /// <param name="decoration">The default decoration of the mask (a mask's <see cref="Behaviour"/>) method can override the decoration (default = Default).</param>
     public CustomMask(Component component, Action<CustomMask> action, bool isVisible = true,
-        TextColor color = TextColor.White, BackgroundColor background = BackgroundColor.None,
-        TextDecoration decoration = TextDecoration.Default) : base(component, isVisible, color, background, decoration)
+        Terminal.TextColor color = Terminal.TextColor.White,
+        Terminal.BackgroundColor background = Terminal.BackgroundColor.None,
+        Terminal.TextDecoration decoration = Terminal.TextDecoration.Default) : base(component, isVisible, color,
+        background, decoration)
     {
         _action = action;
     }

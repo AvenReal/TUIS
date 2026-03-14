@@ -174,7 +174,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.BoxMask",
-      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.BoxMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"api/TUIS.Components.Masks.BoxMask.yml\" sourcestartlinenumber=\"4\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> will draw a box on the border of the <xref href=\"TUIS.Components.Component\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.BoxMask.yml\" sourcestartlinenumber=\"1\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> will draw a box on the border of the <xref href=\"TUIS.Components.Component\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -188,7 +188,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.ClockMask",
-      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.ClockMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"api/TUIS.Components.Masks.ClockMask.yml\" sourcestartlinenumber=\"4\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> will draw a clock and updates it accordingly to the real time.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.ClockMask.yml\" sourcestartlinenumber=\"1\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> will draw a clock and updates it accordingly to the real time.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -202,7 +202,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.CustomMask",
-      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.CustomMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"api/TUIS.Components.Masks.CustomMask.yml\" sourcestartlinenumber=\"4\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> helps to create a <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> with unique behaviour without needing to create an entire new class.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.CustomMask.yml\" sourcestartlinenumber=\"1\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> helps to create a <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> with unique behaviour without needing to create an entire new class.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -216,7 +216,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.ImageMask",
-      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.ImageMask.yml\" sourcestartlinenumber=\"1\">A Mask must be attached to a <xref href=\"TUIS.Components.Masks.Mask.Component\" data-throw-if-not-resolved=\"false\"></xref> and adds a layer of drawings on top of it.\nMasks will be drawn in the same order as they have been added to the <xref href=\"TUIS.Components.Component.Masks\" data-throw-if-not-resolved=\"false\"></xref> list.</p>\n<p sourcefile=\"api/TUIS.Components.Masks.ImageMask.yml\" sourcestartlinenumber=\"4\">Draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.</p>\n"
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.ImageMask.yml\" sourcestartlinenumber=\"1\">Draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -231,48 +231,6 @@
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.InputMask",
       "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.InputMask.yml\" sourcestartlinenumber=\"1\">WIP. This mask let you use <xref href=\"System.Console.ReadLine\" data-throw-if-not-resolved=\"false\"></xref> to get some user input as command or text</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TUIS.Components.Masks.Mask.BackgroundColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TUIS.Components.Masks.Mask.BackgroundColor.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "TUIS.Components.Masks.Mask.BackgroundColor",
-      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.Mask.BackgroundColor.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Components.Masks.Mask.BackgroundColor\" data-throw-if-not-resolved=\"false\"></xref> using the ANSI color code.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TUIS.Components.Masks.Mask.TextColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TUIS.Components.Masks.Mask.TextColor.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "TUIS.Components.Masks.Mask.TextColor",
-      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.Mask.TextColor.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Components.Masks.Mask.TextColor\" data-throw-if-not-resolved=\"false\"></xref> using th ANSI color code.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TUIS.Components.Masks.Mask.TextDecoration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TUIS.Components.Masks.Mask.TextDecoration.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "TUIS.Components.Masks.Mask.TextDecoration",
-      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.Mask.TextDecoration.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Components.Masks.Mask.TextDecoration\" data-throw-if-not-resolved=\"false\"></xref> using the ANSI color code.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -328,7 +286,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Components.Masks.TextMask",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/TUIS.Components.Masks.TextMask.yml\" sourcestartlinenumber=\"1\">This <xref href=\"TUIS.Components.Masks.Mask\" data-throw-if-not-resolved=\"false\"></xref> will draw literal custom text.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -399,6 +357,48 @@
       "IsMRef": true,
       "Title": "TUIS.Systems",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TUIS.Terminal.BackgroundColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TUIS.Terminal.BackgroundColor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TUIS.Terminal.BackgroundColor",
+      "Summary": "<p sourcefile=\"api/TUIS.Terminal.BackgroundColor.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Terminal.BackgroundColor\" data-throw-if-not-resolved=\"false\"></xref> using the ANSI color code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TUIS.Terminal.TextColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TUIS.Terminal.TextColor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TUIS.Terminal.TextColor",
+      "Summary": "<p sourcefile=\"api/TUIS.Terminal.TextColor.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Terminal.TextColor\" data-throw-if-not-resolved=\"false\"></xref> using th ANSI color code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TUIS.Terminal.TextDecoration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TUIS.Terminal.TextDecoration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TUIS.Terminal.TextDecoration",
+      "Summary": "<p sourcefile=\"api/TUIS.Terminal.TextDecoration.yml\" sourcestartlinenumber=\"1\">Get the <xref href=\"TUIS.Terminal.TextDecoration\" data-throw-if-not-resolved=\"false\"></xref> using the ANSI color code.</p>\n"
     },
     {
       "type": "ManagedReference",

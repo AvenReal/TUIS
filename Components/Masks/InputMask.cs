@@ -13,7 +13,7 @@ public class InputMask : Mask
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
@@ -26,7 +26,7 @@ public class InputMask : Mask
         get;
         private set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
             _onOutputChange?.Invoke(this);
         }
@@ -43,7 +43,7 @@ public class InputMask : Mask
         set
         {
             field = value;
-            NeedRedraw = true;
+            NeedReDraw = true;
         }
     }
 
@@ -53,14 +53,15 @@ public class InputMask : Mask
         set
         {
             field = value;
-            NeedRedraw = true;
+            NeedReDraw = true;
         }
     }
 
 
     public InputMask(Component component, Action<InputMask>? onOutputChange = null, byte horizontalPadding = 0,
-        byte verticalPadding = 0, bool isVisible = true, TextColor color = TextColor.White,
-        BackgroundColor background = BackgroundColor.None, TextDecoration decoration = TextDecoration.Default) : base(
+        byte verticalPadding = 0, bool isVisible = true, Terminal.TextColor color = Terminal.TextColor.White,
+        Terminal.BackgroundColor background = Terminal.BackgroundColor.None,
+        Terminal.TextDecoration decoration = Terminal.TextDecoration.Default) : base(
         component, isVisible, color, background, decoration)
     {
         Output = "";
@@ -74,7 +75,7 @@ public class InputMask : Mask
     {
         if (Enabled)
         {
-            Component.NeedRedraw = false;
+            Component.NeedReDraw = false;
             Enabled = false;
             Console.CursorVisible = true;
 

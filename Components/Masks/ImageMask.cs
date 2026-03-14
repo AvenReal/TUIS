@@ -4,7 +4,6 @@ using SixLabors.ImageSharp.PixelFormats;
 namespace TUIS.Components.Masks;
 
 /// <summary>
-/// <inheritdoc/>
 /// Draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.
 /// </summary>
 public class ImageMask : Mask
@@ -20,7 +19,7 @@ public class ImageMask : Mask
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
@@ -37,8 +36,10 @@ public class ImageMask : Mask
     /// <param name="background">The default background color of the mask (a mask's <see cref="Behaviour"/>) method can override the background color (default = None).</param>
     /// <param name="decoration">The default decoration of the mask (a mask's <see cref="Behaviour"/>) method can override the decoration (default = Default).</param>
     public ImageMask(Component component, string path, bool isColored = false, bool isVisible = true,
-        TextColor color = TextColor.White, BackgroundColor background = BackgroundColor.None,
-        TextDecoration decoration = TextDecoration.Default) : base(component, isVisible, color, background, decoration)
+        Terminal.TextColor color = Terminal.TextColor.White,
+        Terminal.BackgroundColor background = Terminal.BackgroundColor.None,
+        Terminal.TextDecoration decoration = Terminal.TextDecoration.Default) : base(component, isVisible, color,
+        background, decoration)
     {
         using Image<Rgba32> image = Image.Load<Rgba32>(path);
         _imageHeight = image.Height;
@@ -66,7 +67,7 @@ public class ImageMask : Mask
             {
                 (float r, float g, float b, float a) = GetRGBA(i * height, j * width, height, width);
                 char? c = GetChar(r, g, b, a);
-                TextColor? textColor = IsColored ? GetColor(r, g, b) : null;
+                Terminal.TextColor textColor = IsColored ? GetColor(r, g, b) : Terminal.TextColor.White;
                 DrawChar(i, j, c, textColor);
             }
         }
@@ -120,7 +121,7 @@ public class ImageMask : Mask
         }
     }
 
-    private TextColor GetColor(float r, float g, float b)
+    private Terminal.TextColor GetColor(float r, float g, float b)
     {
         float gray = 0.6f; //(r + g + b) / 3.0f;
 
@@ -128,18 +129,18 @@ public class ImageMask : Mask
         {
             if (g < gray)
             {
-                return b < gray ? TextColor.Black : TextColor.Blue;
+                return b < gray ? Terminal.TextColor.Black : Terminal.TextColor.Blue;
             }
 
-            return b < gray ? TextColor.Green : TextColor.Cyan;
+            return b < gray ? Terminal.TextColor.Green : Terminal.TextColor.Cyan;
         }
 
         if (g < gray)
         {
-            return b < gray ? TextColor.Red : TextColor.Purple;
+            return b < gray ? Terminal.TextColor.Red : Terminal.TextColor.Purple;
         }
 
-        return b < gray ? TextColor.Yellow : TextColor.White;
+        return b < gray ? Terminal.TextColor.Yellow : Terminal.TextColor.White;
     }
 
     public void Export(string path = "./exported_image.png", int? exportedWidth = null, int? exportedHeight = null)

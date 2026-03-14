@@ -11,7 +11,7 @@ public class Component
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
@@ -21,7 +21,7 @@ public class Component
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
@@ -30,7 +30,7 @@ public class Component
     {
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
         get;
@@ -40,7 +40,7 @@ public class Component
     {
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
         get;
@@ -48,13 +48,22 @@ public class Component
 
     public readonly List<Mask> Masks = new();
 
-    public bool NeedRedraw
+    public bool NeedReDraw
     {
         get;
         set
         {
             if (value)
-                Terminal?.NeedRedraw = true;
+            {
+                try
+                {
+                    Draw();
+                }
+                catch
+                {
+                }
+            }
+
             field = value;
         }
     }
@@ -64,7 +73,7 @@ public class Component
         set
         {
             if (!value)
-                NeedRedraw = true;
+                NeedReDraw = true;
             field = value;
         }
         get;
@@ -81,16 +90,16 @@ public class Component
         PosY = posY;
 
         IsVisible = true;
-        NeedRedraw = true;
+        NeedReDraw = true;
     }
 
     public void Draw()
     {
-        if (!NeedRedraw)
+        if (!NeedReDraw)
             return;
 
 
-        NeedRedraw = false;
+        NeedReDraw = false;
 
         foreach (Mask mask in Masks)
         {

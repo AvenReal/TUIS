@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class BoxMask | TUIS-Doc ">
       
-      <meta name="description" content="A Mask must be attached to a  and adds a layer of drawings on top of it. Masks will be drawn in the same order as they have been added to the  list. This  will draw a box on the border of the .">
+      <meta name="description" content="This  will draw a box on the border of the .">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="TUIS_Components_Masks_BoxMask" data-uid="TUIS.Components.Masks.BoxMask" class="text-break">
-Class BoxMask  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class BoxMask  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,9 +97,7 @@ Class BoxMask  <a class="header-action link-secondary" title="View source" href=
   <dl><dt>Assembly</dt><dd>TUIS.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>A Mask must be attached to a <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Component">Component</a> and adds a layer of drawings on top of it.
-Masks will be drawn in the same order as they have been added to the <a class="xref" href="TUIS.Components.Component.html#TUIS_Components_Component_Masks">Masks</a> list.</p>
-<p>This <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a> will draw a box on the border of the <a class="xref" href="TUIS.Components.Component.html">Component</a>.</p>
+  <div class="markdown summary"><p>This <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a> will draw a box on the border of the <a class="xref" href="TUIS.Components.Component.html">Component</a>.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -128,7 +126,7 @@ Masks will be drawn in the same order as they have been added to the <a class="x
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Component">Mask.Component</a>
     </div>
     <div>
-      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedRedraw">Mask.NeedRedraw</a>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReDraw">Mask.NeedReDraw</a>
     </div>
     <div>
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_IsVisible">Mask.IsVisible</a>
@@ -146,7 +144,7 @@ Masks will be drawn in the same order as they have been added to the <a class="x
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw">Mask.Draw()</a>
     </div>
     <div>
-      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Components_Masks_Mask_TextColor__System_Nullable_TUIS_Components_Masks_Mask_BackgroundColor__System_Nullable_TUIS_Components_Masks_Mask_TextDecoration__">Mask.DrawChar(int, int, char?, Mask.TextColor?, Mask.BackgroundColor?, Mask.TextDecoration?)</a>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_">Mask.DrawChar(int, int, char?, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -182,9 +180,9 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <a id="TUIS_Components_Masks_BoxMask__ctor_" data-uid="TUIS.Components.Masks.BoxMask.#ctor*"></a>
 
-  <h3 id="TUIS_Components_Masks_BoxMask__ctor_TUIS_Components_Component_TUIS_Components_Masks_BoxMask_Type_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_" data-uid="TUIS.Components.Masks.BoxMask.#ctor(TUIS.Components.Component,TUIS.Components.Masks.BoxMask.Type,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)">
+  <h3 id="TUIS_Components_Masks_BoxMask__ctor_TUIS_Components_Component_TUIS_Components_Masks_BoxMask_Type_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_" data-uid="TUIS.Components.Masks.BoxMask.#ctor(TUIS.Components.Component,TUIS.Components.Masks.BoxMask.Type,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)">
   BoxMask(Component, Type, bool, TextColor, BackgroundColor, TextDecoration)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p><inheritdoc></inheritdoc>
@@ -193,7 +191,7 @@ Add a bounding box on the component.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BoxMask(Component component, BoxMask.Type type, bool isVisible = true, Mask.TextColor color = TextColor.White, Mask.BackgroundColor background = BackgroundColor.None, Mask.TextDecoration decoration = TextDecoration.Default)</code></pre>
+    <pre><code class="lang-csharp hljs">public BoxMask(Component component, BoxMask.Type type, bool isVisible = true, Terminal.TextColor color = TextColor.White, Terminal.BackgroundColor background = BackgroundColor.None, Terminal.TextDecoration decoration = TextDecoration.Default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -207,13 +205,13 @@ Add a bounding box on the component.</p>
     <dt><code>isVisible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p><inheritdoc></inheritdoc></p>
 </dd>
-    <dt><code>color</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextColor.html">TextColor</a></dt>
+    <dt><code>color</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextColor.html">TextColor</a></dt>
     <dd><p><inheritdoc></inheritdoc></p>
 </dd>
-    <dt><code>background</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.BackgroundColor.html">BackgroundColor</a></dt>
+    <dt><code>background</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.BackgroundColor.html">BackgroundColor</a></dt>
     <dd><p><inheritdoc></inheritdoc></p>
 </dd>
-    <dt><code>decoration</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextDecoration.html">TextDecoration</a></dt>
+    <dt><code>decoration</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextDecoration.html">TextDecoration</a></dt>
     <dd><p><inheritdoc></inheritdoc></p>
 </dd>
   </dl>
@@ -237,7 +235,7 @@ Add a bounding box on the component.</p>
 
   <h3 id="TUIS_Components_Masks_BoxMask_BoxType" data-uid="TUIS.Components.Masks.BoxMask.BoxType">
   BoxType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Holds the <a class="xref" href="TUIS.Components.Masks.BoxMask.Type.html">BoxMask.Type</a> of boxing.</p>
@@ -273,10 +271,10 @@ Add a bounding box on the component.</p>
 
   <h3 id="TUIS_Components_Masks_BoxMask_Behaviour" data-uid="TUIS.Components.Masks.BoxMask.Behaviour">
   Behaviour()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Components_Masks_Mask_TextColor__System_Nullable_TUIS_Components_Masks_Mask_BackgroundColor__System_Nullable_TUIS_Components_Masks_Mask_TextDecoration__">DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)</a>. The method will automatically be called when needed.</p>
+  <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_">DrawChar(int, int, char?, TextColor, BackgroundColor, TextDecoration)</a>. The method will automatically be called when needed.</p>
 <p>This <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a> will draw a box on the border of the <a class="xref" href="TUIS.Components.Component.html">Component</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -301,7 +299,7 @@ Add a bounding box on the component.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BoxMask.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

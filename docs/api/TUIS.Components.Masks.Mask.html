@@ -89,7 +89,7 @@
 
 
   <h1 id="TUIS_Components_Masks_Mask" data-uid="TUIS.Components.Masks.Mask" class="text-break">
-Class Mask  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Class Mask  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -168,9 +168,9 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <a id="TUIS_Components_Masks_Mask__ctor_" data-uid="TUIS.Components.Masks.Mask.#ctor*"></a>
 
-  <h3 id="TUIS_Components_Masks_Mask__ctor_TUIS_Components_Component_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_" data-uid="TUIS.Components.Masks.Mask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)">
+  <h3 id="TUIS_Components_Masks_Mask__ctor_TUIS_Components_Component_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_" data-uid="TUIS.Components.Masks.Mask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)">
   Mask(Component, bool, TextColor, BackgroundColor, TextDecoration)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>A Mask goes in a <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Component">Component</a> and will add characters to print on it following custom rules: <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Behaviour">Behaviour()</a>.</p>
@@ -178,7 +178,7 @@ Masks will be drawn in the same order as they have been added to the <a class="x
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Mask(Component component, bool isVisible = true, Mask.TextColor color = TextColor.White, Mask.BackgroundColor background = BackgroundColor.None, Mask.TextDecoration decoration = TextDecoration.Default)</code></pre>
+    <pre><code class="lang-csharp hljs">public Mask(Component component, bool isVisible = true, Terminal.TextColor color = TextColor.White, Terminal.BackgroundColor background = BackgroundColor.None, Terminal.TextDecoration decoration = TextDecoration.Default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -189,13 +189,13 @@ Masks will be drawn in the same order as they have been added to the <a class="x
     <dt><code>isVisible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Represent the visibility of the mask (default = true).</p>
 </dd>
-    <dt><code>color</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextColor.html">TextColor</a></dt>
+    <dt><code>color</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextColor.html">TextColor</a></dt>
     <dd><p>The default color of the mask (a mask's <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Behaviour">Behaviour()</a>) method can override the color (default = white).</p>
 </dd>
-    <dt><code>background</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.BackgroundColor.html">BackgroundColor</a></dt>
+    <dt><code>background</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.BackgroundColor.html">BackgroundColor</a></dt>
     <dd><p>The default background color of the mask (a mask's <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Behaviour">Behaviour()</a>) method can override the background color (default = None).</p>
 </dd>
-    <dt><code>decoration</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextDecoration.html">TextDecoration</a></dt>
+    <dt><code>decoration</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextDecoration.html">TextDecoration</a></dt>
     <dd><p>The default decoration of the mask (a mask's <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Behaviour">Behaviour()</a>) method can override the decoration (default = Default).</p>
 </dd>
   </dl>
@@ -218,7 +218,7 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <h3 id="TUIS_Components_Masks_Mask_Component" data-uid="TUIS.Components.Masks.Mask.Component">
   Component
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Component">Component</a> the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a> is attached to.</p>
@@ -254,15 +254,15 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <h3 id="TUIS_Components_Masks_Mask_Background" data-uid="TUIS.Components.Masks.Mask.Background">
   Background
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Keeps the current <a class="xref" href="TUIS.Components.Masks.Mask.BackgroundColor.html">Mask.BackgroundColor</a> of the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.</p>
+  <div class="markdown level1 summary"><p>Keeps the current <a class="xref" href="TUIS.Terminal.BackgroundColor.html">Terminal.BackgroundColor</a> of the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Mask.BackgroundColor Background { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Terminal.BackgroundColor Background { get; set; }</code></pre>
   </div>
 
 
@@ -271,7 +271,7 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.BackgroundColor.html">BackgroundColor</a></dt>
+    <dt><a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.BackgroundColor.html">BackgroundColor</a></dt>
     <dd></dd>
   </dl>
 
@@ -286,15 +286,15 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <h3 id="TUIS_Components_Masks_Mask_Color" data-uid="TUIS.Components.Masks.Mask.Color">
   Color
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Keeps the current <a class="xref" href="TUIS.Components.Masks.Mask.TextColor.html">Mask.TextColor</a> of the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.</p>
+  <div class="markdown level1 summary"><p>Keeps the current <a class="xref" href="TUIS.Terminal.TextColor.html">Terminal.TextColor</a> of the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Mask.TextColor Color { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Terminal.TextColor Color { get; set; }</code></pre>
   </div>
 
 
@@ -303,7 +303,7 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextColor.html">TextColor</a></dt>
+    <dt><a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextColor.html">TextColor</a></dt>
     <dd></dd>
   </dl>
 
@@ -318,15 +318,15 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <h3 id="TUIS_Components_Masks_Mask_Decoration" data-uid="TUIS.Components.Masks.Mask.Decoration">
   Decoration
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Keeps the current <a class="xref" href="TUIS.Components.Masks.Mask.TextDecoration.html">Mask.TextDecoration</a> of the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.</p>
+  <div class="markdown level1 summary"><p>Keeps the current <a class="xref" href="TUIS.Terminal.TextDecoration.html">Terminal.TextDecoration</a> of the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Mask.TextDecoration Decoration { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Terminal.TextDecoration Decoration { get; set; }</code></pre>
   </div>
 
 
@@ -335,7 +335,7 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextDecoration.html">TextDecoration</a></dt>
+    <dt><a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextDecoration.html">TextDecoration</a></dt>
     <dd></dd>
   </dl>
 
@@ -350,7 +350,7 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
   <h3 id="TUIS_Components_Masks_Mask_IsVisible" data-uid="TUIS.Components.Masks.Mask.IsVisible">
   IsVisible
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Represent the visibility of the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.</p>
@@ -378,20 +378,20 @@ Masks will be drawn in the same order as they have been added to the <a class="x
 
 
 
-  <a id="TUIS_Components_Masks_Mask_NeedRedraw_" data-uid="TUIS.Components.Masks.Mask.NeedRedraw*"></a>
+  <a id="TUIS_Components_Masks_Mask_NeedReDraw_" data-uid="TUIS.Components.Masks.Mask.NeedReDraw*"></a>
 
-  <h3 id="TUIS_Components_Masks_Mask_NeedRedraw" data-uid="TUIS.Components.Masks.Mask.NeedRedraw">
-  NeedRedraw
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <h3 id="TUIS_Components_Masks_Mask_NeedReDraw" data-uid="TUIS.Components.Masks.Mask.NeedReDraw">
+  NeedReDraw
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Helps to optimise the drawing of components, if NeedRedraw == false, the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a> won't be re-<a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw">Draw()</a>n.
-if NeedRedraw is set to true, it will automatically set the <a class="xref" href="TUIS.Components.Component.html#TUIS_Components_Component_NeedRedraw">NeedRedraw</a> to true.</p>
+  <div class="markdown level1 summary"><p>Helps to optimise the drawing of components, if NeedReDraw == false, the <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a> won't be re-<a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw">Draw()</a>n.
+if NeedReDraw is set to true, it will automatically set the <a class="xref" href="TUIS.Components.Component.html#TUIS_Components_Component_NeedReDraw">NeedReDraw</a> to true.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool NeedRedraw { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool NeedReDraw { get; set; }</code></pre>
   </div>
 
 
@@ -419,10 +419,10 @@ if NeedRedraw is set to true, it will automatically set the <a class="xref" href
 
   <h3 id="TUIS_Components_Masks_Mask_Behaviour" data-uid="TUIS.Components.Masks.Mask.Behaviour">
   Behaviour()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L107"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Components_Masks_Mask_TextColor__System_Nullable_TUIS_Components_Masks_Mask_BackgroundColor__System_Nullable_TUIS_Components_Masks_Mask_TextDecoration__">DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)</a>. The method will automatically be called when needed.</p>
+  <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_">DrawChar(int, int, char?, TextColor, BackgroundColor, TextDecoration)</a>. The method will automatically be called when needed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -446,7 +446,7 @@ if NeedRedraw is set to true, it will automatically set the <a class="xref" href
 
   <h3 id="TUIS_Components_Masks_Mask_Draw" data-uid="TUIS.Components.Masks.Mask.Draw">
   Draw()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L114"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>This method will be called if the mask has changed and is visible.
@@ -472,9 +472,9 @@ It calls the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Componen
 
   <a id="TUIS_Components_Masks_Mask_DrawChar_" data-uid="TUIS.Components.Masks.Mask.DrawChar*"></a>
 
-  <h3 id="TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Components_Masks_Mask_TextColor__System_Nullable_TUIS_Components_Masks_Mask_BackgroundColor__System_Nullable_TUIS_Components_Masks_Mask_TextDecoration__" data-uid="TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},System.Nullable{TUIS.Components.Masks.Mask.TextColor},System.Nullable{TUIS.Components.Masks.Mask.BackgroundColor},System.Nullable{TUIS.Components.Masks.Mask.TextDecoration})">
-  DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  <h3 id="TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_" data-uid="TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)">
+  DrawChar(int, int, char?, TextColor, BackgroundColor, TextDecoration)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Used in the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Behaviour">Behaviour()</a> method of <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>s to properly print a character using relative coordinates.</p>
@@ -482,7 +482,7 @@ It calls the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Componen
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void DrawChar(int y, int x, char? c, Mask.TextColor? textColor = null, Mask.BackgroundColor? backgroundColor = null, Mask.TextDecoration? textDecoration = null)</code></pre>
+    <pre><code class="lang-csharp hljs">protected void DrawChar(int y, int x, char? c, Terminal.TextColor textColor = TextColor.White, Terminal.BackgroundColor backgroundColor = BackgroundColor.None, Terminal.TextDecoration textDecoration = TextDecoration.Default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -496,13 +496,13 @@ It calls the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Componen
     <dt><code>c</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>?</dt>
     <dd><p>The character to print (null = no print).</p>
 </dd>
-    <dt><code>textColor</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextColor.html">TextColor</a>?</dt>
+    <dt><code>textColor</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextColor.html">TextColor</a></dt>
     <dd><p>The color which the <code class="paramref">c</code> will be printed. null = the default background color of the mask.</p>
 </dd>
-    <dt><code>backgroundColor</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.BackgroundColor.html">BackgroundColor</a>?</dt>
+    <dt><code>backgroundColor</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.BackgroundColor.html">BackgroundColor</a></dt>
     <dd><p>The background color which the <code class="paramref">c</code> will be printed. null = the default background color of the mask.</p>
 </dd>
-    <dt><code>textDecoration</code> <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>.<a class="xref" href="TUIS.Components.Masks.Mask.TextDecoration.html">TextDecoration</a>?</dt>
+    <dt><code>textDecoration</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextDecoration.html">TextDecoration</a></dt>
     <dd><p>The decoration with which the <code class="paramref">c</code> will be printed. null = the default decoration of the mask.</p>
 </dd>
   </dl>
@@ -522,7 +522,7 @@ It calls the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Componen
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/Mask.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

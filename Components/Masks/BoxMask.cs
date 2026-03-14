@@ -1,7 +1,6 @@
 namespace TUIS.Components.Masks;
 
 /// <summary>
-/// <inheritdoc/>
 /// This <see cref="Mask"/> will draw a box on the border of the <see cref="Component"/>.
 /// </summary>
 public class BoxMask : Mask
@@ -14,7 +13,7 @@ public class BoxMask : Mask
         get;
         set
         {
-            NeedRedraw = true;
+            NeedReDraw = true;
             field = value;
         }
     }
@@ -29,8 +28,10 @@ public class BoxMask : Mask
     /// <param name="color"><inheritdoc/></param>
     /// <param name="background"><inheritdoc/></param>
     /// <param name="decoration"><inheritdoc/></param>
-    public BoxMask(Component component, Type type, bool isVisible = true, TextColor color = TextColor.White,
-        BackgroundColor background = BackgroundColor.None, TextDecoration decoration = TextDecoration.Default) : base(
+    public BoxMask(Component component, Type type, bool isVisible = true,
+        Terminal.TextColor color = Terminal.TextColor.White,
+        Terminal.BackgroundColor background = Terminal.BackgroundColor.None,
+        Terminal.TextDecoration decoration = Terminal.TextDecoration.Default) : base(
         component, isVisible, color, background, decoration)
     {
         BoxType = type;
@@ -97,6 +98,7 @@ public class BoxMask : Mask
 
         return null;
     }
+
     /// <summary>
     /// <inheritdoc/>
     /// This <see cref="Mask"/> will draw a box on the border of the <see cref="Component"/>.

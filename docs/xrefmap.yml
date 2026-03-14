@@ -83,19 +83,19 @@ references:
   commentId: F:TUIS.Components.Component.Masks
   fullName: TUIS.Components.Component.Masks
   nameWithType: Component.Masks
-- uid: TUIS.Components.Component.NeedRedraw
-  name: NeedRedraw
-  href: api/TUIS.Components.Component.html#TUIS_Components_Component_NeedRedraw
-  commentId: P:TUIS.Components.Component.NeedRedraw
-  fullName: TUIS.Components.Component.NeedRedraw
-  nameWithType: Component.NeedRedraw
-- uid: TUIS.Components.Component.NeedRedraw*
-  name: NeedRedraw
-  href: api/TUIS.Components.Component.html#TUIS_Components_Component_NeedRedraw_
-  commentId: Overload:TUIS.Components.Component.NeedRedraw
+- uid: TUIS.Components.Component.NeedReDraw
+  name: NeedReDraw
+  href: api/TUIS.Components.Component.html#TUIS_Components_Component_NeedReDraw
+  commentId: P:TUIS.Components.Component.NeedReDraw
+  fullName: TUIS.Components.Component.NeedReDraw
+  nameWithType: Component.NeedReDraw
+- uid: TUIS.Components.Component.NeedReDraw*
+  name: NeedReDraw
+  href: api/TUIS.Components.Component.html#TUIS_Components_Component_NeedReDraw_
+  commentId: Overload:TUIS.Components.Component.NeedReDraw
   isSpec: "True"
-  fullName: TUIS.Components.Component.NeedRedraw
-  nameWithType: Component.NeedRedraw
+  fullName: TUIS.Components.Component.NeedReDraw
+  nameWithType: Component.NeedReDraw
 - uid: TUIS.Components.Component.PosX
   name: PosX
   href: api/TUIS.Components.Component.html#TUIS_Components_Component_PosX
@@ -153,15 +153,15 @@ references:
   commentId: T:TUIS.Components.Masks.BackgroundMask
   fullName: TUIS.Components.Masks.BackgroundMask
   nameWithType: BackgroundMask
-- uid: TUIS.Components.Masks.BackgroundMask.#ctor(TUIS.Components.Component,System.Char,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+- uid: TUIS.Components.Masks.BackgroundMask.#ctor(TUIS.Components.Component,System.Char,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name: BackgroundMask(Component, char, bool, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.BackgroundMask.html#TUIS_Components_Masks_BackgroundMask__ctor_TUIS_Components_Component_System_Char_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_
-  commentId: M:TUIS.Components.Masks.BackgroundMask.#ctor(TUIS.Components.Component,System.Char,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+  href: api/TUIS.Components.Masks.BackgroundMask.html#TUIS_Components_Masks_BackgroundMask__ctor_TUIS_Components_Component_System_Char_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.BackgroundMask.#ctor(TUIS.Components.Component,System.Char,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name.vb: New(Component, Char, Boolean, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.BackgroundMask.BackgroundMask(TUIS.Components.Component, char, bool, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.BackgroundMask.New(TUIS.Components.Component, Char, Boolean, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  nameWithType: BackgroundMask.BackgroundMask(Component, char, bool, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
-  nameWithType.vb: BackgroundMask.New(Component, Char, Boolean, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
+  fullName: TUIS.Components.Masks.BackgroundMask.BackgroundMask(TUIS.Components.Component, char, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.BackgroundMask.New(TUIS.Components.Component, Char, Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: BackgroundMask.BackgroundMask(Component, char, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: BackgroundMask.New(Component, Char, Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
 - uid: TUIS.Components.Masks.BackgroundMask.#ctor*
   name: BackgroundMask
   href: api/TUIS.Components.Masks.BackgroundMask.html#TUIS_Components_Masks_BackgroundMask__ctor_
@@ -204,15 +204,15 @@ references:
   commentId: T:TUIS.Components.Masks.BoxMask
   fullName: TUIS.Components.Masks.BoxMask
   nameWithType: BoxMask
-- uid: TUIS.Components.Masks.BoxMask.#ctor(TUIS.Components.Component,TUIS.Components.Masks.BoxMask.Type,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+- uid: TUIS.Components.Masks.BoxMask.#ctor(TUIS.Components.Component,TUIS.Components.Masks.BoxMask.Type,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name: BoxMask(Component, Type, bool, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.BoxMask.html#TUIS_Components_Masks_BoxMask__ctor_TUIS_Components_Component_TUIS_Components_Masks_BoxMask_Type_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_
-  commentId: M:TUIS.Components.Masks.BoxMask.#ctor(TUIS.Components.Component,TUIS.Components.Masks.BoxMask.Type,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+  href: api/TUIS.Components.Masks.BoxMask.html#TUIS_Components_Masks_BoxMask__ctor_TUIS_Components_Component_TUIS_Components_Masks_BoxMask_Type_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.BoxMask.#ctor(TUIS.Components.Component,TUIS.Components.Masks.BoxMask.Type,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name.vb: New(Component, Type, Boolean, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.BoxMask.BoxMask(TUIS.Components.Component, TUIS.Components.Masks.BoxMask.Type, bool, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.BoxMask.New(TUIS.Components.Component, TUIS.Components.Masks.BoxMask.Type, Boolean, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  nameWithType: BoxMask.BoxMask(Component, BoxMask.Type, bool, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
-  nameWithType.vb: BoxMask.New(Component, BoxMask.Type, Boolean, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
+  fullName: TUIS.Components.Masks.BoxMask.BoxMask(TUIS.Components.Component, TUIS.Components.Masks.BoxMask.Type, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.BoxMask.New(TUIS.Components.Component, TUIS.Components.Masks.BoxMask.Type, Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: BoxMask.BoxMask(Component, BoxMask.Type, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: BoxMask.New(Component, BoxMask.Type, Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
 - uid: TUIS.Components.Masks.BoxMask.#ctor*
   name: BoxMask
   href: api/TUIS.Components.Masks.BoxMask.html#TUIS_Components_Masks_BoxMask__ctor_
@@ -285,15 +285,15 @@ references:
   commentId: T:TUIS.Components.Masks.ClockMask
   fullName: TUIS.Components.Masks.ClockMask
   nameWithType: ClockMask
-- uid: TUIS.Components.Masks.ClockMask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+- uid: TUIS.Components.Masks.ClockMask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name: ClockMask(Component, bool, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.ClockMask.html#TUIS_Components_Masks_ClockMask__ctor_TUIS_Components_Component_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_
-  commentId: M:TUIS.Components.Masks.ClockMask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+  href: api/TUIS.Components.Masks.ClockMask.html#TUIS_Components_Masks_ClockMask__ctor_TUIS_Components_Component_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.ClockMask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name.vb: New(Component, Boolean, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.ClockMask.ClockMask(TUIS.Components.Component, bool, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.ClockMask.New(TUIS.Components.Component, Boolean, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  nameWithType: ClockMask.ClockMask(Component, bool, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
-  nameWithType.vb: ClockMask.New(Component, Boolean, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
+  fullName: TUIS.Components.Masks.ClockMask.ClockMask(TUIS.Components.Component, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.ClockMask.New(TUIS.Components.Component, Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: ClockMask.ClockMask(Component, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: ClockMask.New(Component, Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
 - uid: TUIS.Components.Masks.ClockMask.#ctor*
   name: ClockMask
   href: api/TUIS.Components.Masks.ClockMask.html#TUIS_Components_Masks_ClockMask__ctor_
@@ -323,15 +323,15 @@ references:
   commentId: T:TUIS.Components.Masks.CustomMask
   fullName: TUIS.Components.Masks.CustomMask
   nameWithType: CustomMask
-- uid: TUIS.Components.Masks.CustomMask.#ctor(TUIS.Components.Component,System.Action{TUIS.Components.Masks.CustomMask},System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+- uid: TUIS.Components.Masks.CustomMask.#ctor(TUIS.Components.Component,System.Action{TUIS.Components.Masks.CustomMask},System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name: CustomMask(Component, Action<CustomMask>, bool, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.CustomMask.html#TUIS_Components_Masks_CustomMask__ctor_TUIS_Components_Component_System_Action_TUIS_Components_Masks_CustomMask__System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_
-  commentId: M:TUIS.Components.Masks.CustomMask.#ctor(TUIS.Components.Component,System.Action{TUIS.Components.Masks.CustomMask},System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+  href: api/TUIS.Components.Masks.CustomMask.html#TUIS_Components_Masks_CustomMask__ctor_TUIS_Components_Component_System_Action_TUIS_Components_Masks_CustomMask__System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.CustomMask.#ctor(TUIS.Components.Component,System.Action{TUIS.Components.Masks.CustomMask},System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name.vb: New(Component, Action(Of CustomMask), Boolean, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.CustomMask.CustomMask(TUIS.Components.Component, System.Action<TUIS.Components.Masks.CustomMask>, bool, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.CustomMask.New(TUIS.Components.Component, System.Action(Of TUIS.Components.Masks.CustomMask), Boolean, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  nameWithType: CustomMask.CustomMask(Component, Action<CustomMask>, bool, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
-  nameWithType.vb: CustomMask.New(Component, Action(Of CustomMask), Boolean, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
+  fullName: TUIS.Components.Masks.CustomMask.CustomMask(TUIS.Components.Component, System.Action<TUIS.Components.Masks.CustomMask>, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.CustomMask.New(TUIS.Components.Component, System.Action(Of TUIS.Components.Masks.CustomMask), Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: CustomMask.CustomMask(Component, Action<CustomMask>, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: CustomMask.New(Component, Action(Of CustomMask), Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
 - uid: TUIS.Components.Masks.CustomMask.#ctor*
   name: CustomMask
   href: api/TUIS.Components.Masks.CustomMask.html#TUIS_Components_Masks_CustomMask__ctor_
@@ -367,15 +367,15 @@ references:
   commentId: T:TUIS.Components.Masks.ImageMask
   fullName: TUIS.Components.Masks.ImageMask
   nameWithType: ImageMask
-- uid: TUIS.Components.Masks.ImageMask.#ctor(TUIS.Components.Component,System.String,System.Boolean,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+- uid: TUIS.Components.Masks.ImageMask.#ctor(TUIS.Components.Component,System.String,System.Boolean,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name: ImageMask(Component, string, bool, bool, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.ImageMask.html#TUIS_Components_Masks_ImageMask__ctor_TUIS_Components_Component_System_String_System_Boolean_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_
-  commentId: M:TUIS.Components.Masks.ImageMask.#ctor(TUIS.Components.Component,System.String,System.Boolean,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+  href: api/TUIS.Components.Masks.ImageMask.html#TUIS_Components_Masks_ImageMask__ctor_TUIS_Components_Component_System_String_System_Boolean_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.ImageMask.#ctor(TUIS.Components.Component,System.String,System.Boolean,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name.vb: New(Component, String, Boolean, Boolean, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.ImageMask.ImageMask(TUIS.Components.Component, string, bool, bool, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.ImageMask.New(TUIS.Components.Component, String, Boolean, Boolean, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  nameWithType: ImageMask.ImageMask(Component, string, bool, bool, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
-  nameWithType.vb: ImageMask.New(Component, String, Boolean, Boolean, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
+  fullName: TUIS.Components.Masks.ImageMask.ImageMask(TUIS.Components.Component, string, bool, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.ImageMask.New(TUIS.Components.Component, String, Boolean, Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: ImageMask.ImageMask(Component, string, bool, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: ImageMask.New(Component, String, Boolean, Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
 - uid: TUIS.Components.Masks.ImageMask.#ctor*
   name: ImageMask
   href: api/TUIS.Components.Masks.ImageMask.html#TUIS_Components_Masks_ImageMask__ctor_
@@ -434,15 +434,15 @@ references:
   commentId: T:TUIS.Components.Masks.InputMask
   fullName: TUIS.Components.Masks.InputMask
   nameWithType: InputMask
-- uid: TUIS.Components.Masks.InputMask.#ctor(TUIS.Components.Component,System.Action{TUIS.Components.Masks.InputMask},System.Byte,System.Byte,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+- uid: TUIS.Components.Masks.InputMask.#ctor(TUIS.Components.Component,System.Action{TUIS.Components.Masks.InputMask},System.Byte,System.Byte,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name: InputMask(Component, Action<InputMask>?, byte, byte, bool, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.InputMask.html#TUIS_Components_Masks_InputMask__ctor_TUIS_Components_Component_System_Action_TUIS_Components_Masks_InputMask__System_Byte_System_Byte_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_
-  commentId: M:TUIS.Components.Masks.InputMask.#ctor(TUIS.Components.Component,System.Action{TUIS.Components.Masks.InputMask},System.Byte,System.Byte,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+  href: api/TUIS.Components.Masks.InputMask.html#TUIS_Components_Masks_InputMask__ctor_TUIS_Components_Component_System_Action_TUIS_Components_Masks_InputMask__System_Byte_System_Byte_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.InputMask.#ctor(TUIS.Components.Component,System.Action{TUIS.Components.Masks.InputMask},System.Byte,System.Byte,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name.vb: New(Component, Action(Of InputMask), Byte, Byte, Boolean, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.InputMask.InputMask(TUIS.Components.Component, System.Action<TUIS.Components.Masks.InputMask>?, byte, byte, bool, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.InputMask.New(TUIS.Components.Component, System.Action(Of TUIS.Components.Masks.InputMask), Byte, Byte, Boolean, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  nameWithType: InputMask.InputMask(Component, Action<InputMask>?, byte, byte, bool, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
-  nameWithType.vb: InputMask.New(Component, Action(Of InputMask), Byte, Byte, Boolean, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
+  fullName: TUIS.Components.Masks.InputMask.InputMask(TUIS.Components.Component, System.Action<TUIS.Components.Masks.InputMask>?, byte, byte, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.InputMask.New(TUIS.Components.Component, System.Action(Of TUIS.Components.Masks.InputMask), Byte, Byte, Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: InputMask.InputMask(Component, Action<InputMask>?, byte, byte, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: InputMask.New(Component, Action(Of InputMask), Byte, Byte, Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
 - uid: TUIS.Components.Masks.InputMask.#ctor*
   name: InputMask
   href: api/TUIS.Components.Masks.InputMask.html#TUIS_Components_Masks_InputMask__ctor_
@@ -524,15 +524,15 @@ references:
   commentId: T:TUIS.Components.Masks.Mask
   fullName: TUIS.Components.Masks.Mask
   nameWithType: Mask
-- uid: TUIS.Components.Masks.Mask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+- uid: TUIS.Components.Masks.Mask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name: Mask(Component, bool, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask__ctor_TUIS_Components_Component_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_
-  commentId: M:TUIS.Components.Masks.Mask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask__ctor_TUIS_Components_Component_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.Mask.#ctor(TUIS.Components.Component,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name.vb: New(Component, Boolean, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.Mask.Mask(TUIS.Components.Component, bool, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.Mask.New(TUIS.Components.Component, Boolean, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  nameWithType: Mask.Mask(Component, bool, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
-  nameWithType.vb: Mask.New(Component, Boolean, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
+  fullName: TUIS.Components.Masks.Mask.Mask(TUIS.Components.Component, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.Mask.New(TUIS.Components.Component, Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: Mask.Mask(Component, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: Mask.New(Component, Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
 - uid: TUIS.Components.Masks.Mask.#ctor*
   name: Mask
   href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask__ctor_
@@ -556,66 +556,6 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.Mask.Background
   nameWithType: Mask.Background
-- uid: TUIS.Components.Masks.Mask.BackgroundColor
-  name: Mask.BackgroundColor
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html
-  commentId: T:TUIS.Components.Masks.Mask.BackgroundColor
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor
-  nameWithType: Mask.BackgroundColor
-- uid: TUIS.Components.Masks.Mask.BackgroundColor.Black
-  name: Black
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html#TUIS_Components_Masks_Mask_BackgroundColor_Black
-  commentId: F:TUIS.Components.Masks.Mask.BackgroundColor.Black
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor.Black
-  nameWithType: Mask.BackgroundColor.Black
-- uid: TUIS.Components.Masks.Mask.BackgroundColor.Blue
-  name: Blue
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html#TUIS_Components_Masks_Mask_BackgroundColor_Blue
-  commentId: F:TUIS.Components.Masks.Mask.BackgroundColor.Blue
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor.Blue
-  nameWithType: Mask.BackgroundColor.Blue
-- uid: TUIS.Components.Masks.Mask.BackgroundColor.Cyan
-  name: Cyan
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html#TUIS_Components_Masks_Mask_BackgroundColor_Cyan
-  commentId: F:TUIS.Components.Masks.Mask.BackgroundColor.Cyan
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor.Cyan
-  nameWithType: Mask.BackgroundColor.Cyan
-- uid: TUIS.Components.Masks.Mask.BackgroundColor.Green
-  name: Green
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html#TUIS_Components_Masks_Mask_BackgroundColor_Green
-  commentId: F:TUIS.Components.Masks.Mask.BackgroundColor.Green
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor.Green
-  nameWithType: Mask.BackgroundColor.Green
-- uid: TUIS.Components.Masks.Mask.BackgroundColor.None
-  name: None
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html#TUIS_Components_Masks_Mask_BackgroundColor_None
-  commentId: F:TUIS.Components.Masks.Mask.BackgroundColor.None
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor.None
-  nameWithType: Mask.BackgroundColor.None
-- uid: TUIS.Components.Masks.Mask.BackgroundColor.Purple
-  name: Purple
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html#TUIS_Components_Masks_Mask_BackgroundColor_Purple
-  commentId: F:TUIS.Components.Masks.Mask.BackgroundColor.Purple
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor.Purple
-  nameWithType: Mask.BackgroundColor.Purple
-- uid: TUIS.Components.Masks.Mask.BackgroundColor.Red
-  name: Red
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html#TUIS_Components_Masks_Mask_BackgroundColor_Red
-  commentId: F:TUIS.Components.Masks.Mask.BackgroundColor.Red
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor.Red
-  nameWithType: Mask.BackgroundColor.Red
-- uid: TUIS.Components.Masks.Mask.BackgroundColor.White
-  name: White
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html#TUIS_Components_Masks_Mask_BackgroundColor_White
-  commentId: F:TUIS.Components.Masks.Mask.BackgroundColor.White
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor.White
-  nameWithType: Mask.BackgroundColor.White
-- uid: TUIS.Components.Masks.Mask.BackgroundColor.Yellow
-  name: Yellow
-  href: api/TUIS.Components.Masks.Mask.BackgroundColor.html#TUIS_Components_Masks_Mask_BackgroundColor_Yellow
-  commentId: F:TUIS.Components.Masks.Mask.BackgroundColor.Yellow
-  fullName: TUIS.Components.Masks.Mask.BackgroundColor.Yellow
-  nameWithType: Mask.BackgroundColor.Yellow
 - uid: TUIS.Components.Masks.Mask.Behaviour
   name: Behaviour()
   href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Behaviour
@@ -674,15 +614,15 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.Mask.Draw
   nameWithType: Mask.Draw
-- uid: TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},System.Nullable{TUIS.Components.Masks.Mask.TextColor},System.Nullable{TUIS.Components.Masks.Mask.BackgroundColor},System.Nullable{TUIS.Components.Masks.Mask.TextDecoration})
-  name: DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)
-  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Components_Masks_Mask_TextColor__System_Nullable_TUIS_Components_Masks_Mask_BackgroundColor__System_Nullable_TUIS_Components_Masks_Mask_TextDecoration__
-  commentId: M:TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},System.Nullable{TUIS.Components.Masks.Mask.TextColor},System.Nullable{TUIS.Components.Masks.Mask.BackgroundColor},System.Nullable{TUIS.Components.Masks.Mask.TextDecoration})
-  name.vb: DrawChar(Integer, Integer, Char?, TextColor?, BackgroundColor?, TextDecoration?)
-  fullName: TUIS.Components.Masks.Mask.DrawChar(int, int, char?, TUIS.Components.Masks.Mask.TextColor?, TUIS.Components.Masks.Mask.BackgroundColor?, TUIS.Components.Masks.Mask.TextDecoration?)
-  fullName.vb: TUIS.Components.Masks.Mask.DrawChar(Integer, Integer, Char?, TUIS.Components.Masks.Mask.TextColor?, TUIS.Components.Masks.Mask.BackgroundColor?, TUIS.Components.Masks.Mask.TextDecoration?)
-  nameWithType: Mask.DrawChar(int, int, char?, Mask.TextColor?, Mask.BackgroundColor?, Mask.TextDecoration?)
-  nameWithType.vb: Mask.DrawChar(Integer, Integer, Char?, Mask.TextColor?, Mask.BackgroundColor?, Mask.TextDecoration?)
+- uid: TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
+  name: DrawChar(int, int, char?, TextColor, BackgroundColor, TextDecoration)
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
+  name.vb: DrawChar(Integer, Integer, Char?, TextColor, BackgroundColor, TextDecoration)
+  fullName: TUIS.Components.Masks.Mask.DrawChar(int, int, char?, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.Mask.DrawChar(Integer, Integer, Char?, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: Mask.DrawChar(int, int, char?, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: Mask.DrawChar(Integer, Integer, Char?, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
 - uid: TUIS.Components.Masks.Mask.DrawChar*
   name: DrawChar
   href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_
@@ -703,112 +643,34 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.Mask.IsVisible
   nameWithType: Mask.IsVisible
-- uid: TUIS.Components.Masks.Mask.NeedRedraw
-  name: NeedRedraw
-  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedRedraw
-  commentId: P:TUIS.Components.Masks.Mask.NeedRedraw
-  fullName: TUIS.Components.Masks.Mask.NeedRedraw
-  nameWithType: Mask.NeedRedraw
-- uid: TUIS.Components.Masks.Mask.NeedRedraw*
-  name: NeedRedraw
-  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedRedraw_
-  commentId: Overload:TUIS.Components.Masks.Mask.NeedRedraw
+- uid: TUIS.Components.Masks.Mask.NeedReDraw
+  name: NeedReDraw
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReDraw
+  commentId: P:TUIS.Components.Masks.Mask.NeedReDraw
+  fullName: TUIS.Components.Masks.Mask.NeedReDraw
+  nameWithType: Mask.NeedReDraw
+- uid: TUIS.Components.Masks.Mask.NeedReDraw*
+  name: NeedReDraw
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReDraw_
+  commentId: Overload:TUIS.Components.Masks.Mask.NeedReDraw
   isSpec: "True"
-  fullName: TUIS.Components.Masks.Mask.NeedRedraw
-  nameWithType: Mask.NeedRedraw
-- uid: TUIS.Components.Masks.Mask.TextColor
-  name: Mask.TextColor
-  href: api/TUIS.Components.Masks.Mask.TextColor.html
-  commentId: T:TUIS.Components.Masks.Mask.TextColor
-  fullName: TUIS.Components.Masks.Mask.TextColor
-  nameWithType: Mask.TextColor
-- uid: TUIS.Components.Masks.Mask.TextColor.Black
-  name: Black
-  href: api/TUIS.Components.Masks.Mask.TextColor.html#TUIS_Components_Masks_Mask_TextColor_Black
-  commentId: F:TUIS.Components.Masks.Mask.TextColor.Black
-  fullName: TUIS.Components.Masks.Mask.TextColor.Black
-  nameWithType: Mask.TextColor.Black
-- uid: TUIS.Components.Masks.Mask.TextColor.Blue
-  name: Blue
-  href: api/TUIS.Components.Masks.Mask.TextColor.html#TUIS_Components_Masks_Mask_TextColor_Blue
-  commentId: F:TUIS.Components.Masks.Mask.TextColor.Blue
-  fullName: TUIS.Components.Masks.Mask.TextColor.Blue
-  nameWithType: Mask.TextColor.Blue
-- uid: TUIS.Components.Masks.Mask.TextColor.Cyan
-  name: Cyan
-  href: api/TUIS.Components.Masks.Mask.TextColor.html#TUIS_Components_Masks_Mask_TextColor_Cyan
-  commentId: F:TUIS.Components.Masks.Mask.TextColor.Cyan
-  fullName: TUIS.Components.Masks.Mask.TextColor.Cyan
-  nameWithType: Mask.TextColor.Cyan
-- uid: TUIS.Components.Masks.Mask.TextColor.Green
-  name: Green
-  href: api/TUIS.Components.Masks.Mask.TextColor.html#TUIS_Components_Masks_Mask_TextColor_Green
-  commentId: F:TUIS.Components.Masks.Mask.TextColor.Green
-  fullName: TUIS.Components.Masks.Mask.TextColor.Green
-  nameWithType: Mask.TextColor.Green
-- uid: TUIS.Components.Masks.Mask.TextColor.Purple
-  name: Purple
-  href: api/TUIS.Components.Masks.Mask.TextColor.html#TUIS_Components_Masks_Mask_TextColor_Purple
-  commentId: F:TUIS.Components.Masks.Mask.TextColor.Purple
-  fullName: TUIS.Components.Masks.Mask.TextColor.Purple
-  nameWithType: Mask.TextColor.Purple
-- uid: TUIS.Components.Masks.Mask.TextColor.Red
-  name: Red
-  href: api/TUIS.Components.Masks.Mask.TextColor.html#TUIS_Components_Masks_Mask_TextColor_Red
-  commentId: F:TUIS.Components.Masks.Mask.TextColor.Red
-  fullName: TUIS.Components.Masks.Mask.TextColor.Red
-  nameWithType: Mask.TextColor.Red
-- uid: TUIS.Components.Masks.Mask.TextColor.White
-  name: White
-  href: api/TUIS.Components.Masks.Mask.TextColor.html#TUIS_Components_Masks_Mask_TextColor_White
-  commentId: F:TUIS.Components.Masks.Mask.TextColor.White
-  fullName: TUIS.Components.Masks.Mask.TextColor.White
-  nameWithType: Mask.TextColor.White
-- uid: TUIS.Components.Masks.Mask.TextColor.Yellow
-  name: Yellow
-  href: api/TUIS.Components.Masks.Mask.TextColor.html#TUIS_Components_Masks_Mask_TextColor_Yellow
-  commentId: F:TUIS.Components.Masks.Mask.TextColor.Yellow
-  fullName: TUIS.Components.Masks.Mask.TextColor.Yellow
-  nameWithType: Mask.TextColor.Yellow
-- uid: TUIS.Components.Masks.Mask.TextDecoration
-  name: Mask.TextDecoration
-  href: api/TUIS.Components.Masks.Mask.TextDecoration.html
-  commentId: T:TUIS.Components.Masks.Mask.TextDecoration
-  fullName: TUIS.Components.Masks.Mask.TextDecoration
-  nameWithType: Mask.TextDecoration
-- uid: TUIS.Components.Masks.Mask.TextDecoration.Bold
-  name: Bold
-  href: api/TUIS.Components.Masks.Mask.TextDecoration.html#TUIS_Components_Masks_Mask_TextDecoration_Bold
-  commentId: F:TUIS.Components.Masks.Mask.TextDecoration.Bold
-  fullName: TUIS.Components.Masks.Mask.TextDecoration.Bold
-  nameWithType: Mask.TextDecoration.Bold
-- uid: TUIS.Components.Masks.Mask.TextDecoration.Default
-  name: Default
-  href: api/TUIS.Components.Masks.Mask.TextDecoration.html#TUIS_Components_Masks_Mask_TextDecoration_Default
-  commentId: F:TUIS.Components.Masks.Mask.TextDecoration.Default
-  fullName: TUIS.Components.Masks.Mask.TextDecoration.Default
-  nameWithType: Mask.TextDecoration.Default
-- uid: TUIS.Components.Masks.Mask.TextDecoration.Underline
-  name: Underline
-  href: api/TUIS.Components.Masks.Mask.TextDecoration.html#TUIS_Components_Masks_Mask_TextDecoration_Underline
-  commentId: F:TUIS.Components.Masks.Mask.TextDecoration.Underline
-  fullName: TUIS.Components.Masks.Mask.TextDecoration.Underline
-  nameWithType: Mask.TextDecoration.Underline
+  fullName: TUIS.Components.Masks.Mask.NeedReDraw
+  nameWithType: Mask.NeedReDraw
 - uid: TUIS.Components.Masks.TextMask
   name: TextMask
   href: api/TUIS.Components.Masks.TextMask.html
   commentId: T:TUIS.Components.Masks.TextMask
   fullName: TUIS.Components.Masks.TextMask
   nameWithType: TextMask
-- uid: TUIS.Components.Masks.TextMask.#ctor(TUIS.Components.Component,System.String,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+- uid: TUIS.Components.Masks.TextMask.#ctor(TUIS.Components.Component,System.String,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name: TextMask(Component, string, byte, byte, HorizontalAlignmentEnum, VerticalAlignmentEnum, bool, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.TextMask.html#TUIS_Components_Masks_TextMask__ctor_TUIS_Components_Component_System_String_System_Byte_System_Byte_TUIS_Components_Masks_TextMask_HorizontalAlignmentEnum_TUIS_Components_Masks_TextMask_VerticalAlignmentEnum_System_Boolean_TUIS_Components_Masks_Mask_TextColor_TUIS_Components_Masks_Mask_BackgroundColor_TUIS_Components_Masks_Mask_TextDecoration_
-  commentId: M:TUIS.Components.Masks.TextMask.#ctor(TUIS.Components.Component,System.String,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Components.Masks.Mask.TextColor,TUIS.Components.Masks.Mask.BackgroundColor,TUIS.Components.Masks.Mask.TextDecoration)
+  href: api/TUIS.Components.Masks.TextMask.html#TUIS_Components_Masks_TextMask__ctor_TUIS_Components_Component_System_String_System_Byte_System_Byte_TUIS_Components_Masks_TextMask_HorizontalAlignmentEnum_TUIS_Components_Masks_TextMask_VerticalAlignmentEnum_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.TextMask.#ctor(TUIS.Components.Component,System.String,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
   name.vb: New(Component, String, Byte, Byte, HorizontalAlignmentEnum, VerticalAlignmentEnum, Boolean, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.TextMask.TextMask(TUIS.Components.Component, string, byte, byte, TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum, TUIS.Components.Masks.TextMask.VerticalAlignmentEnum, bool, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.TextMask.New(TUIS.Components.Component, String, Byte, Byte, TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum, TUIS.Components.Masks.TextMask.VerticalAlignmentEnum, Boolean, TUIS.Components.Masks.Mask.TextColor, TUIS.Components.Masks.Mask.BackgroundColor, TUIS.Components.Masks.Mask.TextDecoration)
-  nameWithType: TextMask.TextMask(Component, string, byte, byte, TextMask.HorizontalAlignmentEnum, TextMask.VerticalAlignmentEnum, bool, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
-  nameWithType.vb: TextMask.New(Component, String, Byte, Byte, TextMask.HorizontalAlignmentEnum, TextMask.VerticalAlignmentEnum, Boolean, Mask.TextColor, Mask.BackgroundColor, Mask.TextDecoration)
+  fullName: TUIS.Components.Masks.TextMask.TextMask(TUIS.Components.Component, string, byte, byte, TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum, TUIS.Components.Masks.TextMask.VerticalAlignmentEnum, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.TextMask.New(TUIS.Components.Component, String, Byte, Byte, TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum, TUIS.Components.Masks.TextMask.VerticalAlignmentEnum, Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: TextMask.TextMask(Component, string, byte, byte, TextMask.HorizontalAlignmentEnum, TextMask.VerticalAlignmentEnum, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: TextMask.New(Component, String, Byte, Byte, TextMask.HorizontalAlignmentEnum, TextMask.VerticalAlignmentEnum, Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
 - uid: TUIS.Components.Masks.TextMask.#ctor*
   name: TextMask
   href: api/TUIS.Components.Masks.TextMask.html#TUIS_Components_Masks_TextMask__ctor_
@@ -1068,15 +930,15 @@ references:
   commentId: T:TUIS.Terminal
   fullName: TUIS.Terminal
   nameWithType: Terminal
-- uid: TUIS.Terminal.#ctor
-  name: Terminal()
-  href: api/TUIS.Terminal.html#TUIS_Terminal__ctor
-  commentId: M:TUIS.Terminal.#ctor
-  name.vb: New()
-  fullName: TUIS.Terminal.Terminal()
-  fullName.vb: TUIS.Terminal.New()
-  nameWithType: Terminal.Terminal()
-  nameWithType.vb: Terminal.New()
+- uid: TUIS.Terminal.#ctor(System.Int32,System.Int32)
+  name: Terminal(int, int)
+  href: api/TUIS.Terminal.html#TUIS_Terminal__ctor_System_Int32_System_Int32_
+  commentId: M:TUIS.Terminal.#ctor(System.Int32,System.Int32)
+  name.vb: New(Integer, Integer)
+  fullName: TUIS.Terminal.Terminal(int, int)
+  fullName.vb: TUIS.Terminal.New(Integer, Integer)
+  nameWithType: Terminal.Terminal(int, int)
+  nameWithType.vb: Terminal.New(Integer, Integer)
 - uid: TUIS.Terminal.#ctor*
   name: Terminal
   href: api/TUIS.Terminal.html#TUIS_Terminal__ctor_
@@ -1087,6 +949,66 @@ references:
   fullName.vb: TUIS.Terminal.New
   nameWithType: Terminal.Terminal
   nameWithType.vb: Terminal.New
+- uid: TUIS.Terminal.BackgroundColor
+  name: Terminal.BackgroundColor
+  href: api/TUIS.Terminal.BackgroundColor.html
+  commentId: T:TUIS.Terminal.BackgroundColor
+  fullName: TUIS.Terminal.BackgroundColor
+  nameWithType: Terminal.BackgroundColor
+- uid: TUIS.Terminal.BackgroundColor.Black
+  name: Black
+  href: api/TUIS.Terminal.BackgroundColor.html#TUIS_Terminal_BackgroundColor_Black
+  commentId: F:TUIS.Terminal.BackgroundColor.Black
+  fullName: TUIS.Terminal.BackgroundColor.Black
+  nameWithType: Terminal.BackgroundColor.Black
+- uid: TUIS.Terminal.BackgroundColor.Blue
+  name: Blue
+  href: api/TUIS.Terminal.BackgroundColor.html#TUIS_Terminal_BackgroundColor_Blue
+  commentId: F:TUIS.Terminal.BackgroundColor.Blue
+  fullName: TUIS.Terminal.BackgroundColor.Blue
+  nameWithType: Terminal.BackgroundColor.Blue
+- uid: TUIS.Terminal.BackgroundColor.Cyan
+  name: Cyan
+  href: api/TUIS.Terminal.BackgroundColor.html#TUIS_Terminal_BackgroundColor_Cyan
+  commentId: F:TUIS.Terminal.BackgroundColor.Cyan
+  fullName: TUIS.Terminal.BackgroundColor.Cyan
+  nameWithType: Terminal.BackgroundColor.Cyan
+- uid: TUIS.Terminal.BackgroundColor.Green
+  name: Green
+  href: api/TUIS.Terminal.BackgroundColor.html#TUIS_Terminal_BackgroundColor_Green
+  commentId: F:TUIS.Terminal.BackgroundColor.Green
+  fullName: TUIS.Terminal.BackgroundColor.Green
+  nameWithType: Terminal.BackgroundColor.Green
+- uid: TUIS.Terminal.BackgroundColor.None
+  name: None
+  href: api/TUIS.Terminal.BackgroundColor.html#TUIS_Terminal_BackgroundColor_None
+  commentId: F:TUIS.Terminal.BackgroundColor.None
+  fullName: TUIS.Terminal.BackgroundColor.None
+  nameWithType: Terminal.BackgroundColor.None
+- uid: TUIS.Terminal.BackgroundColor.Purple
+  name: Purple
+  href: api/TUIS.Terminal.BackgroundColor.html#TUIS_Terminal_BackgroundColor_Purple
+  commentId: F:TUIS.Terminal.BackgroundColor.Purple
+  fullName: TUIS.Terminal.BackgroundColor.Purple
+  nameWithType: Terminal.BackgroundColor.Purple
+- uid: TUIS.Terminal.BackgroundColor.Red
+  name: Red
+  href: api/TUIS.Terminal.BackgroundColor.html#TUIS_Terminal_BackgroundColor_Red
+  commentId: F:TUIS.Terminal.BackgroundColor.Red
+  fullName: TUIS.Terminal.BackgroundColor.Red
+  nameWithType: Terminal.BackgroundColor.Red
+- uid: TUIS.Terminal.BackgroundColor.White
+  name: White
+  href: api/TUIS.Terminal.BackgroundColor.html#TUIS_Terminal_BackgroundColor_White
+  commentId: F:TUIS.Terminal.BackgroundColor.White
+  fullName: TUIS.Terminal.BackgroundColor.White
+  nameWithType: Terminal.BackgroundColor.White
+- uid: TUIS.Terminal.BackgroundColor.Yellow
+  name: Yellow
+  href: api/TUIS.Terminal.BackgroundColor.html#TUIS_Terminal_BackgroundColor_Yellow
+  commentId: F:TUIS.Terminal.BackgroundColor.Yellow
+  fullName: TUIS.Terminal.BackgroundColor.Yellow
+  nameWithType: Terminal.BackgroundColor.Yellow
 - uid: TUIS.Terminal.Clear
   name: Clear()
   href: api/TUIS.Terminal.html#TUIS_Terminal_Clear
@@ -1119,18 +1041,24 @@ references:
   isSpec: "True"
   fullName: TUIS.Terminal.Draw
   nameWithType: Terminal.Draw
+- uid: TUIS.Terminal.Height
+  name: Height
+  href: api/TUIS.Terminal.html#TUIS_Terminal_Height
+  commentId: F:TUIS.Terminal.Height
+  fullName: TUIS.Terminal.Height
+  nameWithType: Terminal.Height
 - uid: TUIS.Terminal.InputSystem
   name: InputSystem
   href: api/TUIS.Terminal.html#TUIS_Terminal_InputSystem
   commentId: F:TUIS.Terminal.InputSystem
   fullName: TUIS.Terminal.InputSystem
   nameWithType: Terminal.InputSystem
-- uid: TUIS.Terminal.NeedRedraw
-  name: NeedRedraw
-  href: api/TUIS.Terminal.html#TUIS_Terminal_NeedRedraw
-  commentId: F:TUIS.Terminal.NeedRedraw
-  fullName: TUIS.Terminal.NeedRedraw
-  nameWithType: Terminal.NeedRedraw
+- uid: TUIS.Terminal.NeedReDraw
+  name: NeedReDraw
+  href: api/TUIS.Terminal.html#TUIS_Terminal_NeedReDraw
+  commentId: F:TUIS.Terminal.NeedReDraw
+  fullName: TUIS.Terminal.NeedReDraw
+  nameWithType: Terminal.NeedReDraw
 - uid: TUIS.Terminal.Start(System.Action{TUIS.Terminal})
   name: Start(Action<Terminal>?)
   href: api/TUIS.Terminal.html#TUIS_Terminal_Start_System_Action_TUIS_Terminal__
@@ -1147,9 +1075,109 @@ references:
   isSpec: "True"
   fullName: TUIS.Terminal.Start
   nameWithType: Terminal.Start
+- uid: TUIS.Terminal.TextColor
+  name: Terminal.TextColor
+  href: api/TUIS.Terminal.TextColor.html
+  commentId: T:TUIS.Terminal.TextColor
+  fullName: TUIS.Terminal.TextColor
+  nameWithType: Terminal.TextColor
+- uid: TUIS.Terminal.TextColor.Black
+  name: Black
+  href: api/TUIS.Terminal.TextColor.html#TUIS_Terminal_TextColor_Black
+  commentId: F:TUIS.Terminal.TextColor.Black
+  fullName: TUIS.Terminal.TextColor.Black
+  nameWithType: Terminal.TextColor.Black
+- uid: TUIS.Terminal.TextColor.Blue
+  name: Blue
+  href: api/TUIS.Terminal.TextColor.html#TUIS_Terminal_TextColor_Blue
+  commentId: F:TUIS.Terminal.TextColor.Blue
+  fullName: TUIS.Terminal.TextColor.Blue
+  nameWithType: Terminal.TextColor.Blue
+- uid: TUIS.Terminal.TextColor.Cyan
+  name: Cyan
+  href: api/TUIS.Terminal.TextColor.html#TUIS_Terminal_TextColor_Cyan
+  commentId: F:TUIS.Terminal.TextColor.Cyan
+  fullName: TUIS.Terminal.TextColor.Cyan
+  nameWithType: Terminal.TextColor.Cyan
+- uid: TUIS.Terminal.TextColor.Green
+  name: Green
+  href: api/TUIS.Terminal.TextColor.html#TUIS_Terminal_TextColor_Green
+  commentId: F:TUIS.Terminal.TextColor.Green
+  fullName: TUIS.Terminal.TextColor.Green
+  nameWithType: Terminal.TextColor.Green
+- uid: TUIS.Terminal.TextColor.Purple
+  name: Purple
+  href: api/TUIS.Terminal.TextColor.html#TUIS_Terminal_TextColor_Purple
+  commentId: F:TUIS.Terminal.TextColor.Purple
+  fullName: TUIS.Terminal.TextColor.Purple
+  nameWithType: Terminal.TextColor.Purple
+- uid: TUIS.Terminal.TextColor.Red
+  name: Red
+  href: api/TUIS.Terminal.TextColor.html#TUIS_Terminal_TextColor_Red
+  commentId: F:TUIS.Terminal.TextColor.Red
+  fullName: TUIS.Terminal.TextColor.Red
+  nameWithType: Terminal.TextColor.Red
+- uid: TUIS.Terminal.TextColor.White
+  name: White
+  href: api/TUIS.Terminal.TextColor.html#TUIS_Terminal_TextColor_White
+  commentId: F:TUIS.Terminal.TextColor.White
+  fullName: TUIS.Terminal.TextColor.White
+  nameWithType: Terminal.TextColor.White
+- uid: TUIS.Terminal.TextColor.Yellow
+  name: Yellow
+  href: api/TUIS.Terminal.TextColor.html#TUIS_Terminal_TextColor_Yellow
+  commentId: F:TUIS.Terminal.TextColor.Yellow
+  fullName: TUIS.Terminal.TextColor.Yellow
+  nameWithType: Terminal.TextColor.Yellow
+- uid: TUIS.Terminal.TextDecoration
+  name: Terminal.TextDecoration
+  href: api/TUIS.Terminal.TextDecoration.html
+  commentId: T:TUIS.Terminal.TextDecoration
+  fullName: TUIS.Terminal.TextDecoration
+  nameWithType: Terminal.TextDecoration
+- uid: TUIS.Terminal.TextDecoration.Bold
+  name: Bold
+  href: api/TUIS.Terminal.TextDecoration.html#TUIS_Terminal_TextDecoration_Bold
+  commentId: F:TUIS.Terminal.TextDecoration.Bold
+  fullName: TUIS.Terminal.TextDecoration.Bold
+  nameWithType: Terminal.TextDecoration.Bold
+- uid: TUIS.Terminal.TextDecoration.Default
+  name: Default
+  href: api/TUIS.Terminal.TextDecoration.html#TUIS_Terminal_TextDecoration_Default
+  commentId: F:TUIS.Terminal.TextDecoration.Default
+  fullName: TUIS.Terminal.TextDecoration.Default
+  nameWithType: Terminal.TextDecoration.Default
+- uid: TUIS.Terminal.TextDecoration.Underline
+  name: Underline
+  href: api/TUIS.Terminal.TextDecoration.html#TUIS_Terminal_TextDecoration_Underline
+  commentId: F:TUIS.Terminal.TextDecoration.Underline
+  fullName: TUIS.Terminal.TextDecoration.Underline
+  nameWithType: Terminal.TextDecoration.Underline
 - uid: TUIS.Terminal.TimeSystem
   name: TimeSystem
   href: api/TUIS.Terminal.html#TUIS_Terminal_TimeSystem
   commentId: F:TUIS.Terminal.TimeSystem
   fullName: TUIS.Terminal.TimeSystem
   nameWithType: Terminal.TimeSystem
+- uid: TUIS.Terminal.UpdateScreen(System.Int32,System.Int32,System.Char,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
+  name: UpdateScreen(int, int, char, TextColor, BackgroundColor, TextDecoration)
+  href: api/TUIS.Terminal.html#TUIS_Terminal_UpdateScreen_System_Int32_System_Int32_System_Char_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Terminal.UpdateScreen(System.Int32,System.Int32,System.Char,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
+  name.vb: UpdateScreen(Integer, Integer, Char, TextColor, BackgroundColor, TextDecoration)
+  fullName: TUIS.Terminal.UpdateScreen(int, int, char, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Terminal.UpdateScreen(Integer, Integer, Char, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: Terminal.UpdateScreen(int, int, char, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: Terminal.UpdateScreen(Integer, Integer, Char, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+- uid: TUIS.Terminal.UpdateScreen*
+  name: UpdateScreen
+  href: api/TUIS.Terminal.html#TUIS_Terminal_UpdateScreen_
+  commentId: Overload:TUIS.Terminal.UpdateScreen
+  isSpec: "True"
+  fullName: TUIS.Terminal.UpdateScreen
+  nameWithType: Terminal.UpdateScreen
+- uid: TUIS.Terminal.Width
+  name: Width
+  href: api/TUIS.Terminal.html#TUIS_Terminal_Width
+  commentId: F:TUIS.Terminal.Width
+  fullName: TUIS.Terminal.Width
+  nameWithType: Terminal.Width
