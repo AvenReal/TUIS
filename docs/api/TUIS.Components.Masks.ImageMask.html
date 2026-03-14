@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ImageMask | TUIS-Doc ">
       
-      <meta name="description" content="Draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.">
+      <meta name="description" content="This Mask will draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,7 @@ Class ImageMask  <a class="header-action link-secondary" title="View source" hre
   <dl><dt>Assembly</dt><dd>TUIS.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.</p>
+  <div class="markdown summary"><p>This Mask will draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -182,10 +182,11 @@ Class ImageMask  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="TUIS_Components_Masks_ImageMask__ctor_TUIS_Components_Component_System_String_System_Boolean_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_" data-uid="TUIS.Components.Masks.ImageMask.#ctor(TUIS.Components.Component,System.String,System.Boolean,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)">
   ImageMask(Component, string, bool, bool, TextColor, BackgroundColor, TextDecoration)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Draw an image in format jpg, png or any other image format in ASCII art.</p>
+  <div class="markdown level1 summary"><p>Draw an image in format jpg, png or any other image format in ASCII art.
+Warning: the original image should have a ratio than the <a class="xref" href="TUIS.Components.Component.html">Component</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -202,7 +203,7 @@ Class ImageMask  <a class="header-action link-secondary" title="View source" hre
     <dd><p>The relative or absolute path of the image to draw is ASCII art</p>
 </dd>
     <dt><code>isColored</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>Whether or not the Image will be drawn using the 8 possible colors or in black and white (default = false).</p>
+    <dd><p>Whether the Image will be drawn using the 8 possible colors or in black and white (default = false).</p>
 </dd>
     <dt><code>isVisible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Represent the visibility of the mask (default = true).</p>
@@ -237,10 +238,11 @@ Class ImageMask  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="TUIS_Components_Masks_ImageMask_IsColored" data-uid="TUIS.Components.Masks.ImageMask.IsColored">
   IsColored
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Holds whether the image should be drawn in color or in black and white.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -272,10 +274,11 @@ Class ImageMask  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="TUIS_Components_Masks_ImageMask_Behaviour" data-uid="TUIS.Components.Masks.ImageMask.Behaviour">
   Behaviour()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_">DrawChar(int, int, char?, TextColor, BackgroundColor, TextDecoration)</a>. The method will automatically be called when needed.</p>
+<p>This <a class="xref" href="TUIS.Components.Masks.Mask.html">Mask</a>'s <a class="xref" href="TUIS.Components.Masks.ImageMask.html#TUIS_Components_Masks_ImageMask_Behaviour">Behaviour()</a> is to draw the <span class="xref">TUIS.Components.Masks.ImageMask._image</span> in ascii art.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -299,7 +302,7 @@ Class ImageMask  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="TUIS_Components_Masks_ImageMask_Export_System_String_System_Nullable_System_Int32__System_Nullable_System_Int32__" data-uid="TUIS.Components.Masks.ImageMask.Export(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
   Export(string, int?, int?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L178"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

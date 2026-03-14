@@ -4,16 +4,28 @@ using SixLabors.ImageSharp.PixelFormats;
 namespace TUIS.Components.Masks;
 
 /// <summary>
-/// Draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.
+/// This Mask will draw an image in format jpg, png or any other image format in ASCII art in black and white or using 8 different colors.
 /// </summary>
 public class ImageMask : Mask
 {
+    /// <summary>
+    /// Holds the height of the original image.
+    /// </summary>
     private int _imageHeight;
+
+    /// <summary>
+    /// Holds the width of the original image.
+    /// </summary>
     private int _imageWidth;
 
+    /// <summary>
+    /// Holds all the <see cref="Rgba32"/> of each pixel of the original image.
+    /// </summary>
     private Rgba32[,] _image;
 
-
+    /// <summary>
+    /// Holds whether the image should be drawn in color or in black and white.
+    /// </summary>
     public bool IsColored
     {
         get;
@@ -27,9 +39,10 @@ public class ImageMask : Mask
 
     /// <summary>
     /// Draw an image in format jpg, png or any other image format in ASCII art.
+    /// Warning: the original image should have a ratio than the <see cref="Component"/>. 
     /// </summary>
     /// <param name="path">The relative or absolute path of the image to draw is ASCII art</param>
-    /// <param name="isColored">Whether or not the Image will be drawn using the 8 possible colors or in black and white (default = false).</param>
+    /// <param name="isColored">Whether the Image will be drawn using the 8 possible colors or in black and white (default = false).</param>
     /// <param name="component">The component which the mask is attached to.</param>
     /// <param name="isVisible">Represent the visibility of the mask (default = true).</param>
     /// <param name="color">The default color of the mask (a mask's <see cref="Behaviour"/>) method can override the color (default = white).</param>
@@ -55,7 +68,10 @@ public class ImageMask : Mask
         }
     }
 
-
+    /// <summary>
+    /// <inheritdoc/>
+    /// This <see cref="Mask"/>'s <see cref="Behaviour"/> is to draw the <see cref="_image"/> in ascii art.
+    /// </summary>
     protected override void Behaviour()
     {
         int height = _imageHeight / Component.Height;
@@ -65,7 +81,7 @@ public class ImageMask : Mask
         {
             for (int j = 0; j < Component.Width; j++)
             {
-                (float r, float g, float b, float a) = GetRGBA(i * height, j * width, height, width);
+                (float r, float g, float b, float a) = GetRgba(i * height, j * width, height, width);
                 char? c = GetChar(r, g, b, a);
                 Terminal.TextColor textColor = IsColored ? GetColor(r, g, b) : Terminal.TextColor.White;
                 DrawChar(i, j, c, textColor);
@@ -73,7 +89,16 @@ public class ImageMask : Mask
         }
     }
 
-    private (float r, float g, float b, float a) GetRGBA(int yoffset, int xoffset, int height, int width)
+    /// <summary>
+    /// Each character of the final ascii art image will correspond to a region of pixels on the original image.
+    /// This method will get the average RGBA values for a region of pixels. 
+    /// </summary>
+    /// <param name="y">The y coordinate on the original image of the top left corner of the region to calculate RGBA values.</param>
+    /// <param name="x">The x coordinate on the original image of the top left corner of the region to calculate RGBA values.</param>
+    /// <param name="height">The height of the region to calculate RGBA values.</param>
+    /// <param name="width">The width of the region to calculate RGBA values.</param>
+    /// <returns>Returns the RGBA representing the average color of the region.</returns>
+    private (float r, float g, float b, float a) GetRgba(int y, int x, int height, int width)
     {
         float r = 0;
         float g = 0;
@@ -86,7 +111,7 @@ public class ImageMask : Mask
         {
             for (int j = 0; j < width; j++)
             {
-                Rgba32 c = _image[yoffset + i, xoffset + j];
+                Rgba32 c = _image[y + i, x + j];
                 r += c.R;
                 g += c.G;
                 b += c.B;
@@ -98,7 +123,14 @@ public class ImageMask : Mask
         return (r / nbPixels / 255.0f, g / nbPixels / 255.0f, b / nbPixels / 255.0f, a / nbPixels / 255.0f);
     }
 
-
+    /// <summary>
+    /// Returns a char based on how dark the average RGBA is.
+    /// </summary>
+    /// <param name="r">The red part of the color of the pixel.</param>
+    /// <param name="g">The green part of the color of the pixel.</param>
+    /// <param name="b">The blue part of the color of the pixel.</param>
+    /// <param name="a">The alpha part of the color of the pixel.</param>
+    /// <returns>A char corresponding to the darkness of the average RGBA.</returns>
     private char? GetChar(float r, float g, float b, float a)
     {
         if (a <= 0.5)
@@ -123,7 +155,7 @@ public class ImageMask : Mask
 
     private Terminal.TextColor GetColor(float r, float g, float b)
     {
-        float gray = 0.6f; //(r + g + b) / 3.0f;
+        float gray = 0.6f;
 
         if (r < gray)
         {
@@ -155,7 +187,7 @@ public class ImageMask : Mask
         {
             for (int j = 0; j < goalWidth; j++)
             {
-                (float r, float g, float b, float a) = GetRGBA(i * height, j * width, height, width);
+                (float r, float g, float b, float a) = GetRgba(i * height, j * width, height, width);
                 writer.Write(GetChar(r, g, b, a) ?? ' ');
             }
 
