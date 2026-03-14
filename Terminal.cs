@@ -4,6 +4,9 @@ using TUIS.Systems;
 
 namespace TUIS;
 
+/// <summary>
+/// A Terminal is the main object of this TUI system. It will hold each <see cref="Component"/> that will be drawn on the screen.
+/// </summary>
 public class Terminal
 {
     public readonly int Width;
@@ -22,6 +25,7 @@ public class Terminal
         Width = width;
         Height = height;
         TimeSystem.AddTimedEvent((_, _) => { Draw(); });
+        TimeSystem.AddTimedEvent((_, _) => { UpdateScreen(); });
         _screen = new string[Height, Width];
         NeedReDraw = new bool[Height];
 
@@ -35,19 +39,11 @@ public class Terminal
         }
     }
 
-    public void Draw()
+    /// <summary>
+    /// This method will automatically be called to re-draw each row of the <see cref="_screen"/> that have been modified.  
+    /// </summary>
+    private void UpdateScreen()
     {
-        // if (!NeedReDraw)
-        //     return;
-
-        // NeedReDraw = false;
-        // Console.CursorVisible = false;
-
-        // foreach (var component in Components)
-        // {
-        //     component.Draw();
-        // }
-
         for (int i = 0; i < Height; i++)
         {
             if (NeedReDraw[i])
@@ -65,12 +61,32 @@ public class Terminal
         }
     }
 
-    public void UpdateScreen(int y, int x, char c, TextColor textColor, BackgroundColor backgroundColor,
+    /// <summary>
+    /// This method will automatically be called and will call <see cref="Component.Draw"/> on each <see cref="Components"/>. 
+    /// </summary>
+    private void Draw()
+    {
+        foreach (var component in Components)
+        {
+            component.Draw();
+        }
+    }
+
+    /// <summary>
+    /// This method will be called by <see cref="TUIS.Components.Masks.Mask.DrawChar"/> to correctly update a character of the internal <see cref="_screen"/> of the <see cref="Terminal"/>. 
+    /// </summary>
+    /// <param name="y">The y coordinate of the char to update (0 = top).</param>
+    /// <param name="x">The x coordinate of the char to update (0 = left).</param>
+    /// <param name="c">The new char.</param>
+    /// <param name="textColor">The <see cref="TextColor"/> the <see cref="c"/> will be drawn.</param>
+    /// <param name="backgroundColor">The <see cref="BackgroundColor"/> the <see cref="c"/> will be drawn.</param>
+    /// <param name="textDecoration">The <see cref="TextDecoration"/> the <see cref="c"/> will be drawn.</param>
+    public void DrawChar(int y, int x, char c, TextColor textColor, BackgroundColor backgroundColor,
         TextDecoration textDecoration)
     {
         string oldValue = _screen[y, x];
         _screen[y, x] = $"\e[{(int)(backgroundColor)}m\e[{(int)(textDecoration)};{(int)(textColor)}m{c}";
-        NeedReDraw[y] = oldValue != _screen[y, x];
+        NeedReDraw[y] = NeedReDraw[y] || oldValue != _screen[y, x];
     }
 
     /// <summary>

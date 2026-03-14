@@ -5,13 +5,14 @@ using TUIS;
 using TUIS.Components;
 using TUIS.Components.Masks;
 
-
-Terminal terminal = new Terminal(200, 50);
-
-// Background
 var height = Console.WindowHeight;
 var width = Console.WindowWidth;
-Component bg = new Component(terminal, width, height, 1, 1);
+
+Terminal terminal = new Terminal(width * 3, height * 2);
+
+// Background
+
+Component bg = new Component(terminal, width * 3, height * 2, 0, 0);
 ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
 // BackgroundMask bgMask = new BackgroundMask(bg, '#');
 
@@ -53,7 +54,7 @@ BackgroundMask clockBg = new BackgroundMask(clock);
 ClockMask clockMask = new ClockMask(clock);
 
 
-terminal.Draw();
+// terminal.UpdateScreen();
 
 
 InputMask inputMask = (InputMask)terminal.Components[1].Masks[1];

@@ -137,7 +137,7 @@ public abstract class Mask
             return;
 
 
-        Component.Terminal.UpdateScreen(y + Component.PosY, x + Component.PosX, (char)c, textColor, backgroundColor,
+        Component.Terminal.DrawChar(y + Component.PosY, x + Component.PosX, (char)c, textColor, backgroundColor,
             textDecoration);
     }
 }

@@ -1028,19 +1028,22 @@ references:
   commentId: F:TUIS.Terminal.Components
   fullName: TUIS.Terminal.Components
   nameWithType: Terminal.Components
-- uid: TUIS.Terminal.Draw
-  name: Draw()
-  href: api/TUIS.Terminal.html#TUIS_Terminal_Draw
-  commentId: M:TUIS.Terminal.Draw
-  fullName: TUIS.Terminal.Draw()
-  nameWithType: Terminal.Draw()
-- uid: TUIS.Terminal.Draw*
-  name: Draw
-  href: api/TUIS.Terminal.html#TUIS_Terminal_Draw_
-  commentId: Overload:TUIS.Terminal.Draw
+- uid: TUIS.Terminal.DrawChar(System.Int32,System.Int32,System.Char,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
+  name: DrawChar(int, int, char, TextColor, BackgroundColor, TextDecoration)
+  href: api/TUIS.Terminal.html#TUIS_Terminal_DrawChar_System_Int32_System_Int32_System_Char_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Terminal.DrawChar(System.Int32,System.Int32,System.Char,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
+  name.vb: DrawChar(Integer, Integer, Char, TextColor, BackgroundColor, TextDecoration)
+  fullName: TUIS.Terminal.DrawChar(int, int, char, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Terminal.DrawChar(Integer, Integer, Char, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: Terminal.DrawChar(int, int, char, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: Terminal.DrawChar(Integer, Integer, Char, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+- uid: TUIS.Terminal.DrawChar*
+  name: DrawChar
+  href: api/TUIS.Terminal.html#TUIS_Terminal_DrawChar_
+  commentId: Overload:TUIS.Terminal.DrawChar
   isSpec: "True"
-  fullName: TUIS.Terminal.Draw
-  nameWithType: Terminal.Draw
+  fullName: TUIS.Terminal.DrawChar
+  nameWithType: Terminal.DrawChar
 - uid: TUIS.Terminal.Height
   name: Height
   href: api/TUIS.Terminal.html#TUIS_Terminal_Height
@@ -1159,22 +1162,6 @@ references:
   commentId: F:TUIS.Terminal.TimeSystem
   fullName: TUIS.Terminal.TimeSystem
   nameWithType: Terminal.TimeSystem
-- uid: TUIS.Terminal.UpdateScreen(System.Int32,System.Int32,System.Char,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
-  name: UpdateScreen(int, int, char, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Terminal.html#TUIS_Terminal_UpdateScreen_System_Int32_System_Int32_System_Char_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
-  commentId: M:TUIS.Terminal.UpdateScreen(System.Int32,System.Int32,System.Char,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
-  name.vb: UpdateScreen(Integer, Integer, Char, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Terminal.UpdateScreen(int, int, char, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
-  fullName.vb: TUIS.Terminal.UpdateScreen(Integer, Integer, Char, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
-  nameWithType: Terminal.UpdateScreen(int, int, char, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
-  nameWithType.vb: Terminal.UpdateScreen(Integer, Integer, Char, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
-- uid: TUIS.Terminal.UpdateScreen*
-  name: UpdateScreen
-  href: api/TUIS.Terminal.html#TUIS_Terminal_UpdateScreen_
-  commentId: Overload:TUIS.Terminal.UpdateScreen
-  isSpec: "True"
-  fullName: TUIS.Terminal.UpdateScreen
-  nameWithType: Terminal.UpdateScreen
 - uid: TUIS.Terminal.Width
   name: Width
   href: api/TUIS.Terminal.html#TUIS_Terminal_Width

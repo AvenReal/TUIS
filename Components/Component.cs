@@ -51,21 +51,7 @@ public class Component
     public bool NeedReDraw
     {
         get;
-        set
-        {
-            if (value)
-            {
-                try // awful, need to go away
-                {
-                    Draw();
-                }
-                catch
-                {
-                }
-            }
-
-            field = value;
-        }
+        set { field = value; }
     }
 
     public bool IsVisible

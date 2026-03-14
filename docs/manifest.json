@@ -412,7 +412,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "TUIS.Terminal",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/TUIS.Terminal.yml\" sourcestartlinenumber=\"1\">A Terminal is the main object of this TUI system. It will hold each <xref href=\"TUIS.Components.Component\" data-throw-if-not-resolved=\"false\"></xref> that will be drawn on the screen.</p>\n"
     },
     {
       "type": "ManagedReference",
