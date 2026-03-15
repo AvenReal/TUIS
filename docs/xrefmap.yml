@@ -614,15 +614,15 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.Mask.Draw
   nameWithType: Mask.Draw
-- uid: TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
-  name: DrawChar(int, int, char?, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
-  commentId: M:TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
-  name.vb: DrawChar(Integer, Integer, Char?, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.Mask.DrawChar(int, int, char?, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.Mask.DrawChar(Integer, Integer, Char?, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
-  nameWithType: Mask.DrawChar(int, int, char?, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
-  nameWithType.vb: Mask.DrawChar(Integer, Integer, Char?, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+- uid: TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},System.Nullable{TUIS.Terminal.TextColor},System.Nullable{TUIS.Terminal.BackgroundColor},System.Nullable{TUIS.Terminal.TextDecoration})
+  name: DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__
+  commentId: M:TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},System.Nullable{TUIS.Terminal.TextColor},System.Nullable{TUIS.Terminal.BackgroundColor},System.Nullable{TUIS.Terminal.TextDecoration})
+  name.vb: DrawChar(Integer, Integer, Char?, TextColor?, BackgroundColor?, TextDecoration?)
+  fullName: TUIS.Components.Masks.Mask.DrawChar(int, int, char?, TUIS.Terminal.TextColor?, TUIS.Terminal.BackgroundColor?, TUIS.Terminal.TextDecoration?)
+  fullName.vb: TUIS.Components.Masks.Mask.DrawChar(Integer, Integer, Char?, TUIS.Terminal.TextColor?, TUIS.Terminal.BackgroundColor?, TUIS.Terminal.TextDecoration?)
+  nameWithType: Mask.DrawChar(int, int, char?, Terminal.TextColor?, Terminal.BackgroundColor?, Terminal.TextDecoration?)
+  nameWithType.vb: Mask.DrawChar(Integer, Integer, Char?, Terminal.TextColor?, Terminal.BackgroundColor?, Terminal.TextDecoration?)
 - uid: TUIS.Components.Masks.Mask.DrawChar*
   name: DrawChar
   href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_

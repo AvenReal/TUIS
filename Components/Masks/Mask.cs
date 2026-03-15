@@ -129,15 +129,16 @@ public abstract class Mask
     /// <param name="textColor">The color which the <paramref name="c"/> will be printed. null = the default background color of the mask.</param>
     /// <param name="backgroundColor">The background color which the <paramref name="c"/> will be printed. null = the default background color of the mask.</param>
     /// <param name="textDecoration">The decoration with which the <paramref name="c"/> will be printed. null = the default decoration of the mask.</param>
-    protected void DrawChar(int y, int x, char? c, Terminal.TextColor textColor = Terminal.TextColor.White,
-        Terminal.BackgroundColor backgroundColor = Terminal.BackgroundColor.None,
-        Terminal.TextDecoration textDecoration = Terminal.TextDecoration.Default)
+    protected void DrawChar(int y, int x, char? c, Terminal.TextColor? textColor = null,
+        Terminal.BackgroundColor? backgroundColor = null,
+        Terminal.TextDecoration? textDecoration = null)
     {
         if (c == null)
             return;
 
 
-        Component.Terminal.DrawChar(y + Component.PosY, x + Component.PosX, (char)c, textColor, backgroundColor,
-            textDecoration);
+        Component.Terminal.DrawChar(y + Component.PosY, x + Component.PosX, (char)c, textColor ?? Color,
+            backgroundColor ?? Background,
+            textDecoration ?? Decoration);
     }
 }

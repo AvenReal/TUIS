@@ -5,60 +5,59 @@ using TUIS;
 using TUIS.Components;
 using TUIS.Components.Masks;
 
-var height = Console.WindowHeight;
-var width = Console.WindowWidth;
 
-Terminal terminal = new Terminal(width * 3, height * 2);
+int height = (int)(Console.WindowHeight * 2.6);
+int width = (int)(Console.WindowWidth * 4.7);
+
+Terminal terminal = new Terminal(width, height);
 
 // Background
 
-Component bg = new Component(terminal, width * 3, height * 2, 0, 0);
+Component bg = new Component(terminal, -1, -1, 0, 0);
 ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
-// BackgroundMask bgMask = new BackgroundMask(bg, '#');
 
-// Login
+Component window = new Component(terminal, 15, 10, -1, -1);
+BoxMask windowBoxMask = new BoxMask(window, BoxMask.Type.Double, true, Terminal.TextColor.Blue);
 
-Component login = new Component(terminal, 50, 4, 20, 133);
-BackgroundMask loginBg = new BackgroundMask(login);
-InputMask loginInputMask = new InputMask(login, mask =>
+terminal.InputSystem.OnKeyPress += key =>
 {
-    InputMask inputMask = (InputMask)mask.Component.Terminal.Components[2].Masks[1];
-    inputMask.Enabled = true;
-});
-BoxMask loginBoxMask = new BoxMask(login, BoxMask.Type.Simple);
-TextMask loginTextMask = new TextMask(login, "Login:", 1, 1);
-
-// Password
-
-Component password = new Component(terminal, 50, 4, 25, 133);
-BackgroundMask passwordBg = new BackgroundMask(password);
-InputMask passwordInputMask = new InputMask(password, pwInputMask =>
-{
-    if (loginInputMask.Output != "admin" || pwInputMask.Output != "password")
+    switch (key.Key)
     {
-        loginInputMask.Enabled = true;
-        pwInputMask.NeedReDraw = true;
+        case ConsoleKey.LeftArrow:
+        {
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                window.Width--;
+            else
+                window.PosX--;
+            break;
+        }
+        case ConsoleKey.RightArrow:
+        {
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                window.Width++;
+            else
+                window.PosX++;
+            break;
+        }
+        case ConsoleKey.UpArrow:
+        {
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                window.Height--;
+            else
+                window.PosY--;
+            break;
+        }
+        case ConsoleKey.DownArrow:
+        {
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                window.Height++;
+            else
+                window.PosY++;
+            break;
+        }
     }
-    else
-    {
-        ((TextMask)pwInputMask.Component.Masks[3]).Text = "Welcome!";
-    }
-});
-BoxMask passwordBoxMask = new BoxMask(password, BoxMask.Type.Simple);
-TextMask passwordTextMask = new TextMask(password, "Password:", 1, 1);
 
-// Clock
-
-Component clock = new Component(terminal, 27, 3, 10, 145);
-BackgroundMask clockBg = new BackgroundMask(clock);
-ClockMask clockMask = new ClockMask(clock);
-
-
-// terminal.UpdateScreen();
-
-
-InputMask inputMask = (InputMask)terminal.Components[1].Masks[1];
-inputMask.Enabled = true;
-Console.CursorVisible = true;
+    windowBoxMask.NeedReDraw = true;
+};
 
 terminal.Start();

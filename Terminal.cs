@@ -18,7 +18,7 @@ public class Terminal
 
     private readonly string[,] _screen;
 
-    public bool[] NeedReDraw;
+    public readonly (int min, int max)[] NeedReDraw;
 
     public Terminal(int width, int height)
     {
@@ -27,11 +27,11 @@ public class Terminal
         TimeSystem.AddTimedEvent((_, _) => { Draw(); });
         TimeSystem.AddTimedEvent((_, _) => { UpdateScreen(); });
         _screen = new string[Height, Width];
-        NeedReDraw = new bool[Height];
+        NeedReDraw = new (int, int)[Height];
 
         for (int i = 0; i < Height; i++)
         {
-            NeedReDraw[i] = true;
+            NeedReDraw[i] = (int.MaxValue, -1);
             for (int j = 0; j < Width; j++)
             {
                 _screen[i, j] = " ";
@@ -46,17 +46,18 @@ public class Terminal
     {
         for (int i = 0; i < Height; i++)
         {
-            if (NeedReDraw[i])
+            if (NeedReDraw[i].max != -1)
             {
-                NeedReDraw[i] = false;
+                (int min, int max) = NeedReDraw[i];
+                NeedReDraw[i] = (int.MaxValue, -1);
 
                 StringBuilder sb = new StringBuilder();
-                for (int j = 0; j < Width; j++)
+                for (int j = min; j <= max; j++)
                 {
                     sb.Append(_screen[i, j]);
                 }
 
-                Console.Write($"\u001b[{i};{1}H{sb.ToString()}");
+                Console.Write($"\u001b[{i};{min + 1}H{sb.ToString()}");
             }
         }
     }
@@ -86,7 +87,12 @@ public class Terminal
     {
         string oldValue = _screen[y, x];
         _screen[y, x] = $"\e[{(int)(backgroundColor)}m\e[{(int)(textDecoration)};{(int)(textColor)}m{c}";
-        NeedReDraw[y] = NeedReDraw[y] || oldValue != _screen[y, x];
+
+        if (oldValue != _screen[y, x])
+        {
+            (int min, int max) = NeedReDraw[y];
+            NeedReDraw[y] = (int.Min(min, x), int.Max(max, x));
+        }
     }
 
     /// <summary>
