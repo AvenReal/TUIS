@@ -83,7 +83,7 @@ public class ImageMask : Mask
             {
                 (float r, float g, float b, float a) = GetRgba(i * height, j * width, height, width);
                 char? c = GetChar(r, g, b, a);
-                Terminal.TextColor textColor = IsColored ? GetColor(r, g, b) : Terminal.TextColor.White;
+                Terminal.TextColor? textColor = IsColored ? GetColor(r, g, b) : null;
                 DrawChar(i, j, c, textColor);
             }
         }
