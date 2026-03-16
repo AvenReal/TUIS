@@ -255,6 +255,18 @@ references:
   commentId: T:TUIS.Components.Masks.BoxMask.Type
   fullName: TUIS.Components.Masks.BoxMask.Type
   nameWithType: BoxMask.Type
+- uid: TUIS.Components.Masks.BoxMask.Type.Bold
+  name: Bold
+  href: api/TUIS.Components.Masks.BoxMask.Type.html#TUIS_Components_Masks_BoxMask_Type_Bold
+  commentId: F:TUIS.Components.Masks.BoxMask.Type.Bold
+  fullName: TUIS.Components.Masks.BoxMask.Type.Bold
+  nameWithType: BoxMask.Type.Bold
+- uid: TUIS.Components.Masks.BoxMask.Type.Default
+  name: Default
+  href: api/TUIS.Components.Masks.BoxMask.Type.html#TUIS_Components_Masks_BoxMask_Type_Default
+  commentId: F:TUIS.Components.Masks.BoxMask.Type.Default
+  fullName: TUIS.Components.Masks.BoxMask.Type.Default
+  nameWithType: BoxMask.Type.Default
 - uid: TUIS.Components.Masks.BoxMask.Type.Double
   name: Double
   href: api/TUIS.Components.Masks.BoxMask.Type.html#TUIS_Components_Masks_BoxMask_Type_Double
@@ -267,18 +279,24 @@ references:
   commentId: F:TUIS.Components.Masks.BoxMask.Type.None
   fullName: TUIS.Components.Masks.BoxMask.Type.None
   nameWithType: BoxMask.Type.None
-- uid: TUIS.Components.Masks.BoxMask.Type.Simple
-  name: Simple
-  href: api/TUIS.Components.Masks.BoxMask.Type.html#TUIS_Components_Masks_BoxMask_Type_Simple
-  commentId: F:TUIS.Components.Masks.BoxMask.Type.Simple
-  fullName: TUIS.Components.Masks.BoxMask.Type.Simple
-  nameWithType: BoxMask.Type.Simple
+- uid: TUIS.Components.Masks.BoxMask.Type.Rounded
+  name: Rounded
+  href: api/TUIS.Components.Masks.BoxMask.Type.html#TUIS_Components_Masks_BoxMask_Type_Rounded
+  commentId: F:TUIS.Components.Masks.BoxMask.Type.Rounded
+  fullName: TUIS.Components.Masks.BoxMask.Type.Rounded
+  nameWithType: BoxMask.Type.Rounded
 - uid: TUIS.Components.Masks.BoxMask.Type.Thick
   name: Thick
   href: api/TUIS.Components.Masks.BoxMask.Type.html#TUIS_Components_Masks_BoxMask_Type_Thick
   commentId: F:TUIS.Components.Masks.BoxMask.Type.Thick
   fullName: TUIS.Components.Masks.BoxMask.Type.Thick
   nameWithType: BoxMask.Type.Thick
+- uid: TUIS.Components.Masks.BoxMask.Type.ThickInner
+  name: ThickInner
+  href: api/TUIS.Components.Masks.BoxMask.Type.html#TUIS_Components_Masks_BoxMask_Type_ThickInner
+  commentId: F:TUIS.Components.Masks.BoxMask.Type.ThickInner
+  fullName: TUIS.Components.Masks.BoxMask.Type.ThickInner
+  nameWithType: BoxMask.Type.ThickInner
 - uid: TUIS.Components.Masks.ClockMask
   name: ClockMask
   href: api/TUIS.Components.Masks.ClockMask.html

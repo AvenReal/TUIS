@@ -42,9 +42,12 @@ public class BoxMask : Mask
     /// </summary>
     public enum Type
     {
-        Simple,
+        Default,
+        Rounded,
+        Bold,
         Double,
         Thick,
+        ThickInner,
         None
     }
 
@@ -55,9 +58,12 @@ public class BoxMask : Mask
         Dictionary<Type, (char west, char east, char north, char south, char northWest, char northEast, char southWest,
             char southEast)> _boxChars = new()
         {
-            { Type.Simple, ('│', '│', '─', '─', '┌', '┐', '└', '┘') },
+            { Type.Default, ('│', '│', '─', '─', '┌', '┐', '└', '┘') },
+            { Type.Rounded, ('│', '│', '─', '─', '╭', '╮', '╰', '╯') },
+            { Type.Bold, ('┃', '┃', '━', '━', '┏', '┓', '┗', '┛') },
             { Type.Double, ('║', '║', '═', '═', '╔', '╗', '╚', '╝') },
-            { Type.Thick, ('▌', '▐', '▀', '▄', '█', '█', '█', '█') }
+            { Type.Thick, ('▌', '▐', '▀', '▄', '▛', '▜', '▙', '▟') },
+            { Type.ThickInner, ('▐', '▌', '▄', '▀', '▗', '▖', '▝', '▘') }
         };
 
 
