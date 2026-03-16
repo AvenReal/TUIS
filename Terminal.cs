@@ -25,7 +25,7 @@ public class Terminal
         Width = width;
         Height = height;
         TimeSystem.AddTimedEvent((_, _) => { Draw(); });
-        TimeSystem.AddTimedEvent((_, _) => { UpdateScreen(); });
+        // TimeSystem.AddTimedEvent((_, _) => { UpdateScreen(); });
         _screen = new string[Height, Width];
         NeedReDraw = new (int, int)[Height];
 
@@ -86,13 +86,19 @@ public class Terminal
         TextDecoration textDecoration)
     {
         string oldValue = _screen[y, x];
-        _screen[y, x] = $"\e[{(int)(backgroundColor)}m\e[{(int)(textDecoration)};{(int)(textColor)}m{c}";
-
-        if (oldValue != _screen[y, x])
+        string newValue = $"\e[{(int)(backgroundColor)}m\e[{(int)(textDecoration)};{(int)(textColor)}m{c}";
+        if (oldValue != newValue)
         {
-            (int min, int max) = NeedReDraw[y];
-            NeedReDraw[y] = (int.Min(min, x), int.Max(max, x));
+            _screen[y, x] = newValue;
+            Console.Write($"\u001b[{y};{x}H{newValue}");
         }
+
+
+        // if (oldValue != _screen[y, x])
+        // {
+        //     (int min, int max) = NeedReDraw[y];
+        //     NeedReDraw[y] = (int.Min(min, x), int.Max(max, x));
+        // }
     }
 
     /// <summary>
@@ -154,6 +160,7 @@ public class Terminal
         onStart?.Invoke(this);
         while (true)
         {
+            Thread.Sleep(10000);
         }
     }
 }

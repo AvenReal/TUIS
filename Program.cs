@@ -5,9 +5,8 @@ using TUIS;
 using TUIS.Components;
 using TUIS.Components.Masks;
 
-
-int height = (int)(Console.WindowHeight * 2.6);
-int width = (int)(Console.WindowWidth * 4.7);
+int height = (int)(Console.WindowHeight * 2);
+int width = (int)(Console.WindowWidth * 2);
 
 Terminal terminal = new Terminal(width, height);
 
@@ -53,6 +52,11 @@ terminal.InputSystem.OnKeyPress += key =>
                 window.Height++;
             else
                 window.PosY++;
+            break;
+        }
+        case ConsoleKey.Tab:
+        {
+            windowBoxMask.BoxType = (BoxMask.Type)((int)(windowBoxMask.BoxType + 1) % 7);
             break;
         }
     }
