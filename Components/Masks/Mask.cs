@@ -12,7 +12,7 @@ public abstract class Mask
     public readonly Component Component;
 
     /// <summary>
-    /// Helps to optimise the drawing of components, if NeedReDraw == false, the <see cref="Mask"/> won't be re-<see cref="Draw"/>n.
+    /// Helps to optimize the drawing of components, if NeedReDraw == false, the <see cref="Mask"/> won't be re-<see cref="Draw"/>n.
     /// if NeedReDraw is set to true, it will automatically set the <see cref="Components.Component.NeedReDraw"/> to true.
     /// </summary>
     public bool NeedReDraw
