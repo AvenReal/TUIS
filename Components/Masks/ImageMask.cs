@@ -31,14 +31,14 @@ public class ImageMask : Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
 
 
     /// <summary>
-    /// Draw an image in format jpg, png or any other image format in ASCII art.
+    /// Calculate an image in format jpg, png or any other image format in ASCII art.
     /// Warning: the original image should have a ratio than the <see cref="Component"/>. 
     /// </summary>
     /// <param name="path">The relative or absolute path of the image to draw is ASCII art</param>
@@ -84,7 +84,7 @@ public class ImageMask : Mask
                 (float r, float g, float b, float a) = GetRgba(i * height, j * width, height, width);
                 char? c = GetChar(r, g, b, a);
                 Terminal.TextColor? textColor = IsColored ? GetColor(r, g, b) : null;
-                DrawChar(i, j, c, textColor);
+                Draw(i, j, c, textColor);
             }
         }
     }

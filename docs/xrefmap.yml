@@ -38,19 +38,35 @@ references:
   fullName.vb: TUIS.Components.Component.New
   nameWithType: Component.Component
   nameWithType.vb: Component.New
-- uid: TUIS.Components.Component.Draw
-  name: Draw()
-  href: api/TUIS.Components.Component.html#TUIS_Components_Component_Draw
-  commentId: M:TUIS.Components.Component.Draw
-  fullName: TUIS.Components.Component.Draw()
-  nameWithType: Component.Draw()
-- uid: TUIS.Components.Component.Draw*
-  name: Draw
-  href: api/TUIS.Components.Component.html#TUIS_Components_Component_Draw_
-  commentId: Overload:TUIS.Components.Component.Draw
+- uid: TUIS.Components.Component.Calculate
+  name: Calculate()
+  href: api/TUIS.Components.Component.html#TUIS_Components_Component_Calculate
+  commentId: M:TUIS.Components.Component.Calculate
+  fullName: TUIS.Components.Component.Calculate()
+  nameWithType: Component.Calculate()
+- uid: TUIS.Components.Component.Calculate*
+  name: Calculate
+  href: api/TUIS.Components.Component.html#TUIS_Components_Component_Calculate_
+  commentId: Overload:TUIS.Components.Component.Calculate
   isSpec: "True"
-  fullName: TUIS.Components.Component.Draw
-  nameWithType: Component.Draw
+  fullName: TUIS.Components.Component.Calculate
+  nameWithType: Component.Calculate
+- uid: TUIS.Components.Component.DrawChar(System.Int32,System.Int32)
+  name: DrawChar(int, int)
+  href: api/TUIS.Components.Component.html#TUIS_Components_Component_DrawChar_System_Int32_System_Int32_
+  commentId: M:TUIS.Components.Component.DrawChar(System.Int32,System.Int32)
+  name.vb: DrawChar(Integer, Integer)
+  fullName: TUIS.Components.Component.DrawChar(int, int)
+  fullName.vb: TUIS.Components.Component.DrawChar(Integer, Integer)
+  nameWithType: Component.DrawChar(int, int)
+  nameWithType.vb: Component.DrawChar(Integer, Integer)
+- uid: TUIS.Components.Component.DrawChar*
+  name: DrawChar
+  href: api/TUIS.Components.Component.html#TUIS_Components_Component_DrawChar_
+  commentId: Overload:TUIS.Components.Component.DrawChar
+  isSpec: "True"
+  fullName: TUIS.Components.Component.DrawChar
+  nameWithType: Component.DrawChar
 - uid: TUIS.Components.Component.Height
   name: Height
   href: api/TUIS.Components.Component.html#TUIS_Components_Component_Height
@@ -83,6 +99,19 @@ references:
   commentId: F:TUIS.Components.Component.Masks
   fullName: TUIS.Components.Component.Masks
   nameWithType: Component.Masks
+- uid: TUIS.Components.Component.NeedReCalculate
+  name: NeedReCalculate
+  href: api/TUIS.Components.Component.html#TUIS_Components_Component_NeedReCalculate
+  commentId: P:TUIS.Components.Component.NeedReCalculate
+  fullName: TUIS.Components.Component.NeedReCalculate
+  nameWithType: Component.NeedReCalculate
+- uid: TUIS.Components.Component.NeedReCalculate*
+  name: NeedReCalculate
+  href: api/TUIS.Components.Component.html#TUIS_Components_Component_NeedReCalculate_
+  commentId: Overload:TUIS.Components.Component.NeedReCalculate
+  isSpec: "True"
+  fullName: TUIS.Components.Component.NeedReCalculate
+  nameWithType: Component.NeedReCalculate
 - uid: TUIS.Components.Component.NeedReDraw
   name: NeedReDraw
   href: api/TUIS.Components.Component.html#TUIS_Components_Component_NeedReDraw
@@ -587,6 +616,19 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.Mask.Behaviour
   nameWithType: Mask.Behaviour
+- uid: TUIS.Components.Masks.Mask.Calculate
+  name: Calculate()
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Calculate
+  commentId: M:TUIS.Components.Masks.Mask.Calculate
+  fullName: TUIS.Components.Masks.Mask.Calculate()
+  nameWithType: Mask.Calculate()
+- uid: TUIS.Components.Masks.Mask.Calculate*
+  name: Calculate
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Calculate_
+  commentId: Overload:TUIS.Components.Masks.Mask.Calculate
+  isSpec: "True"
+  fullName: TUIS.Components.Masks.Mask.Calculate
+  nameWithType: Mask.Calculate
 - uid: TUIS.Components.Masks.Mask.Color
   name: Color
   href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Color
@@ -619,12 +661,15 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.Mask.Decoration
   nameWithType: Mask.Decoration
-- uid: TUIS.Components.Masks.Mask.Draw
-  name: Draw()
-  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw
-  commentId: M:TUIS.Components.Masks.Mask.Draw
-  fullName: TUIS.Components.Masks.Mask.Draw()
-  nameWithType: Mask.Draw()
+- uid: TUIS.Components.Masks.Mask.Draw(System.Int32,System.Int32,System.Nullable{System.Char},System.Nullable{TUIS.Terminal.TextColor},System.Nullable{TUIS.Terminal.BackgroundColor},System.Nullable{TUIS.Terminal.TextDecoration})
+  name: Draw(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__
+  commentId: M:TUIS.Components.Masks.Mask.Draw(System.Int32,System.Int32,System.Nullable{System.Char},System.Nullable{TUIS.Terminal.TextColor},System.Nullable{TUIS.Terminal.BackgroundColor},System.Nullable{TUIS.Terminal.TextDecoration})
+  name.vb: Draw(Integer, Integer, Char?, TextColor?, BackgroundColor?, TextDecoration?)
+  fullName: TUIS.Components.Masks.Mask.Draw(int, int, char?, TUIS.Terminal.TextColor?, TUIS.Terminal.BackgroundColor?, TUIS.Terminal.TextDecoration?)
+  fullName.vb: TUIS.Components.Masks.Mask.Draw(Integer, Integer, Char?, TUIS.Terminal.TextColor?, TUIS.Terminal.BackgroundColor?, TUIS.Terminal.TextDecoration?)
+  nameWithType: Mask.Draw(int, int, char?, Terminal.TextColor?, Terminal.BackgroundColor?, Terminal.TextDecoration?)
+  nameWithType.vb: Mask.Draw(Integer, Integer, Char?, Terminal.TextColor?, Terminal.BackgroundColor?, Terminal.TextDecoration?)
 - uid: TUIS.Components.Masks.Mask.Draw*
   name: Draw
   href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw_
@@ -632,15 +677,15 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.Mask.Draw
   nameWithType: Mask.Draw
-- uid: TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},System.Nullable{TUIS.Terminal.TextColor},System.Nullable{TUIS.Terminal.BackgroundColor},System.Nullable{TUIS.Terminal.TextDecoration})
-  name: DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)
-  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__
-  commentId: M:TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32,System.Nullable{System.Char},System.Nullable{TUIS.Terminal.TextColor},System.Nullable{TUIS.Terminal.BackgroundColor},System.Nullable{TUIS.Terminal.TextDecoration})
-  name.vb: DrawChar(Integer, Integer, Char?, TextColor?, BackgroundColor?, TextDecoration?)
-  fullName: TUIS.Components.Masks.Mask.DrawChar(int, int, char?, TUIS.Terminal.TextColor?, TUIS.Terminal.BackgroundColor?, TUIS.Terminal.TextDecoration?)
-  fullName.vb: TUIS.Components.Masks.Mask.DrawChar(Integer, Integer, Char?, TUIS.Terminal.TextColor?, TUIS.Terminal.BackgroundColor?, TUIS.Terminal.TextDecoration?)
-  nameWithType: Mask.DrawChar(int, int, char?, Terminal.TextColor?, Terminal.BackgroundColor?, Terminal.TextDecoration?)
-  nameWithType.vb: Mask.DrawChar(Integer, Integer, Char?, Terminal.TextColor?, Terminal.BackgroundColor?, Terminal.TextDecoration?)
+- uid: TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32)
+  name: DrawChar(int, int)
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_
+  commentId: M:TUIS.Components.Masks.Mask.DrawChar(System.Int32,System.Int32)
+  name.vb: DrawChar(Integer, Integer)
+  fullName: TUIS.Components.Masks.Mask.DrawChar(int, int)
+  fullName.vb: TUIS.Components.Masks.Mask.DrawChar(Integer, Integer)
+  nameWithType: Mask.DrawChar(int, int)
+  nameWithType.vb: Mask.DrawChar(Integer, Integer)
 - uid: TUIS.Components.Masks.Mask.DrawChar*
   name: DrawChar
   href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_
@@ -661,6 +706,19 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.Mask.IsVisible
   nameWithType: Mask.IsVisible
+- uid: TUIS.Components.Masks.Mask.NeedReCalculate
+  name: NeedReCalculate
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReCalculate
+  commentId: P:TUIS.Components.Masks.Mask.NeedReCalculate
+  fullName: TUIS.Components.Masks.Mask.NeedReCalculate
+  nameWithType: Mask.NeedReCalculate
+- uid: TUIS.Components.Masks.Mask.NeedReCalculate*
+  name: NeedReCalculate
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReCalculate_
+  commentId: Overload:TUIS.Components.Masks.Mask.NeedReCalculate
+  isSpec: "True"
+  fullName: TUIS.Components.Masks.Mask.NeedReCalculate
+  nameWithType: Mask.NeedReCalculate
 - uid: TUIS.Components.Masks.Mask.NeedReDraw
   name: NeedReDraw
   href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReDraw
@@ -674,6 +732,12 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.Mask.NeedReDraw
   nameWithType: Mask.NeedReDraw
+- uid: TUIS.Components.Masks.Mask.Screen
+  name: Screen
+  href: api/TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Screen
+  commentId: F:TUIS.Components.Masks.Mask.Screen
+  fullName: TUIS.Components.Masks.Mask.Screen
+  nameWithType: Mask.Screen
 - uid: TUIS.Components.Masks.TextMask
   name: TextMask
   href: api/TUIS.Components.Masks.TextMask.html
@@ -1046,15 +1110,12 @@ references:
   commentId: F:TUIS.Terminal.Components
   fullName: TUIS.Terminal.Components
   nameWithType: Terminal.Components
-- uid: TUIS.Terminal.DrawChar(System.Int32,System.Int32,System.Char,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
-  name: DrawChar(int, int, char, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Terminal.html#TUIS_Terminal_DrawChar_System_Int32_System_Int32_System_Char_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
-  commentId: M:TUIS.Terminal.DrawChar(System.Int32,System.Int32,System.Char,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
-  name.vb: DrawChar(Integer, Integer, Char, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Terminal.DrawChar(int, int, char, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
-  fullName.vb: TUIS.Terminal.DrawChar(Integer, Integer, Char, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
-  nameWithType: Terminal.DrawChar(int, int, char, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
-  nameWithType.vb: Terminal.DrawChar(Integer, Integer, Char, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+- uid: TUIS.Terminal.DrawChar
+  name: DrawChar()
+  href: api/TUIS.Terminal.html#TUIS_Terminal_DrawChar
+  commentId: M:TUIS.Terminal.DrawChar
+  fullName: TUIS.Terminal.DrawChar()
+  nameWithType: Terminal.DrawChar()
 - uid: TUIS.Terminal.DrawChar*
   name: DrawChar
   href: api/TUIS.Terminal.html#TUIS_Terminal_DrawChar_
@@ -1074,6 +1135,12 @@ references:
   commentId: F:TUIS.Terminal.InputSystem
   fullName: TUIS.Terminal.InputSystem
   nameWithType: Terminal.InputSystem
+- uid: TUIS.Terminal.NeedReCalculate
+  name: NeedReCalculate
+  href: api/TUIS.Terminal.html#TUIS_Terminal_NeedReCalculate
+  commentId: F:TUIS.Terminal.NeedReCalculate
+  fullName: TUIS.Terminal.NeedReCalculate
+  nameWithType: Terminal.NeedReCalculate
 - uid: TUIS.Terminal.NeedReDraw
   name: NeedReDraw
   href: api/TUIS.Terminal.html#TUIS_Terminal_NeedReDraw

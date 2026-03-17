@@ -13,7 +13,7 @@ public class InputMask : Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
@@ -26,7 +26,7 @@ public class InputMask : Mask
         get;
         private set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
             _onOutputChange?.Invoke(this);
         }
@@ -43,7 +43,7 @@ public class InputMask : Mask
         set
         {
             field = value;
-            NeedReDraw = true;
+            NeedReCalculate = true;
         }
     }
 
@@ -53,7 +53,7 @@ public class InputMask : Mask
         set
         {
             field = value;
-            NeedReDraw = true;
+            NeedReCalculate = true;
         }
     }
 
@@ -75,7 +75,7 @@ public class InputMask : Mask
     {
         if (Enabled)
         {
-            Component.NeedReDraw = false;
+            Component.NeedReCalculate = false;
             Enabled = false;
             Console.CursorVisible = true;
 

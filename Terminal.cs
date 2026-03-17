@@ -1,5 +1,5 @@
-using System.Text;
 using TUIS.Components;
+using TUIS.Components.Masks;
 using TUIS.Systems;
 
 namespace TUIS;
@@ -18,63 +18,53 @@ public class Terminal
 
     private readonly string[,] _screen;
 
-    public readonly (int min, int max)[] NeedReDraw;
+    public bool NeedReDraw;
+
+    public bool NeedReCalculate;
 
     public Terminal(int width, int height)
     {
         Width = width;
         Height = height;
-        TimeSystem.AddTimedEvent((_, _) => { Draw(); });
-        // TimeSystem.AddTimedEvent((_, _) => { UpdateScreen(); });
+        TimeSystem.AddTimedEvent((_, _) =>
+        {
+            Calculate();
+            DrawChar();
+        });
         _screen = new string[Height, Width];
-        NeedReDraw = new (int, int)[Height];
+
 
         for (int i = 0; i < Height; i++)
         {
-            NeedReDraw[i] = (int.MaxValue, -1);
             for (int j = 0; j < Width; j++)
             {
                 _screen[i, j] = " ";
             }
         }
+
+        NeedReCalculate = true;
     }
 
+
     /// <summary>
-    /// This method will automatically be called to re-draw each row of the <see cref="_screen"/> that have been modified.  
+    /// This method will automatically be called and will call <see cref="Component.Calculate"/> on each <see cref="Components"/> to calculates the chars that need to be changed on next frame. 
     /// </summary>
-    private void UpdateScreen()
+    private void Calculate()
     {
-        for (int i = 0; i < Height; i++)
+        if (NeedReCalculate)
         {
-            if (NeedReDraw[i].max != -1)
+            NeedReCalculate = false;
+
+            foreach (var component in Components)
             {
-                (int min, int max) = NeedReDraw[i];
-                NeedReDraw[i] = (int.MaxValue, -1);
-
-                StringBuilder sb = new StringBuilder();
-                for (int j = min; j <= max; j++)
-                {
-                    sb.Append(_screen[i, j]);
-                }
-
-                Console.Write($"\u001b[{i};{min + 1}H{sb.ToString()}");
+                component.Calculate();
             }
         }
     }
 
-    /// <summary>
-    /// This method will automatically be called and will call <see cref="Component.Draw"/> on each <see cref="Components"/>. 
-    /// </summary>
-    private void Draw()
-    {
-        foreach (var component in Components)
-        {
-            component.Draw();
-        }
-    }
 
     /// <summary>
-    /// This method will be called by <see cref="TUIS.Components.Masks.Mask.DrawChar"/> to correctly update a character of the internal <see cref="_screen"/> of the <see cref="Terminal"/>. 
+    /// This method will be called by <see cref="Mask.Draw"/> to correctly update a character of the internal <see cref="_screen"/> of the <see cref="Terminal"/>. 
     /// </summary>
     /// <param name="y">The y coordinate of the char to update (0 = top).</param>
     /// <param name="x">The x coordinate of the char to update (0 = left).</param>
@@ -82,23 +72,33 @@ public class Terminal
     /// <param name="textColor">The <see cref="TextColor"/> the <see cref="c"/> will be drawn.</param>
     /// <param name="backgroundColor">The <see cref="BackgroundColor"/> the <see cref="c"/> will be drawn.</param>
     /// <param name="textDecoration">The <see cref="TextDecoration"/> the <see cref="c"/> will be drawn.</param>
-    public void DrawChar(int y, int x, char c, TextColor textColor, BackgroundColor backgroundColor,
-        TextDecoration textDecoration)
+    public void DrawChar()
     {
-        string oldValue = _screen[y, x];
-        string newValue = $"\e[{(int)(backgroundColor)}m\e[{(int)(textDecoration)};{(int)(textColor)}m{c}";
-        if (oldValue != newValue)
+        if (!NeedReDraw)
+            return;
+        NeedReDraw = false;
+
+        for (int i = 0; i < Height; i++)
         {
-            _screen[y, x] = newValue;
-            Console.Write($"\u001b[{y};{x}H{newValue}");
+            for (int j = 0; j < Width; j++)
+            {
+                foreach (var component in Components)
+                {
+                    var newValue = component.DrawChar(i, j);
+                    if (newValue != null)
+                    {
+                        var oldValue = _screen[i, j];
+                        if (oldValue != newValue)
+                        {
+                            _screen[i, j] = newValue;
+                            Console.Write($"\u001b[{i};{j}H{newValue}");
+                        }
+                    }
+                }
+            }
         }
-
-
-        // if (oldValue != _screen[y, x])
-        // {
-        //     (int min, int max) = NeedReDraw[y];
-        //     NeedReDraw[y] = (int.Min(min, x), int.Max(max, x));
-        // }
+        // string oldValue = _screen[y, x];
+        // string newValue = $"\e[{(int)(backgroundColor)}m\e[{(int)(textDecoration)};{(int)(textColor)}m{c}";
     }
 
     /// <summary>
@@ -149,7 +149,7 @@ public class Terminal
         Console.Clear();
         foreach (var component in Components)
         {
-            component.NeedReDraw = true;
+            component.NeedReCalculate = true;
         }
     }
 

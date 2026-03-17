@@ -23,7 +23,7 @@ public class ClockMask : Mask
         {
             if (Component.Terminal.TimeSystem.MiliSecond % 10 == 0)
             {
-                NeedReDraw = true;
+                NeedReCalculate = true;
             }
         }));
     }
@@ -67,20 +67,20 @@ public class ClockMask : Mask
 
         for (int i = 0; i < 9; i++)
         {
-            DrawChar(i / 3, i % 3, _numbers[hoursTenth][i]);
-            DrawChar(i / 3, i % 3 + 4, _numbers[hoursUnits][i]);
+            Draw(i / 3, i % 3, _numbers[hoursTenth][i]);
+            Draw(i / 3, i % 3 + 4, _numbers[hoursUnits][i]);
 
-            DrawChar(i / 3, i % 3 + 10, _numbers[minutesTenth][i]);
-            DrawChar(i / 3, i % 3 + 14, _numbers[minutesUnits][i]);
+            Draw(i / 3, i % 3 + 10, _numbers[minutesTenth][i]);
+            Draw(i / 3, i % 3 + 14, _numbers[minutesUnits][i]);
 
-            DrawChar(i / 3, i % 3 + 20, _numbers[secondsTenth][i]);
-            DrawChar(i / 3, i % 3 + 24, _numbers[secondsUnits][i]);
+            Draw(i / 3, i % 3 + 20, _numbers[secondsTenth][i]);
+            Draw(i / 3, i % 3 + 24, _numbers[secondsUnits][i]);
         }
 
-        DrawChar(0, 8, Component.Terminal.TimeSystem.MiliSecond % 20 == 0 ? ' ' : '▄');
-        DrawChar(2, 8, Component.Terminal.TimeSystem.MiliSecond % 20 == 0 ? ' ' : '▀');
+        Draw(0, 8, Component.Terminal.TimeSystem.MiliSecond % 20 == 0 ? ' ' : '▄');
+        Draw(2, 8, Component.Terminal.TimeSystem.MiliSecond % 20 == 0 ? ' ' : '▀');
 
-        DrawChar(0, 18, Component.Terminal.TimeSystem.MiliSecond % 20 == 0 ? ' ' : '▄');
-        DrawChar(2, 18, Component.Terminal.TimeSystem.MiliSecond % 20 == 0 ? ' ' : '▀');
+        Draw(0, 18, Component.Terminal.TimeSystem.MiliSecond % 20 == 0 ? ' ' : '▄');
+        Draw(2, 18, Component.Terminal.TimeSystem.MiliSecond % 20 == 0 ? ' ' : '▀');
     }
 }

@@ -13,7 +13,7 @@ public class BackgroundMask : Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
@@ -47,7 +47,7 @@ public class BackgroundMask : Mask
         {
             for (int j = 0; j < Component.Width; j++)
             {
-                DrawChar(i, j, BackgroundChar);
+                Draw(i, j, BackgroundChar);
             }
         }
     }

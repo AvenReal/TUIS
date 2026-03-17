@@ -12,7 +12,7 @@ public class TextMask : Mask
         {
             field = value;
             _textLength = Text.Length;
-            NeedReDraw = true;
+            NeedReCalculate = true;
         }
     }
 
@@ -24,7 +24,7 @@ public class TextMask : Mask
         set
         {
             field = value;
-            NeedReDraw = true;
+            NeedReCalculate = true;
         }
     }
 
@@ -34,7 +34,7 @@ public class TextMask : Mask
         set
         {
             field = value;
-            NeedReDraw = true;
+            NeedReCalculate = true;
         }
     }
 
@@ -44,7 +44,7 @@ public class TextMask : Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
@@ -54,7 +54,7 @@ public class TextMask : Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
@@ -124,7 +124,7 @@ public class TextMask : Mask
         {
             int lineIndex = (i / charsPerLine);
             int charIndexInLine = (i % charsPerLine);
-            DrawChar((yOffset + lineIndex), (xOffset + charIndexInLine), Text[i]);
+            Draw((yOffset + lineIndex), (xOffset + charIndexInLine), Text[i]);
         }
     }
 }

@@ -11,18 +11,31 @@ public abstract class Mask
     /// </summary>
     public readonly Component Component;
 
-    /// <summary>
-    /// Helps to optimize the drawing of components, if NeedReDraw == false, the <see cref="Mask"/> won't be re-<see cref="Draw"/>n.
-    /// if NeedReDraw is set to true, it will automatically set the <see cref="Components.Component.NeedReDraw"/> to true.
-    /// </summary>
+    public List<List<string?>> Screen;
+
     public bool NeedReDraw
+    {
+        get;
+        set
+        {
+            if (value)
+                Component.NeedReDraw = true;
+            field = value;
+        }
+    }
+
+    /// <summary>
+    /// Helps to optimize the drawing of components, if NeedReCalculate == false, the <see cref="Mask"/> won't be re-<see cref="Calculate"/>n.
+    /// if NeedReCalculate is set to true, it will automatically set the <see cref="Components.Component.NeedReCalculate"/> to true.
+    /// </summary>
+    public bool NeedReCalculate
     {
         get;
         set
         {
             field = value;
             if (value)
-                Component.NeedReDraw = true;
+                Component.NeedReCalculate = true;
         }
     }
 
@@ -34,7 +47,7 @@ public abstract class Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
@@ -47,7 +60,7 @@ public abstract class Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
@@ -60,7 +73,7 @@ public abstract class Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
@@ -73,7 +86,7 @@ public abstract class Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
@@ -98,47 +111,66 @@ public abstract class Mask
         Background = background;
         Decoration = decoration;
 
-        NeedReDraw = true;
+        Screen = new List<List<string?>>(Component.Height);
+        for (int i = 0; i < Component.Height; i++)
+        {
+            Screen.Add(new List<string?>(Component.Width));
+            for (int j = 0; j < Component.Width; j++)
+            {
+                Screen[i].Add(null);
+            }
+        }
+
+        NeedReCalculate = true;
     }
 
     /// <summary>
-    /// This method is what makes the mask unique, it will describe that to print and where using the <see cref="DrawChar"/>. The method will automatically be called when needed. 
+    /// This method is what makes the mask unique, it will describe that to print and where using the <see cref="Draw"/>. The method will automatically be called when needed. 
     /// </summary>
     protected abstract void Behaviour();
 
 
     /// <summary>
-    /// This method will be called if the mask has changed and is visible.
-    /// It calls the <see cref="Behaviour"/> method of the mask.
+    /// This method will be called if the mask has changed and so need to be re-calculated.
+    /// It calls the custom <see cref="Behaviour"/> method of the mask.
     /// </summary>
-    public void Draw()
+    public void Calculate()
     {
-        if (!NeedReDraw || !IsVisible)
+        if (!NeedReCalculate)
             return;
 
-        NeedReDraw = false;
+        NeedReCalculate = false;
+
         Behaviour();
     }
 
     /// <summary>
-    /// Used in the <see cref="Behaviour"/> method of <see cref="Mask"/>s to properly print a character using relative coordinates.
+    /// Used in the <see cref="Behaviour"/> method of <see cref="Mask"/>s to properly store a character using relative coordinates.
     /// </summary>
     /// <param name="y">Coordinate on the y-axis (0 = top) relative to the <see cref="Component"/>.</param>
     /// <param name="x">Coordinate on the x-axis (0 = left) relative to the <see cref="Component"/>.</param>
-    /// <param name="c">The character to print (null = no print).</param>
-    /// <param name="textColor">The color which the <paramref name="c"/> will be printed. null = the default background color of the mask.</param>
-    /// <param name="backgroundColor">The background color which the <paramref name="c"/> will be printed. null = the default background color of the mask.</param>
-    /// <param name="textDecoration">The decoration with which the <paramref name="c"/> will be printed. null = the default decoration of the mask.</param>
-    protected void DrawChar(int y, int x, char? c, Terminal.TextColor? textColor = null,
+    /// <param name="c">The character to print (null => "transparent").</param>
+    /// <param name="textColor">The color which the <paramref name="c"/> will be printed. (default = null => the default background color of the mask).</param>
+    /// <param name="backgroundColor">The background color which the <paramref name="c"/> will be printed. (default = null => the default background color of the mask).</param>
+    /// <param name="textDecoration">The decoration with which the <paramref name="c"/> will be printed. (default = null => the default decoration of the mask).</param>
+    protected void Draw(int y, int x, char? c, Terminal.TextColor? textColor = null,
         Terminal.BackgroundColor? backgroundColor = null,
         Terminal.TextDecoration? textDecoration = null)
     {
-        if (c == null)
-            return;
+        var oldValue = Screen[y][x];
+        var newValue = c == null
+            ? null
+            : $"\e[{(int)(backgroundColor ?? Background)}m\e[{(int)(textDecoration ?? Decoration)};{(int)(textColor ?? Color)}m{c}";
 
+        if (oldValue != newValue)
+        {
+            Screen[y][x] = newValue;
+            NeedReDraw = true;
+        }
+    }
 
-        Component.Terminal.DrawChar(y + Component.PosY, x + Component.PosX, (char)c, textColor ?? Color,
-            backgroundColor ?? Background,
-            textDecoration ?? Decoration);
+    public string? DrawChar(int y, int x)
+    {
+        return Screen[y][x];
     }
 }

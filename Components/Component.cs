@@ -11,8 +11,22 @@ public class Component
         get;
         set
         {
-            NeedReDraw = true;
             field = value;
+
+            foreach (var mask in Masks)
+            {
+                mask.Screen = new List<List<string?>>(Height);
+                for (int i = 0; i < Height; i++)
+                {
+                    mask.Screen.Add(new List<string?>(Width));
+                    for (int j = 0; j < Width; j++)
+                    {
+                        mask.Screen[i].Add(null);
+                    }
+                }
+            }
+
+            NeedReCalculate = true;
         }
     }
 
@@ -21,8 +35,21 @@ public class Component
         get;
         set
         {
-            NeedReDraw = true;
-            field = value;
+            foreach (var mask in Masks)
+            {
+                field = value;
+                mask.Screen = new List<List<string?>>(Height);
+                for (int i = 0; i < Height; i++)
+                {
+                    mask.Screen.Add(new List<string?>(Width));
+                    for (int j = 0; j < Width; j++)
+                    {
+                        mask.Screen[i].Add(null);
+                    }
+                }
+            }
+
+            NeedReCalculate = true;
         }
     }
 
@@ -30,8 +57,8 @@ public class Component
     {
         set
         {
-            NeedReDraw = true;
             field = value;
+            NeedReCalculate = true;
         }
         get;
     }
@@ -40,18 +67,33 @@ public class Component
     {
         set
         {
-            NeedReDraw = true;
             field = value;
+            NeedReCalculate = true;
         }
         get;
     }
 
     public readonly List<Mask> Masks = new();
 
+    public bool NeedReCalculate
+    {
+        get;
+        set
+        {
+            field = value;
+            Terminal.NeedReCalculate = true;
+        }
+    }
+
     public bool NeedReDraw
     {
         get;
-        set { field = value; }
+        set
+        {
+            if (value)
+                Terminal.NeedReDraw = true;
+            field = value;
+        }
     }
 
     public bool IsVisible
@@ -59,8 +101,8 @@ public class Component
         set
         {
             if (!value)
-                NeedReDraw = true;
-            field = value;
+                field = value;
+            NeedReCalculate = true;
         }
         get;
     }
@@ -84,20 +126,36 @@ public class Component
         PosY = posY == -1 ? (Terminal.Height - height) / 2 : posY;
 
         IsVisible = true;
-        NeedReDraw = true;
+        NeedReCalculate = true;
     }
 
-    public void Draw()
+    public void Calculate()
     {
-        if (!NeedReDraw)
+        if (!NeedReCalculate)
             return;
 
-
-        NeedReDraw = false;
+        NeedReCalculate = false;
 
         foreach (Mask mask in Masks)
         {
-            mask.Draw();
+            mask.Calculate();
         }
+    }
+
+    public string? DrawChar(int y, int x)
+    {
+        if (y < PosY || y >= PosY + Height || x < PosX || x >= PosX + Width)
+            return null;
+
+        y -= PosY;
+        x -= PosX;
+
+        string? res = null;
+        foreach (var mask in Masks)
+        {
+            res = mask.DrawChar(y, x) ?? res;
+        }
+
+        return res;
     }
 }

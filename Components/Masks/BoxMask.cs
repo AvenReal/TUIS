@@ -13,7 +13,7 @@ public class BoxMask : Mask
         get;
         set
         {
-            NeedReDraw = true;
+            NeedReCalculate = true;
             field = value;
         }
     }
@@ -115,7 +115,7 @@ public class BoxMask : Mask
         {
             for (int j = 0; j < Component.Width; j++)
             {
-                DrawChar(i, j, GetBox(BoxType, j, i, Component.Height, Component.Width));
+                Draw(i, j, GetBox(BoxType, j, i, Component.Height, Component.Width));
             }
         }
     }

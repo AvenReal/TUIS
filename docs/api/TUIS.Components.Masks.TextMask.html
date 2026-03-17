@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/AvenReal/TUIS/new/master/apiSpec/new?filename=TUIS_Components_Masks_TextMask.md&amp;value=---%0Auid%3A%20TUIS.Components.Masks.TextMask%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/AvenReal/TUIS/new/draw_optimisations/apiSpec/new?filename=TUIS_Components_Masks_TextMask.md&amp;value=---%0Auid%3A%20TUIS.Components.Masks.TextMask%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="TUIS_Components_Masks_TextMask" data-uid="TUIS.Components.Masks.TextMask" class="text-break">
-Class TextMask  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/TextMask.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Class TextMask  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/draw_optimisations/Components/Masks/TextMask.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -126,7 +126,13 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Component">Mask.Component</a>
     </div>
     <div>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Screen">Mask.Screen</a>
+    </div>
+    <div>
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReDraw">Mask.NeedReDraw</a>
+    </div>
+    <div>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReCalculate">Mask.NeedReCalculate</a>
     </div>
     <div>
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_IsVisible">Mask.IsVisible</a>
@@ -141,10 +147,13 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Decoration">Mask.Decoration</a>
     </div>
     <div>
-      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw">Mask.Draw()</a>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Calculate">Mask.Calculate()</a>
     </div>
     <div>
-      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__">Mask.DrawChar(int, int, char?, Terminal.TextColor?, Terminal.BackgroundColor?, Terminal.TextDecoration?)</a>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__">Mask.Draw(int, int, char?, Terminal.TextColor?, Terminal.BackgroundColor?, Terminal.TextDecoration?)</a>
+    </div>
+    <div>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_">Mask.DrawChar(int, int)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -182,7 +191,7 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="TUIS_Components_Masks_TextMask__ctor_TUIS_Components_Component_System_String_System_Byte_System_Byte_TUIS_Components_Masks_TextMask_HorizontalAlignmentEnum_TUIS_Components_Masks_TextMask_VerticalAlignmentEnum_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_" data-uid="TUIS.Components.Masks.TextMask.#ctor(TUIS.Components.Component,System.String,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)">
   TextMask(Component, string, byte, byte, HorizontalAlignmentEnum, VerticalAlignmentEnum, bool, TextColor, BackgroundColor, TextDecoration)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/TextMask.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/draw_optimisations/Components/Masks/TextMask.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -235,7 +244,7 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="TUIS_Components_Masks_TextMask_HorizontalAlignment" data-uid="TUIS.Components.Masks.TextMask.HorizontalAlignment">
   HorizontalAlignment
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/TextMask.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/draw_optimisations/Components/Masks/TextMask.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -266,7 +275,7 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="TUIS_Components_Masks_TextMask_HorizontalPadding" data-uid="TUIS.Components.Masks.TextMask.HorizontalPadding">
   HorizontalPadding
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/TextMask.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/draw_optimisations/Components/Masks/TextMask.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -297,7 +306,7 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="TUIS_Components_Masks_TextMask_Text" data-uid="TUIS.Components.Masks.TextMask.Text">
   Text
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/TextMask.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/draw_optimisations/Components/Masks/TextMask.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -328,7 +337,7 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="TUIS_Components_Masks_TextMask_VerticalAlignment" data-uid="TUIS.Components.Masks.TextMask.VerticalAlignment">
   VerticalAlignment
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/TextMask.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/draw_optimisations/Components/Masks/TextMask.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -359,7 +368,7 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="TUIS_Components_Masks_TextMask_VerticalPadding" data-uid="TUIS.Components.Masks.TextMask.VerticalPadding">
   VerticalPadding
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/TextMask.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/draw_optimisations/Components/Masks/TextMask.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -394,10 +403,10 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="TUIS_Components_Masks_TextMask_Behaviour" data-uid="TUIS.Components.Masks.TextMask.Behaviour">
   Behaviour()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/TextMask.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/draw_optimisations/Components/Masks/TextMask.cs/#L99"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__">DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)</a>. The method will automatically be called when needed.</p>
+  <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_Draw_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__">Draw(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)</a>. The method will automatically be called when needed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -421,7 +430,7 @@ Class TextMask  <a class="header-action link-secondary" title="View source" href
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/TextMask.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/AvenReal/TUIS/blob/draw_optimisations/Components/Masks/TextMask.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

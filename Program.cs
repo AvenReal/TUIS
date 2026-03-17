@@ -5,8 +5,8 @@ using TUIS;
 using TUIS.Components;
 using TUIS.Components.Masks;
 
-int height = (int)(Console.WindowHeight * 2);
-int width = (int)(Console.WindowWidth * 2);
+int height = (int)(Console.WindowHeight * 3.5);
+int width = (int)(Console.WindowWidth * 5.5);
 
 Terminal terminal = new Terminal(width, height);
 
