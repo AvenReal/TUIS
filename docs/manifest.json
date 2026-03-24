@@ -150,6 +150,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/TUIS.Components.Masks.BigTextTextMask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TUIS.Components.Masks.BigTextTextMask.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TUIS.Components.Masks.BigTextTextMask",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/TUIS.Components.Masks.BoxMask.Type.yml",
       "output": {
         ".html": {

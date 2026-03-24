@@ -1,4 +1,3 @@
-using System.Text;
 using TUIS.Components;
 using TUIS.Systems;
 
@@ -25,7 +24,6 @@ public class Terminal
         Width = width;
         Height = height;
         TimeSystem.AddTimedEvent((_, _) => { Draw(); });
-        // TimeSystem.AddTimedEvent((_, _) => { UpdateScreen(); });
         _screen = new string[Height, Width];
         NeedReDraw = new (int, int)[Height];
 
@@ -35,29 +33,6 @@ public class Terminal
             for (int j = 0; j < Width; j++)
             {
                 _screen[i, j] = " ";
-            }
-        }
-    }
-
-    /// <summary>
-    /// This method will automatically be called to re-draw each row of the <see cref="_screen"/> that have been modified.  
-    /// </summary>
-    private void UpdateScreen()
-    {
-        for (int i = 0; i < Height; i++)
-        {
-            if (NeedReDraw[i].max != -1)
-            {
-                (int min, int max) = NeedReDraw[i];
-                NeedReDraw[i] = (int.MaxValue, -1);
-
-                StringBuilder sb = new StringBuilder();
-                for (int j = min; j <= max; j++)
-                {
-                    sb.Append(_screen[i, j]);
-                }
-
-                Console.Write($"\u001b[{i};{min + 1}H{sb.ToString()}");
             }
         }
     }
@@ -92,13 +67,6 @@ public class Terminal
             _screen[y, x] = newValue;
             Console.Write($"\u001b[{y};{x}H{newValue}");
         }
-
-
-        // if (oldValue != _screen[y, x])
-        // {
-        //     (int min, int max) = NeedReDraw[y];
-        //     NeedReDraw[y] = (int.Min(min, x), int.Max(max, x));
-        // }
     }
 
     /// <summary>
