@@ -198,44 +198,69 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.BackgroundMask.Behaviour
   nameWithType: BackgroundMask.Behaviour
-- uid: TUIS.Components.Masks.BigTextTextMask
-  name: BigTextTextMask
-  href: api/TUIS.Components.Masks.BigTextTextMask.html
-  commentId: T:TUIS.Components.Masks.BigTextTextMask
-  fullName: TUIS.Components.Masks.BigTextTextMask
-  nameWithType: BigTextTextMask
-- uid: TUIS.Components.Masks.BigTextTextMask.#ctor(TUIS.Components.Component,System.String,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
-  name: BigTextTextMask(Component, string, byte, byte, HorizontalAlignmentEnum, VerticalAlignmentEnum, bool, TextColor, BackgroundColor, TextDecoration)
-  href: api/TUIS.Components.Masks.BigTextTextMask.html#TUIS_Components_Masks_BigTextTextMask__ctor_TUIS_Components_Component_System_String_System_Byte_System_Byte_TUIS_Components_Masks_TextMask_HorizontalAlignmentEnum_TUIS_Components_Masks_TextMask_VerticalAlignmentEnum_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
-  commentId: M:TUIS.Components.Masks.BigTextTextMask.#ctor(TUIS.Components.Component,System.String,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
-  name.vb: New(Component, String, Byte, Byte, HorizontalAlignmentEnum, VerticalAlignmentEnum, Boolean, TextColor, BackgroundColor, TextDecoration)
-  fullName: TUIS.Components.Masks.BigTextTextMask.BigTextTextMask(TUIS.Components.Component, string, byte, byte, TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum, TUIS.Components.Masks.TextMask.VerticalAlignmentEnum, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
-  fullName.vb: TUIS.Components.Masks.BigTextTextMask.New(TUIS.Components.Component, String, Byte, Byte, TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum, TUIS.Components.Masks.TextMask.VerticalAlignmentEnum, Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
-  nameWithType: BigTextTextMask.BigTextTextMask(Component, string, byte, byte, TextMask.HorizontalAlignmentEnum, TextMask.VerticalAlignmentEnum, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
-  nameWithType.vb: BigTextTextMask.New(Component, String, Byte, Byte, TextMask.HorizontalAlignmentEnum, TextMask.VerticalAlignmentEnum, Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
-- uid: TUIS.Components.Masks.BigTextTextMask.#ctor*
-  name: BigTextTextMask
-  href: api/TUIS.Components.Masks.BigTextTextMask.html#TUIS_Components_Masks_BigTextTextMask__ctor_
-  commentId: Overload:TUIS.Components.Masks.BigTextTextMask.#ctor
+- uid: TUIS.Components.Masks.BigTextMask
+  name: BigTextMask
+  href: api/TUIS.Components.Masks.BigTextMask.html
+  commentId: T:TUIS.Components.Masks.BigTextMask
+  fullName: TUIS.Components.Masks.BigTextMask
+  nameWithType: BigTextMask
+- uid: TUIS.Components.Masks.BigTextMask.#ctor(TUIS.Components.Component,System.String,TUIS.Components.Masks.BigTextMask.FontType,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
+  name: BigTextMask(Component, string, FontType, byte, byte, HorizontalAlignmentEnum, VerticalAlignmentEnum, bool, TextColor, BackgroundColor, TextDecoration)
+  href: api/TUIS.Components.Masks.BigTextMask.html#TUIS_Components_Masks_BigTextMask__ctor_TUIS_Components_Component_System_String_TUIS_Components_Masks_BigTextMask_FontType_System_Byte_System_Byte_TUIS_Components_Masks_TextMask_HorizontalAlignmentEnum_TUIS_Components_Masks_TextMask_VerticalAlignmentEnum_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_
+  commentId: M:TUIS.Components.Masks.BigTextMask.#ctor(TUIS.Components.Component,System.String,TUIS.Components.Masks.BigTextMask.FontType,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)
+  name.vb: New(Component, String, FontType, Byte, Byte, HorizontalAlignmentEnum, VerticalAlignmentEnum, Boolean, TextColor, BackgroundColor, TextDecoration)
+  fullName: TUIS.Components.Masks.BigTextMask.BigTextMask(TUIS.Components.Component, string, TUIS.Components.Masks.BigTextMask.FontType, byte, byte, TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum, TUIS.Components.Masks.TextMask.VerticalAlignmentEnum, bool, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  fullName.vb: TUIS.Components.Masks.BigTextMask.New(TUIS.Components.Component, String, TUIS.Components.Masks.BigTextMask.FontType, Byte, Byte, TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum, TUIS.Components.Masks.TextMask.VerticalAlignmentEnum, Boolean, TUIS.Terminal.TextColor, TUIS.Terminal.BackgroundColor, TUIS.Terminal.TextDecoration)
+  nameWithType: BigTextMask.BigTextMask(Component, string, BigTextMask.FontType, byte, byte, TextMask.HorizontalAlignmentEnum, TextMask.VerticalAlignmentEnum, bool, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+  nameWithType.vb: BigTextMask.New(Component, String, BigTextMask.FontType, Byte, Byte, TextMask.HorizontalAlignmentEnum, TextMask.VerticalAlignmentEnum, Boolean, Terminal.TextColor, Terminal.BackgroundColor, Terminal.TextDecoration)
+- uid: TUIS.Components.Masks.BigTextMask.#ctor*
+  name: BigTextMask
+  href: api/TUIS.Components.Masks.BigTextMask.html#TUIS_Components_Masks_BigTextMask__ctor_
+  commentId: Overload:TUIS.Components.Masks.BigTextMask.#ctor
   isSpec: "True"
   name.vb: New
-  fullName: TUIS.Components.Masks.BigTextTextMask.BigTextTextMask
-  fullName.vb: TUIS.Components.Masks.BigTextTextMask.New
-  nameWithType: BigTextTextMask.BigTextTextMask
-  nameWithType.vb: BigTextTextMask.New
-- uid: TUIS.Components.Masks.BigTextTextMask.Behaviour
+  fullName: TUIS.Components.Masks.BigTextMask.BigTextMask
+  fullName.vb: TUIS.Components.Masks.BigTextMask.New
+  nameWithType: BigTextMask.BigTextMask
+  nameWithType.vb: BigTextMask.New
+- uid: TUIS.Components.Masks.BigTextMask.Behaviour
   name: Behaviour()
-  href: api/TUIS.Components.Masks.BigTextTextMask.html#TUIS_Components_Masks_BigTextTextMask_Behaviour
-  commentId: M:TUIS.Components.Masks.BigTextTextMask.Behaviour
-  fullName: TUIS.Components.Masks.BigTextTextMask.Behaviour()
-  nameWithType: BigTextTextMask.Behaviour()
-- uid: TUIS.Components.Masks.BigTextTextMask.Behaviour*
+  href: api/TUIS.Components.Masks.BigTextMask.html#TUIS_Components_Masks_BigTextMask_Behaviour
+  commentId: M:TUIS.Components.Masks.BigTextMask.Behaviour
+  fullName: TUIS.Components.Masks.BigTextMask.Behaviour()
+  nameWithType: BigTextMask.Behaviour()
+- uid: TUIS.Components.Masks.BigTextMask.Behaviour*
   name: Behaviour
-  href: api/TUIS.Components.Masks.BigTextTextMask.html#TUIS_Components_Masks_BigTextTextMask_Behaviour_
-  commentId: Overload:TUIS.Components.Masks.BigTextTextMask.Behaviour
+  href: api/TUIS.Components.Masks.BigTextMask.html#TUIS_Components_Masks_BigTextMask_Behaviour_
+  commentId: Overload:TUIS.Components.Masks.BigTextMask.Behaviour
   isSpec: "True"
-  fullName: TUIS.Components.Masks.BigTextTextMask.Behaviour
-  nameWithType: BigTextTextMask.Behaviour
+  fullName: TUIS.Components.Masks.BigTextMask.Behaviour
+  nameWithType: BigTextMask.Behaviour
+- uid: TUIS.Components.Masks.BigTextMask.Font
+  name: Font
+  href: api/TUIS.Components.Masks.BigTextMask.html#TUIS_Components_Masks_BigTextMask_Font
+  commentId: P:TUIS.Components.Masks.BigTextMask.Font
+  fullName: TUIS.Components.Masks.BigTextMask.Font
+  nameWithType: BigTextMask.Font
+- uid: TUIS.Components.Masks.BigTextMask.Font*
+  name: Font
+  href: api/TUIS.Components.Masks.BigTextMask.html#TUIS_Components_Masks_BigTextMask_Font_
+  commentId: Overload:TUIS.Components.Masks.BigTextMask.Font
+  isSpec: "True"
+  fullName: TUIS.Components.Masks.BigTextMask.Font
+  nameWithType: BigTextMask.Font
+- uid: TUIS.Components.Masks.BigTextMask.FontType
+  name: BigTextMask.FontType
+  href: api/TUIS.Components.Masks.BigTextMask.FontType.html
+  commentId: T:TUIS.Components.Masks.BigTextMask.FontType
+  fullName: TUIS.Components.Masks.BigTextMask.FontType
+  nameWithType: BigTextMask.FontType
+- uid: TUIS.Components.Masks.BigTextMask.FontType.ThreeByThreeClassic
+  name: ThreeByThreeClassic
+  href: api/TUIS.Components.Masks.BigTextMask.FontType.html#TUIS_Components_Masks_BigTextMask_FontType_ThreeByThreeClassic
+  commentId: F:TUIS.Components.Masks.BigTextMask.FontType.ThreeByThreeClassic
+  fullName: TUIS.Components.Masks.BigTextMask.FontType.ThreeByThreeClassic
+  nameWithType: BigTextMask.FontType.ThreeByThreeClassic
 - uid: TUIS.Components.Masks.BoxMask
   name: BoxMask
   href: api/TUIS.Components.Masks.BoxMask.html

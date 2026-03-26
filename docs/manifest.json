@@ -150,16 +150,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TUIS.Components.Masks.BigTextTextMask.yml",
+      "source_relative_path": "api/TUIS.Components.Masks.BigTextMask.FontType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TUIS.Components.Masks.BigTextTextMask.html"
+          "relative_path": "api/TUIS.Components.Masks.BigTextMask.FontType.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "TUIS.Components.Masks.BigTextTextMask",
+      "Title": "TUIS.Components.Masks.BigTextMask.FontType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TUIS.Components.Masks.BigTextMask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TUIS.Components.Masks.BigTextMask.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TUIS.Components.Masks.BigTextMask",
       "Summary": null
     },
     {
