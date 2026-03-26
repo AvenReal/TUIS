@@ -16,9 +16,8 @@ Component bg = new Component(terminal, -1, -1, 0, 0);
 ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
 */
 
-Component component = new Component(terminal, -1, -1, 1, 1);
-BigTextMask bigTextMask = new BigTextMask(component,
-    "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG the quick brown fox jumps over the lazy dog");
+Component component = new Component(terminal, 35, -1, 1, 1);
+BigTextMask bigTextMask = new BigTextMask(component, "Coucou mon coeur, sache que je t'aime tres fort !");
 
 terminal.InputSystem.OnKeyPress += key =>
 {
