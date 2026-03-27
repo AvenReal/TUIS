@@ -19,7 +19,7 @@ public class BackgroundMask : Mask
     }
 
     /// <summary>
-    /// Print a single <paramref name="backgroundChar"/> in the background (Warning Masks will be printed in order so this one will override any Mask before itself) <
+    /// Print a single character as a background (Warning Masks will be printed in order so this one will override any Mask before itself) <
     /// <inheritdoc/>
     /// </summary>
     /// <param name="component">The component which the mask is attached to.</param>
