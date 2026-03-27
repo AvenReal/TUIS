@@ -1,13 +1,21 @@
 namespace TUIS.Components.Masks;
 
+/// <summary>
+/// This <see cref="Mask"/> will draw literal custom text using ascii art. 
+/// </summary>
 public class BigTextMask : TextMask
 {
+    /// <summary>
+    /// Enum representing the different font types possible.
+    /// </summary>
     public enum FontType
     {
         ThreeByThreeClassic,
     }
 
-
+    /// <summary>
+    /// Holds the way to construct the <see cref="FontType.ThreeByThreeClassic"/> font. 
+    /// </summary>
     private static readonly Dictionary<char, char[]> ThreeByThreeClassic = new()
     {
         { 'A', ['▄', '▀', '▄', '█', '▄', '█', '█', ' ', '█'] },
@@ -76,12 +84,17 @@ public class BigTextMask : TextMask
         { ',', [' ', ' ', ' ', ' ', ' ', ' ', '▄', '▀', ' '] },
     };
 
-
+    /// <summary>
+    /// Map the <see cref="Font"/> to the corresponding Font Dictionary.
+    /// </summary>
     private static readonly Dictionary<FontType, (int size, Dictionary<char, char[]>)> GetFont = new()
     {
         { FontType.ThreeByThreeClassic, (3, ThreeByThreeClassic) },
     };
 
+    /// <summary>
+    /// Holds the current <see cref="FontType"/>.
+    /// </summary>
     public FontType Font
     {
         get;
@@ -92,6 +105,20 @@ public class BigTextMask : TextMask
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="component"></param>
+    /// <param name="text"></param>
+    /// <param name="fontType"></param>
+    /// <param name="horizontalPadding"></param>
+    /// <param name="verticalPadding"></param>
+    /// <param name="horizontalAlignment"></param>
+    /// <param name="verticalAlignment"></param>
+    /// <param name="isVisible"></param>
+    /// <param name="color"></param>
+    /// <param name="background"></param>
+    /// <param name="decoration"></param>
     public BigTextMask(Component component, string text, FontType fontType = FontType.ThreeByThreeClassic,
         byte horizontalPadding = 0, byte verticalPadding = 0,
         HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left,

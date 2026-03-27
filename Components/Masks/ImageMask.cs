@@ -38,6 +38,7 @@ public class ImageMask : Mask
 
 
     /// <summary>
+    /// <inheritdoc/>
     /// Draw an image in format jpg, png or any other image format in ASCII art.
     /// Warning: the original image should have a ratio than the <see cref="Component"/>. 
     /// </summary>

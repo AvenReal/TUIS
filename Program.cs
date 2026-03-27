@@ -16,8 +16,8 @@ Component bg = new Component(terminal, -1, -1, 0, 0);
 ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
 */
 
-Component component = new Component(terminal, 35, -1, 1, 1);
-BigTextMask bigTextMask = new BigTextMask(component, "Coucou mon coeur, sache que je t'aime tres fort !");
+Component component = new Component(terminal, -1, -1, 1, 1);
+BigTextMask bigTextMask = new BigTextMask(component, "Made by AvenReal :)");
 
 terminal.InputSystem.OnKeyPress += key =>
 {
