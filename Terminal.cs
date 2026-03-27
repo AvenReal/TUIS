@@ -53,7 +53,7 @@ public class Terminal
     /// </summary>
     /// <param name="y">The y coordinate of the char to update (0 = top).</param>
     /// <param name="x">The x coordinate of the char to update (0 = left).</param>
-    /// <param name="c">The new char.</param>
+    /// <param name="c">The new char to draw.</param>
     /// <param name="textColor">The <see cref="TextColor"/> the <see cref="c"/> will be drawn.</param>
     /// <param name="backgroundColor">The <see cref="BackgroundColor"/> the <see cref="c"/> will be drawn.</param>
     /// <param name="textDecoration">The <see cref="TextDecoration"/> the <see cref="c"/> will be drawn.</param>
