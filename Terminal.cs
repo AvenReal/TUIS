@@ -15,9 +15,10 @@ public class Terminal
 
     public readonly List<Component> Components = [];
 
-    private readonly string[,] _screen;
+    public bool NeedReDraw;
 
-    public readonly (int min, int max)[] NeedReDraw;
+    private readonly string[,] _screen;
+    private readonly bool[,] _updatedPixels;
 
     public Terminal(int width, int height)
     {
@@ -25,16 +26,16 @@ public class Terminal
         Height = height;
         TimeSystem.AddTimedEvent((_, _) => { Draw(); });
         _screen = new string[Height, Width];
-        NeedReDraw = new (int, int)[Height];
-
+        _updatedPixels = new bool[Height, Width];
         for (int i = 0; i < Height; i++)
         {
-            NeedReDraw[i] = (int.MaxValue, -1);
             for (int j = 0; j < Width; j++)
             {
-                _screen[i, j] = " ";
+                _updatedPixels[i, j] = true;
             }
         }
+
+        NeedReDraw = false;
     }
 
     /// <summary>
@@ -42,10 +43,17 @@ public class Terminal
     /// </summary>
     private void Draw()
     {
+        if (!NeedReDraw)
+            return;
+
+        NeedReDraw = true;
+
         foreach (var component in Components)
         {
             component.Draw();
         }
+
+        UpdateScreen();
     }
 
     /// <summary>
@@ -65,7 +73,22 @@ public class Terminal
         if (oldValue != newValue)
         {
             _screen[y, x] = newValue;
-            Console.Write($"\u001b[{y};{x}H{newValue}");
+            _updatedPixels[y, x] = true;
+        }
+    }
+
+    private void UpdateScreen()
+    {
+        for (int i = 0; i < Height; i++)
+        {
+            for (int j = 0; j < Width; j++)
+            {
+                if (_updatedPixels[i, j])
+                {
+                    _updatedPixels[i, j] = false;
+                    Console.Write($"\u001b[{i};{j}H{_screen[i, j]}");
+                }
+            }
         }
     }
 

@@ -198,10 +198,12 @@ Class BigTextMask  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="TUIS_Components_Masks_BigTextMask__ctor_TUIS_Components_Component_System_String_TUIS_Components_Masks_BigTextMask_FontType_System_Byte_System_Byte_TUIS_Components_Masks_TextMask_HorizontalAlignmentEnum_TUIS_Components_Masks_TextMask_VerticalAlignmentEnum_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_" data-uid="TUIS.Components.Masks.BigTextMask.#ctor(TUIS.Components.Component,System.String,TUIS.Components.Masks.BigTextMask.FontType,System.Byte,System.Byte,TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum,TUIS.Components.Masks.TextMask.VerticalAlignmentEnum,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)">
   BigTextMask(Component, string, FontType, byte, byte, HorizontalAlignmentEnum, VerticalAlignmentEnum, bool, TextColor, BackgroundColor, TextDecoration)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BigTextMask.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BigTextMask.cs/#L123"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p><inheritdoc></inheritdoc>
+This <a class="xref" href="TUIS.Components.Masks.TextMask.html">TextMask</a> will draw the text using ascii art.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -211,27 +213,38 @@ Class BigTextMask  <a class="header-action link-secondary" title="View source" h
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>component</code> <a class="xref" href="TUIS.Components.Component.html">Component</a></dt>
-    <dd></dd>
+    <dd><p>The component which the mask is attached to.</p>
+</dd>
     <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The string of text to draw.</p>
+</dd>
     <dt><code>fontType</code> <a class="xref" href="TUIS.Components.Masks.BigTextMask.html">BigTextMask</a>.<a class="xref" href="TUIS.Components.Masks.BigTextMask.FontType.html">FontType</a></dt>
-    <dd></dd>
+    <dd><p>The type of font to draw.</p>
+</dd>
     <dt><code>horizontalPadding</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
-    <dd></dd>
+    <dd><p>The distance between the left/right sides of the <code class="paramref">component</code> and the beginning/end of the <code class="paramref">text</code>'s rows.</p>
+</dd>
     <dt><code>verticalPadding</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
-    <dd></dd>
+    <dd><p>The distance between the top/bottom sides of the <code class="paramref">component</code> and the first/last row of the <code class="paramref">text</code>.</p>
+</dd>
     <dt><code>horizontalAlignment</code> <a class="xref" href="TUIS.Components.Masks.TextMask.html">TextMask</a>.<a class="xref" href="TUIS.Components.Masks.TextMask.HorizontalAlignmentEnum.html">HorizontalAlignmentEnum</a></dt>
-    <dd></dd>
+    <dd><p>Whether the <code class="paramref">text</code> should be aligned to the HorizontalAlignmentEnum.Left, HorizontalAlignmentEnum.Center or HorizontalAlignmentEnum.Right of the <code class="paramref">component</code>.</p>
+</dd>
     <dt><code>verticalAlignment</code> <a class="xref" href="TUIS.Components.Masks.TextMask.html">TextMask</a>.<a class="xref" href="TUIS.Components.Masks.TextMask.VerticalAlignmentEnum.html">VerticalAlignmentEnum</a></dt>
-    <dd></dd>
+    <dd><p>Whether the <code class="paramref">text</code> should be aligned to the VerticalAlignmentEnum.Top, VerticalAlignmentEnum.Center or VerticalAlignmentEnum.Bottom of the <code class="paramref">component</code>.</p>
+</dd>
     <dt><code>isVisible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>Represent the visibility of the mask (default = true).</p>
+</dd>
     <dt><code>color</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextColor.html">TextColor</a></dt>
-    <dd></dd>
+    <dd><p>The default color of the mask (a mask's <a class="xref" href="TUIS.Components.Masks.BigTextMask.html#TUIS_Components_Masks_BigTextMask_Behaviour">Behaviour()</a>) method can override the color (default = white).</p>
+</dd>
     <dt><code>background</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.BackgroundColor.html">BackgroundColor</a></dt>
-    <dd></dd>
+    <dd><p>The default background color of the mask (a mask's <a class="xref" href="TUIS.Components.Masks.BigTextMask.html#TUIS_Components_Masks_BigTextMask_Behaviour">Behaviour()</a>) method can override the background color (default = None).</p>
+</dd>
     <dt><code>decoration</code> <a class="xref" href="TUIS.Terminal.html">Terminal</a>.<a class="xref" href="TUIS.Terminal.TextDecoration.html">TextDecoration</a></dt>
-    <dd></dd>
+    <dd><p>The default decoration of the mask (a mask's <a class="xref" href="TUIS.Components.Masks.BigTextMask.html#TUIS_Components_Masks_BigTextMask_Behaviour">Behaviour()</a>) method can override the decoration (default = Default).</p>
+</dd>
   </dl>
 
 
@@ -289,7 +302,7 @@ Class BigTextMask  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="TUIS_Components_Masks_BigTextMask_Behaviour" data-uid="TUIS.Components.Masks.BigTextMask.Behaviour">
   Behaviour()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BigTextMask.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/BigTextMask.cs/#L135"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__">DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)</a>. The method will automatically be called when needed.</p>

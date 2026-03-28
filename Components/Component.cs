@@ -51,7 +51,12 @@ public class Component
     public bool NeedReDraw
     {
         get;
-        set { field = value; }
+        set
+        {
+            field = value;
+            if (value)
+                Terminal.NeedReDraw = true;
+        }
     }
 
     public bool IsVisible

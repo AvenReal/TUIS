@@ -11,20 +11,50 @@ int width = (int)(Console.WindowWidth * 2);
 Terminal terminal = new Terminal(width, height);
 
 // Background
-/*
+
 Component bg = new Component(terminal, -1, -1, 0, 0);
 ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
-*/
 
-Component component = new Component(terminal, -1, -1, 1, 1);
-BigTextMask bigTextMask = new BigTextMask(component, "Made by AvenReal :)");
+
+Component component = new Component(terminal, 5, 5, -1, -1);
+BoxMask boxMask = new BoxMask(component, BoxMask.Type.Bold);
 
 terminal.InputSystem.OnKeyPress += key =>
 {
-    if (key.Key == ConsoleKey.Tab)
+    switch (key.Key)
     {
-        bigTextMask.Font = (BigTextMask.FontType)(((int)bigTextMask.Font + 1) % 2);
+        case ConsoleKey.UpArrow:
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                component.Height--;
+            else
+                component.PosY--;
+
+            break;
+        case ConsoleKey.DownArrow:
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                component.Height++;
+            else
+                component.PosY++;
+
+            break;
+        case (ConsoleKey.RightArrow):
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                component.Width++;
+            else
+                component.PosX++;
+
+            break;
+        case ConsoleKey.LeftArrow:
+            if (key.Modifiers == ConsoleModifiers.Shift)
+                component.Width--;
+            else
+                component.PosX--;
+
+            break;
     }
+
+    boxMask.NeedReDraw = true;
+    bgImageMask.NeedReDraw = true;
 };
 
 terminal.Start();

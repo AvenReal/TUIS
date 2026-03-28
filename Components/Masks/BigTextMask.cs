@@ -106,19 +106,20 @@ public class BigTextMask : TextMask
     }
 
     /// <summary>
-    /// 
+    /// <inheritdoc/>
+    /// This <see cref="TextMask"/> will draw the text using ascii art.
     /// </summary>
-    /// <param name="component"></param>
-    /// <param name="text"></param>
-    /// <param name="fontType"></param>
-    /// <param name="horizontalPadding"></param>
-    /// <param name="verticalPadding"></param>
-    /// <param name="horizontalAlignment"></param>
-    /// <param name="verticalAlignment"></param>
-    /// <param name="isVisible"></param>
-    /// <param name="color"></param>
-    /// <param name="background"></param>
-    /// <param name="decoration"></param>
+    /// <param name="fontType">The type of font to draw.</param>
+    /// <param name="text">The string of text to draw.</param>
+    /// <param name="horizontalPadding">The distance between the left/right sides of the <paramref name="component"/> and the beginning/end of the <paramref name="text"/>'s rows.</param>
+    /// <param name="verticalPadding">The distance between the top/bottom sides of the <paramref name="component"/> and the first/last row of the <paramref name="text"/>.</param>
+    /// <param name="horizontalAlignment">Whether the <paramref name="text"/> should be aligned to the <see cref="HorizontalAlignmentEnum.Left"/>, <see cref="HorizontalAlignmentEnum.Center"/> or <see cref="HorizontalAlignmentEnum.Right"/> of the <paramref name="component"/>.</param>
+    /// <param name="verticalAlignment">Whether the <paramref name="text"/> should be aligned to the <see cref="VerticalAlignmentEnum.Top"/>, <see cref="VerticalAlignmentEnum.Center"/> or <see cref="VerticalAlignmentEnum.Bottom"/> of the <paramref name="component"/>.</param>
+    /// <param name="component">The component which the mask is attached to.</param>
+    /// <param name="isVisible">Represent the visibility of the mask (default = true).</param>
+    /// <param name="color">The default color of the mask (a mask's <see cref="Behaviour"/>) method can override the color (default = white).</param>
+    /// <param name="background">The default background color of the mask (a mask's <see cref="Behaviour"/>) method can override the background color (default = None).</param>
+    /// <param name="decoration">The default decoration of the mask (a mask's <see cref="Behaviour"/>) method can override the decoration (default = Default).</param>
     public BigTextMask(Component component, string text, FontType fontType = FontType.ThreeByThreeClassic,
         byte horizontalPadding = 0, byte verticalPadding = 0,
         HorizontalAlignmentEnum horizontalAlignment = HorizontalAlignmentEnum.Left,
