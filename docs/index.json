@@ -84,6 +84,11 @@
     "title": "Namespace TUIS.Components | TUIS-Doc",
     "summary": "Namespace TUIS.Components Classes Component"
   },
+  "api/TUIS.Screen.html": {
+    "href": "api/TUIS.Screen.html",
+    "title": "Class Screen | TUIS-Doc",
+    "summary": "Class Screen Namespace TUIS Assembly TUIS.dll public class Screen Inheritance object Screen Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors Screen(Terminal) public Screen(Terminal terminal) Parameters terminal Terminal Methods Get(int, int) public string? Get(int y, int x) Parameters y int x int Returns string GetPriority() public int GetPriority() Returns int Set(int, int, int, string?) public void Set(int y, int x, int priority, string? value) Parameters y int x int priority int value string"
+  },
   "api/TUIS.Systems.InputSystem.html": {
     "href": "api/TUIS.Systems.InputSystem.html",
     "title": "Class InputSystem | TUIS-Doc",
@@ -122,7 +127,7 @@
   "api/TUIS.html": {
     "href": "api/TUIS.html",
     "title": "Namespace TUIS | TUIS-Doc",
-    "summary": "Namespace TUIS Classes Terminal A Terminal is the main object of this TUI system. It will hold each Component that will be drawn on the screen. Enums Terminal.BackgroundColor Get the Terminal.BackgroundColor using the ANSI color code. Terminal.TextColor Get the Terminal.TextColor using th ANSI color code. Terminal.TextDecoration Get the Terminal.TextDecoration using the ANSI color code."
+    "summary": "Namespace TUIS Classes Screen Terminal A Terminal is the main object of this TUI system. It will hold each Component that will be drawn on the screen. Enums Terminal.BackgroundColor Get the Terminal.BackgroundColor using the ANSI color code. Terminal.TextColor Get the Terminal.TextColor using th ANSI color code. Terminal.TextDecoration Get the Terminal.TextDecoration using the ANSI color code."
   },
   "documentation/getting-started.html": {
     "href": "documentation/getting-started.html",

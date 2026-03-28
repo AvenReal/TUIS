@@ -8,6 +8,7 @@ using TUIS.Components.Masks;
 int height = (int)(Console.WindowHeight * 2);
 int width = (int)(Console.WindowWidth * 2);
 
+
 Terminal terminal = new Terminal(width, height);
 
 // Background
@@ -17,6 +18,7 @@ ImageMask bgImageMask = new ImageMask(bg, "Images/wallpaper.jpg");
 
 
 Component component = new Component(terminal, 5, 5, -1, -1);
+ImageMask imageMask = new ImageMask(component, "Images/wallpaper.jpg", true);
 BoxMask boxMask = new BoxMask(component, BoxMask.Type.Bold);
 
 terminal.InputSystem.OnKeyPress += key =>
@@ -53,7 +55,6 @@ terminal.InputSystem.OnKeyPress += key =>
             break;
     }
 
-    boxMask.NeedReDraw = true;
     bgImageMask.NeedReDraw = true;
 };
 

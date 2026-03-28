@@ -11,8 +11,11 @@ public class Component
         get;
         set
         {
-            NeedReDraw = true;
             field = value;
+            foreach (Mask mask in Masks)
+            {
+                mask.NeedReDraw = true;
+            }
         }
     }
 
@@ -21,8 +24,11 @@ public class Component
         get;
         set
         {
-            NeedReDraw = true;
             field = value;
+            foreach (Mask mask in Masks)
+            {
+                mask.NeedReDraw = true;
+            }
         }
     }
 
@@ -30,8 +36,11 @@ public class Component
     {
         set
         {
-            NeedReDraw = true;
             field = value;
+            foreach (Mask mask in Masks)
+            {
+                mask.NeedReDraw = true;
+            }
         }
         get;
     }
@@ -40,8 +49,11 @@ public class Component
     {
         set
         {
-            NeedReDraw = true;
             field = value;
+            foreach (Mask mask in Masks)
+            {
+                mask.NeedReDraw = true;
+            }
         }
         get;
     }
@@ -64,8 +76,11 @@ public class Component
         set
         {
             if (!value)
-                NeedReDraw = true;
-            field = value;
+                field = value;
+            foreach (Mask mask in Masks)
+            {
+                mask.NeedReDraw = true;
+            }
         }
         get;
     }

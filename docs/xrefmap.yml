@@ -888,6 +888,76 @@ references:
   isSpec: "True"
   fullName: TUIS.Components.Masks.TextMask.VerticalPadding
   nameWithType: TextMask.VerticalPadding
+- uid: TUIS.Screen
+  name: Screen
+  href: api/TUIS.Screen.html
+  commentId: T:TUIS.Screen
+  fullName: TUIS.Screen
+  nameWithType: Screen
+- uid: TUIS.Screen.#ctor(TUIS.Terminal)
+  name: Screen(Terminal)
+  href: api/TUIS.Screen.html#TUIS_Screen__ctor_TUIS_Terminal_
+  commentId: M:TUIS.Screen.#ctor(TUIS.Terminal)
+  name.vb: New(Terminal)
+  fullName: TUIS.Screen.Screen(TUIS.Terminal)
+  fullName.vb: TUIS.Screen.New(TUIS.Terminal)
+  nameWithType: Screen.Screen(Terminal)
+  nameWithType.vb: Screen.New(Terminal)
+- uid: TUIS.Screen.#ctor*
+  name: Screen
+  href: api/TUIS.Screen.html#TUIS_Screen__ctor_
+  commentId: Overload:TUIS.Screen.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: TUIS.Screen.Screen
+  fullName.vb: TUIS.Screen.New
+  nameWithType: Screen.Screen
+  nameWithType.vb: Screen.New
+- uid: TUIS.Screen.Get(System.Int32,System.Int32)
+  name: Get(int, int)
+  href: api/TUIS.Screen.html#TUIS_Screen_Get_System_Int32_System_Int32_
+  commentId: M:TUIS.Screen.Get(System.Int32,System.Int32)
+  name.vb: Get(Integer, Integer)
+  fullName: TUIS.Screen.Get(int, int)
+  fullName.vb: TUIS.Screen.Get(Integer, Integer)
+  nameWithType: Screen.Get(int, int)
+  nameWithType.vb: Screen.Get(Integer, Integer)
+- uid: TUIS.Screen.Get*
+  name: Get
+  href: api/TUIS.Screen.html#TUIS_Screen_Get_
+  commentId: Overload:TUIS.Screen.Get
+  isSpec: "True"
+  fullName: TUIS.Screen.Get
+  nameWithType: Screen.Get
+- uid: TUIS.Screen.GetPriority
+  name: GetPriority()
+  href: api/TUIS.Screen.html#TUIS_Screen_GetPriority
+  commentId: M:TUIS.Screen.GetPriority
+  fullName: TUIS.Screen.GetPriority()
+  nameWithType: Screen.GetPriority()
+- uid: TUIS.Screen.GetPriority*
+  name: GetPriority
+  href: api/TUIS.Screen.html#TUIS_Screen_GetPriority_
+  commentId: Overload:TUIS.Screen.GetPriority
+  isSpec: "True"
+  fullName: TUIS.Screen.GetPriority
+  nameWithType: Screen.GetPriority
+- uid: TUIS.Screen.Set(System.Int32,System.Int32,System.Int32,System.String)
+  name: Set(int, int, int, string?)
+  href: api/TUIS.Screen.html#TUIS_Screen_Set_System_Int32_System_Int32_System_Int32_System_String_
+  commentId: M:TUIS.Screen.Set(System.Int32,System.Int32,System.Int32,System.String)
+  name.vb: Set(Integer, Integer, Integer, String)
+  fullName: TUIS.Screen.Set(int, int, int, string?)
+  fullName.vb: TUIS.Screen.Set(Integer, Integer, Integer, String)
+  nameWithType: Screen.Set(int, int, int, string?)
+  nameWithType.vb: Screen.Set(Integer, Integer, Integer, String)
+- uid: TUIS.Screen.Set*
+  name: Set
+  href: api/TUIS.Screen.html#TUIS_Screen_Set_
+  commentId: Overload:TUIS.Screen.Set
+  isSpec: "True"
+  fullName: TUIS.Screen.Set
+  nameWithType: Screen.Set
 - uid: TUIS.Systems
   name: TUIS.Systems
   href: api/TUIS.Systems.html

@@ -115,7 +115,6 @@ public abstract class Mask
     {
         if (!NeedReDraw || !IsVisible)
             return;
-
         NeedReDraw = false;
         Behaviour();
     }

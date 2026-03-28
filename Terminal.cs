@@ -15,7 +15,7 @@ public class Terminal
 
     public readonly List<Component> Components = [];
 
-    public bool NeedReDraw;
+    public bool NeedReDraw = false;
 
     private readonly string[,] _screen;
     private readonly bool[,] _updatedPixels;
@@ -34,8 +34,6 @@ public class Terminal
                 _updatedPixels[i, j] = true;
             }
         }
-
-        NeedReDraw = false;
     }
 
     /// <summary>
