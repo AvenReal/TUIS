@@ -96,7 +96,7 @@ public class Component
     public Component(Terminal terminal, int width, int height, int posY, int posX)
     {
         Terminal = terminal;
-        Terminal.Components.Add(this);
+        Terminal.AddComponent(this);
 
         Width = width == -1 ? Terminal.Width : width;
         Height = height == -1 ? Terminal.Height : height;

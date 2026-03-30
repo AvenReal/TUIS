@@ -10,6 +10,7 @@ public class Terminal
 {
     public readonly int Width;
     public readonly int Height;
+
     public readonly InputSystem InputSystem = new();
     public readonly TimeSystem TimeSystem = new();
 
@@ -20,10 +21,17 @@ public class Terminal
     private readonly string[,] _screen;
     private readonly bool[,] _updatedPixels;
 
-    public Terminal(int width, int height)
+    /// <summary>
+    /// The terminal is the class that holds every <see cref="Component"/>s together, it also holds the <see cref="InputSystem"/> and the <see cref="TimeSystem"/>.
+    /// You should only have 1 instance of a terminal in your program. 
+    /// </summary>
+    /// <param name="width">With of the terminal (default = -1 = <see cref="Console.WindowWidth"/>) (/!\ cannot be changed).</param>
+    /// <param name="height">Height of the terminal (default = -1 = <see cref="Console.WindowHeight"/>) (/!\ cannot be changed).</param>
+    public Terminal(int width = -1, int height = -1)
     {
-        Width = width;
-        Height = height;
+        Width = width == -1 ? Console.WindowWidth : width;
+        Height = height == -1 ? Console.WindowHeight : height;
+
         TimeSystem.AddTimedEvent((_, _) => { Draw(); });
         _screen = new string[Height, Width];
         _updatedPixels = new bool[Height, Width];
@@ -35,6 +43,10 @@ public class Terminal
             }
         }
     }
+
+    // #################################################################################################################
+    //                                              Display Methods
+    // #################################################################################################################
 
     /// <summary>
     /// This method will automatically be called and will call <see cref="Component.Draw"/> on each <see cref="Components"/>. 
@@ -90,6 +102,10 @@ public class Terminal
         }
     }
 
+    // #################################################################################################################
+    //                                              Enums
+    // #################################################################################################################
+
     /// <summary>
     /// Get the <see cref="TextColor"/> using th ANSI color code.
     /// </summary>
@@ -132,6 +148,14 @@ public class Terminal
         Underline = 4,
     }
 
+    // #################################################################################################################
+    //                                              Misc
+    // #################################################################################################################
+
+    public virtual void AddComponent(Component component)
+    {
+        Components.Add(component);
+    }
 
     public void Clear()
     {

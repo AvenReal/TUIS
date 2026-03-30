@@ -332,6 +332,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/TUIS.Components.SelectableComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TUIS.Components.SelectableComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TUIS.Components.SelectableComponent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/TUIS.Components.yml",
       "output": {
         ".html": {
@@ -346,16 +360,16 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TUIS.Screen.yml",
+      "source_relative_path": "api/TUIS.DynamicTerminal.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TUIS.Screen.html"
+          "relative_path": "api/TUIS.DynamicTerminal.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "TUIS.Screen",
+      "Title": "TUIS.DynamicTerminal",
       "Summary": null
     },
     {
