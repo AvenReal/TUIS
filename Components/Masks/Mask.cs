@@ -140,4 +140,17 @@ public abstract class Mask
             backgroundColor ?? Background,
             textDecoration ?? Decoration);
     }
+
+    protected void DrawChar(int y, int x, char? c, (int r, int g, int b) textColor,
+        Terminal.BackgroundColor? backgroundColor = null,
+        Terminal.TextDecoration? textDecoration = null)
+    {
+        if (c == null)
+            return;
+
+
+        Component.Terminal.DrawChar(y + Component.PosY, x + Component.PosX, (char)c, textColor,
+            backgroundColor ?? Background,
+            textDecoration ?? Decoration);
+    }
 }

@@ -111,6 +111,16 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "Images/wallpaper2.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Images/wallpaper2.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "README.md",
       "output": {

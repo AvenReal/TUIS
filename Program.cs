@@ -13,7 +13,7 @@ DynamicTerminal terminal =
     new DynamicTerminal(width, height, new ConsoleKeyInfo('\t', ConsoleKey.Tab, false, false, false));
 
 Component bg = new Component(terminal, -1, -1, 0, 0);
-ImageMask imageMask = new ImageMask(bg, "Images/wallpaper.jpg");
+ImageMask imageMask = new ImageMask(bg, "Images/wallpaper.jpg", true);
 
 SelectableComponent login = new SelectableComponent(terminal, 35, 4, 25, -1);
 BackgroundMask loginBg = new BackgroundMask(login);

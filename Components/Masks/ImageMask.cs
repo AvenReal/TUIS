@@ -84,8 +84,11 @@ public class ImageMask : Mask
             {
                 (float r, float g, float b, float a) = GetRgba(i * height, j * width, height, width);
                 char? c = GetChar(r, g, b, a);
-                Terminal.TextColor? textColor = IsColored ? GetColor(r, g, b) : null;
-                DrawChar(i, j, c, textColor);
+                (int r, int g, int b) textColor = ((int)(r * 255), (int)(g * 255), (int)(b * 255));
+                if (IsColored)
+                    DrawChar(i, j, c, textColor);
+                else
+                    DrawChar(i, j, c);
             }
         }
     }
@@ -134,12 +137,7 @@ public class ImageMask : Mask
     /// <returns>A char corresponding to the darkness of the average RGBA.</returns>
     private char? GetChar(float r, float g, float b, float a)
     {
-        if (a <= 0.5)
-        {
-            return null;
-        }
-
-        switch ((r + g + b) / 3.0f)
+        switch (((r + g + b) / 3.0f))
         {
             case >= 0.8f:
                 return '█';

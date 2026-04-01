@@ -87,6 +87,19 @@ public class Terminal
         }
     }
 
+    public void DrawChar(int y, int x, char c, (int r, int g, int b) textColor, BackgroundColor backgroundColor,
+        TextDecoration textDecoration)
+    {
+        string oldValue = _screen[y, x];
+        string newValue =
+            $"\e[{(int)(backgroundColor)}m\e[{(int)(textDecoration)};0m\e[38;2;{textColor.r};{textColor.g};{textColor.b}m{c}";
+        if (oldValue != newValue)
+        {
+            _screen[y, x] = newValue;
+            _updatedPixels[y, x] = true;
+        }
+    }
+
     private void UpdateScreen()
     {
         for (int i = 0; i < Height; i++)
