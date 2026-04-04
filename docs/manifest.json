@@ -244,6 +244,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/TUIS.Components.Masks.ImageMask.ImageCharacterisation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TUIS.Components.Masks.ImageMask.ImageCharacterisation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TUIS.Components.Masks.ImageMask.ImageCharacterisation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/TUIS.Components.Masks.ImageMask.yml",
       "output": {
         ".html": {

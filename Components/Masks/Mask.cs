@@ -141,7 +141,7 @@ public abstract class Mask
             textDecoration ?? Decoration);
     }
 
-    protected void DrawChar(int y, int x, char? c, (int r, int g, int b) textColor,
+    protected void DrawChar(int y, int x, char? c, (byte r, byte g, byte b) textColor,
         Terminal.BackgroundColor? backgroundColor = null,
         Terminal.TextDecoration? textDecoration = null)
     {

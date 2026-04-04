@@ -19,7 +19,7 @@ public class Terminal
     public bool NeedReDraw = false;
 
     private readonly string[,] _screen;
-    private readonly bool[,] _updatedPixels;
+    private readonly bool[] _updatedRows;
 
     /// <summary>
     /// The terminal is the class that holds every <see cref="Component"/>s together, it also holds the <see cref="InputSystem"/> and the <see cref="TimeSystem"/>.
@@ -34,13 +34,10 @@ public class Terminal
 
         TimeSystem.AddTimedEvent((_, _) => { Draw(); });
         _screen = new string[Height, Width];
-        _updatedPixels = new bool[Height, Width];
+        _updatedRows = new bool[Height];
         for (int i = 0; i < Height; i++)
         {
-            for (int j = 0; j < Width; j++)
-            {
-                _updatedPixels[i, j] = true;
-            }
+            _updatedRows[i] = true;
         }
     }
 
@@ -56,7 +53,7 @@ public class Terminal
         if (!NeedReDraw)
             return;
 
-        NeedReDraw = true;
+        NeedReDraw = false;
 
         foreach (var component in Components)
         {
@@ -83,7 +80,7 @@ public class Terminal
         if (oldValue != newValue)
         {
             _screen[y, x] = newValue;
-            _updatedPixels[y, x] = true;
+            _updatedRows[y] = true;
         }
     }
 
@@ -96,7 +93,7 @@ public class Terminal
         if (oldValue != newValue)
         {
             _screen[y, x] = newValue;
-            _updatedPixels[y, x] = true;
+            _updatedRows[y] = true;
         }
     }
 
@@ -104,13 +101,11 @@ public class Terminal
     {
         for (int i = 0; i < Height; i++)
         {
-            for (int j = 0; j < Width; j++)
+            if (_updatedRows[i])
             {
-                if (_updatedPixels[i, j])
-                {
-                    _updatedPixels[i, j] = false;
-                    Console.Write($"\u001b[{i};{j}H{_screen[i, j]}");
-                }
+                _updatedRows[i] = false;
+                string row = string.Join("", Enumerable.Range(0, Width).Select(c => _screen[i, c]));
+                Console.Write($"\u001b[{i};1H{row}");
             }
         }
     }
@@ -132,6 +127,14 @@ public class Terminal
         Purple = 35,
         Cyan = 36,
         White = 37,
+        Gray = 90,
+        BrightRed = 91,
+        BrightGreen = 92,
+        BrightYellow = 93,
+        BrightBlue = 94,
+        BrightPurple = 95,
+        BrightCyan = 96,
+        BrightWhite = 97,
     }
 
     /// <summary>

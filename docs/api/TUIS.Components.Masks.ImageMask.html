@@ -147,7 +147,7 @@ Class ImageMask  <a class="header-action link-secondary" title="View source" hre
       <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__">Mask.DrawChar(int, int, char?, Terminal.TextColor?, Terminal.BackgroundColor?, Terminal.TextDecoration?)</a>
     </div>
     <div>
-      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_ValueTuple_System_Int32_System_Int32_System_Int32__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__">Mask.DrawChar(int, int, char?, (int r, int g, int b), Terminal.BackgroundColor?, Terminal.TextDecoration?)</a>
+      <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_ValueTuple_System_Byte_System_Byte_System_Byte__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__">Mask.DrawChar(int, int, char?, (byte r, byte g, byte b), Terminal.BackgroundColor?, Terminal.TextDecoration?)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -183,19 +183,19 @@ Class ImageMask  <a class="header-action link-secondary" title="View source" hre
 
   <a id="TUIS_Components_Masks_ImageMask__ctor_" data-uid="TUIS.Components.Masks.ImageMask.#ctor*"></a>
 
-  <h3 id="TUIS_Components_Masks_ImageMask__ctor_TUIS_Components_Component_System_String_System_Boolean_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_" data-uid="TUIS.Components.Masks.ImageMask.#ctor(TUIS.Components.Component,System.String,System.Boolean,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)">
-  ImageMask(Component, string, bool, bool, TextColor, BackgroundColor, TextDecoration)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <h3 id="TUIS_Components_Masks_ImageMask__ctor_TUIS_Components_Component_System_String_TUIS_Components_Masks_ImageMask_ImageCharacterisation_System_Boolean_TUIS_Terminal_TextColor_TUIS_Terminal_BackgroundColor_TUIS_Terminal_TextDecoration_" data-uid="TUIS.Components.Masks.ImageMask.#ctor(TUIS.Components.Component,System.String,TUIS.Components.Masks.ImageMask.ImageCharacterisation,System.Boolean,TUIS.Terminal.TextColor,TUIS.Terminal.BackgroundColor,TUIS.Terminal.TextDecoration)">
+  ImageMask(Component, string, ImageCharacterisation, bool, TextColor, BackgroundColor, TextDecoration)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p><inheritdoc></inheritdoc>
 Draw an image in format jpg, png or any other image format in ASCII art.
-Warning: the original image should have a ratio than the <a class="xref" href="TUIS.Components.Component.html">Component</a>.</p>
+Warning: the original image should have a bigger height and width than the <a class="xref" href="TUIS.Components.Component.html">Component</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ImageMask(Component component, string path, bool isColored = false, bool isVisible = true, Terminal.TextColor color = TextColor.White, Terminal.BackgroundColor background = BackgroundColor.None, Terminal.TextDecoration decoration = TextDecoration.Default)</code></pre>
+    <pre><code class="lang-csharp hljs">public ImageMask(Component component, string path, ImageMask.ImageCharacterisation characterisation = ImageCharacterisation.Brightness, bool isVisible = true, Terminal.TextColor color = TextColor.White, Terminal.BackgroundColor background = BackgroundColor.None, Terminal.TextDecoration decoration = TextDecoration.Default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -206,8 +206,8 @@ Warning: the original image should have a ratio than the <a class="xref" href="T
     <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The relative or absolute path of the image to draw is ASCII art</p>
 </dd>
-    <dt><code>isColored</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>Whether the Image will be drawn using the 8 possible colors or in black and white (default = false).</p>
+    <dt><code>characterisation</code> <a class="xref" href="TUIS.Components.Masks.ImageMask.html">ImageMask</a>.<a class="xref" href="TUIS.Components.Masks.ImageMask.ImageCharacterisation.html">ImageCharacterisation</a></dt>
+    <dd><p>Set what the different characters of the image should represent (default = <a class="xref" href="TUIS.Components.Masks.ImageMask.ImageCharacterisation.html#TUIS_Components_Masks_ImageMask_ImageCharacterisation_Brightness">Brightness</a>).</p>
 </dd>
     <dt><code>isVisible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Represent the visibility of the mask (default = true).</p>
@@ -238,19 +238,20 @@ Warning: the original image should have a ratio than the <a class="xref" href="T
 </h2>
 
 
-  <a id="TUIS_Components_Masks_ImageMask_IsColored_" data-uid="TUIS.Components.Masks.ImageMask.IsColored*"></a>
+  <a id="TUIS_Components_Masks_ImageMask_Characterisation_" data-uid="TUIS.Components.Masks.ImageMask.Characterisation*"></a>
 
-  <h3 id="TUIS_Components_Masks_ImageMask_IsColored" data-uid="TUIS.Components.Masks.ImageMask.IsColored">
-  IsColored
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <h3 id="TUIS_Components_Masks_ImageMask_Characterisation" data-uid="TUIS.Components.Masks.ImageMask.Characterisation">
+  Characterisation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Holds whether the image should be drawn in color or in black and white.</p>
+  <div class="markdown level1 summary"><p>Holds whether the different characters of the image should represent the <a class="xref" href="TUIS.Components.Masks.ImageMask.ImageCharacterisation.html#TUIS_Components_Masks_ImageMask_ImageCharacterisation_Brightness">Brightness</a> or the <a class="xref" href="TUIS.Components.Masks.ImageMask.ImageCharacterisation.html#TUIS_Components_Masks_ImageMask_ImageCharacterisation_Alpha">Alpha</a> of the pixels.
+Trigger a <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_NeedReDraw">NeedReDraw</a> on value change.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsColored { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ImageMask.ImageCharacterisation Characterisation { get; set; }</code></pre>
   </div>
 
 
@@ -259,7 +260,39 @@ Warning: the original image should have a ratio than the <a class="xref" href="T
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="TUIS.Components.Masks.ImageMask.html">ImageMask</a>.<a class="xref" href="TUIS.Components.Masks.ImageMask.ImageCharacterisation.html">ImageCharacterisation</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TUIS_Components_Masks_ImageMask_NbOfBitByColor_" data-uid="TUIS.Components.Masks.ImageMask.NbOfBitByColor*"></a>
+
+  <h3 id="TUIS_Components_Masks_ImageMask_NbOfBitByColor" data-uid="TUIS.Components.Masks.ImageMask.NbOfBitByColor">
+  NbOfBitByColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Holds the number of bit</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte NbOfBitByColor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
     <dd></dd>
   </dl>
 
@@ -278,7 +311,7 @@ Warning: the original image should have a ratio than the <a class="xref" href="T
 
   <h3 id="TUIS_Components_Masks_ImageMask_Behaviour" data-uid="TUIS.Components.Masks.ImageMask.Behaviour">
   Behaviour()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L98"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>This method is what makes the mask unique, it will describe that to print and where using the <a class="xref" href="TUIS.Components.Masks.Mask.html#TUIS_Components_Masks_Mask_DrawChar_System_Int32_System_Int32_System_Nullable_System_Char__System_Nullable_TUIS_Terminal_TextColor__System_Nullable_TUIS_Terminal_BackgroundColor__System_Nullable_TUIS_Terminal_TextDecoration__">DrawChar(int, int, char?, TextColor?, BackgroundColor?, TextDecoration?)</a>. The method will automatically be called when needed.</p>
@@ -306,7 +339,7 @@ Warning: the original image should have a ratio than the <a class="xref" href="T
 
   <h3 id="TUIS_Components_Masks_ImageMask_Export_System_String_System_Nullable_System_Int32__System_Nullable_System_Int32__" data-uid="TUIS.Components.Masks.ImageMask.Export(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
   Export(string, int?, int?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AvenReal/TUIS/blob/master/Components/Masks/ImageMask.cs/#L207"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

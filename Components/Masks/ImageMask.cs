@@ -24,32 +24,53 @@ public class ImageMask : Mask
     private Rgba32[,] _image;
 
     /// <summary>
-    /// Holds whether the image should be drawn in color or in black and white.
+    /// Holds whether the different characters of the image should represent the <see cref="ImageCharacterisation.Brightness"/> or the <see cref="ImageCharacterisation.Alpha"/> of the pixels.
+    /// Trigger a <see cref="Mask.NeedReDraw"/> on value change.
     /// </summary>
-    public bool IsColored
+    public ImageCharacterisation Characterisation
     {
         get;
         set
         {
-            NeedReDraw = true;
             field = value;
+            NeedReDraw = true;
         }
     }
 
 
     /// <summary>
+    /// Holds the number of bit 
+    /// </summary>
+    public byte NbOfBitByColor
+    {
+        get;
+        set
+        {
+            field = value;
+            NeedReDraw = true;
+        }
+    }
+
+    public enum ImageCharacterisation
+    {
+        Brightness,
+        Alpha,
+    }
+
+    /// <summary>
     /// <inheritdoc/>
     /// Draw an image in format jpg, png or any other image format in ASCII art.
-    /// Warning: the original image should have a ratio than the <see cref="Component"/>. 
+    /// Warning: the original image should have a bigger height and width than the <see cref="Component"/>. 
     /// </summary>
     /// <param name="path">The relative or absolute path of the image to draw is ASCII art</param>
-    /// <param name="isColored">Whether the Image will be drawn using the 8 possible colors or in black and white (default = false).</param>
     /// <param name="component">The component which the mask is attached to.</param>
+    /// <param name="characterisation">Set what the different characters of the image should represent (default = <see cref="ImageCharacterisation.Brightness"/>).</param>
     /// <param name="isVisible">Represent the visibility of the mask (default = true).</param>
     /// <param name="color">The default color of the mask (a mask's <see cref="Behaviour"/>) method can override the color (default = white).</param>
     /// <param name="background">The default background color of the mask (a mask's <see cref="Behaviour"/>) method can override the background color (default = None).</param>
     /// <param name="decoration">The default decoration of the mask (a mask's <see cref="Behaviour"/>) method can override the decoration (default = Default).</param>
-    public ImageMask(Component component, string path, bool isColored = false, bool isVisible = true,
+    public ImageMask(Component component, string path,
+        ImageCharacterisation characterisation = ImageCharacterisation.Brightness, bool isVisible = true,
         Terminal.TextColor color = Terminal.TextColor.White,
         Terminal.BackgroundColor background = Terminal.BackgroundColor.None,
         Terminal.TextDecoration decoration = Terminal.TextDecoration.Default) : base(component, isVisible, color,
@@ -58,7 +79,8 @@ public class ImageMask : Mask
         using Image<Rgba32> image = Image.Load<Rgba32>(path);
         _imageHeight = image.Height;
         _imageWidth = image.Width;
-        IsColored = isColored;
+        Characterisation = characterisation;
+        NbOfBitByColor = 0;
         _image = new Rgba32[_imageHeight, _imageWidth];
         for (int i = 0; i < _imageHeight; i++)
         {
@@ -84,11 +106,8 @@ public class ImageMask : Mask
             {
                 (float r, float g, float b, float a) = GetRgba(i * height, j * width, height, width);
                 char? c = GetChar(r, g, b, a);
-                (int r, int g, int b) textColor = ((int)(r * 255), (int)(g * 255), (int)(b * 255));
-                if (IsColored)
-                    DrawChar(i, j, c, textColor);
-                else
-                    DrawChar(i, j, c);
+                (byte r, byte g, byte b) textColor = GetColor(r, g, b);
+                DrawChar(i, j, c, textColor);
             }
         }
     }
@@ -137,7 +156,7 @@ public class ImageMask : Mask
     /// <returns>A char corresponding to the darkness of the average RGBA.</returns>
     private char? GetChar(float r, float g, float b, float a)
     {
-        switch (((r + g + b) / 3.0f))
+        switch (Characterisation == ImageCharacterisation.Brightness ? ((r + g + b) / 3.0f) : a)
         {
             case >= 0.8f:
                 return '█';
@@ -152,26 +171,37 @@ public class ImageMask : Mask
         }
     }
 
-    private Terminal.TextColor GetColor(float r, float g, float b)
+    private (byte r, byte g, byte b) GetColor(float r, float g, float b)
     {
-        float gray = 0.6f;
-
-        if (r < gray)
+        if (NbOfBitByColor == 0)
         {
-            if (g < gray)
-            {
-                return b < gray ? Terminal.TextColor.Black : Terminal.TextColor.Blue;
-            }
-
-            return b < gray ? Terminal.TextColor.Green : Terminal.TextColor.Cyan;
+            return (255, 255, 255);
         }
 
-        if (g < gray)
+        return ((byte r, byte g, byte b))(MathF.Round(r * NbOfBitByColor) * (255 / NbOfBitByColor),
+            MathF.Round(g * NbOfBitByColor) * (255 / NbOfBitByColor),
+            MathF.Round(b * NbOfBitByColor) * (255 / NbOfBitByColor));
+
+        /*if (Colorisation == ImageColorisation.Monochrome)
+            return Terminal.TextColor.BrightWhite;
+
+        r = r * 255;
+        g = g *255;
+        b = b * 255;
+
+        List < (Terminal.TextColor color, float distance) > distances = new();
+        int iMin = Colorisation == ImageColorisation.HeightBrightColors ? 8 : 0;
+        int iMax = Colorisation == ImageColorisation.HeightNormalColors ? 8 : 16;
+        for (int i = iMin; i < iMax; i++)
         {
-            return b < gray ? Terminal.TextColor.Red : Terminal.TextColor.Purple;
+            Terminal.TextColor textColor = _colorToRGB.Keys.ElementAt(i);
+            (float r, float g, float b) color = _colorToRGB[textColor];
+            (float r, float g, float b) substractedColors = (color.r - r, color.g - g, color.b - b);
+            distances.Add((textColor, MathF.Sqrt(substractedColors.r * substractedColors.r + substractedColors.g * substractedColors.g + substractedColors.b * substractedColors.b)));
+
         }
 
-        return b < gray ? Terminal.TextColor.Yellow : Terminal.TextColor.White;
+        return distances.Aggregate((min, next) => next.distance < min.distance ? next : min).color;*/
     }
 
     public void Export(string path = "./exported_image.png", int? exportedWidth = null, int? exportedHeight = null)
@@ -180,6 +210,7 @@ public class ImageMask : Mask
         int height = _imageHeight / goalHeight;
         var goalWidth = (exportedWidth ?? Component.Width);
         int width = _imageWidth / goalWidth;
+
 
         using StreamWriter writer = new StreamWriter(path);
         for (int i = 0; i < goalHeight; i++)
